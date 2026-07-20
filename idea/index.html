@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مولد المحتوى — OTM System</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+ <link rel="icon" type="image/png" href="main-logo.png">
+
+</head>
+<body>
+
+    <div id="notification" class="notification"></div>
+
+<div id="welcome-modal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header-block">
+                <span class="modal-meta">ⓘ قبل البدء</span>
+                <h2>ملاحظة سريعة حول كيفية الاستخدام</h2>
+            </div>
+            <div class="modal-body-block">
+                <p>هذه الأداة تقدم اقتراحات فقط. معرفتك وخبرتك الشخصية ستساعدك على الحصول على أفضل النتائج.
+
+</p>
+                <p style="font-weight: 600; color: var(--accent);">💡 يرجى الكتابة  باللغة العربية دائماً.</p>
+
+                <button id="close-modal-btn"> فلنبدأ ←</button>
+
+                <p class="modal-footer-note" style="font-size: 0.75rem; color: #a1a1aa; margin-top: 12px; text-align: center; line-height: 1.4;">
+                    باستمرارك في استخدام هذا المنتج، فإنك توافق على <a href="/Terms-of-Service" style="color: inherit; text-decoration: underline;">شروط الخدمة</a> و <a href="/privacy" style="color: inherit; text-decoration: underline;">سياسة الخصوصية</a> الخاصة بنا.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="wizard-flow">
+            
+
+      <header class="main-header">
+    <h1>
+      
+        <span class="highlight-title">  ما عندكش فكرة ديال محتوى؟  خذ خطة فيديو جاهزة للتصوير</span> 
+        <span class="badge-free">مجاني 100%</span>
+    </h1>
+    <p class="main-subtitle">أجب عن أربعة أسئلة و احصل على فكرة لفيديو . كل فكرة مع hook قوي و ونص كامل يمكنك البدء في تصويره اليوم.</p>
+</header>
+
+            <div class="progress-nav">
+                <span id="step-counter">الخطوة <span class="num">1</span> من 4</span>
+                <button id="prev-btn" class="nav-link" style="display: none;">← السابق</button>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-segment active"></div>
+                <div class="progress-segment"></div>
+                <div class="progress-segment"></div>
+                <div class="progress-segment"></div>
+            </div>
+
+            <section class="step-section active" id="step-1">
+                <h2>🎯 من هو الجمهور المستهدف لهذا المحتوى؟</h2>
+                <p class="section-desc">تحدث إلى شخص واحد، وليس إلى حشد من الناس. كلما كنت أكثر تحديداً، كانت النتائج أفضل.</p>
+                <div class="input-wrapper">
+                    <input type="text" id="audience" placeholder="مثال: رواد الأعمال">
+
+                </div>
+                <div class="meta-tip">⚡ نصيحة · اضغط على أي مثال لملئه تلقائياً</div>
+               <div class="examples-container">
+
+    <span class="example-tag">🤖 المهتمون بالذكاء الاصطناعي</span>
+    
+
+     <span class="example-tag">💪 المهتمون باللياقة</span>
+                
+    <span class="example-tag">🎓 الطلاب</span>
+
+
+    
+
+    <span class="example-tag">✈️ المسافرون</span>
+
+    <span class="example-tag">📷 محبو التصوير</span>
+
+<span class="example-tag">🏡 الباحثون عن منزل</span>
+
+</div>
+            </section>
+
+            <section class="step-section" id="step-2">
+                <h2>ما هو الهدف من هذا الفيديو؟</h2>
+                <p class="section-desc">الأهداف المختلفة تتطلب أساليب مختلفة للفيديوهات.</p>
+                <div class="options-grid">
+                    <div class="card-option" data-value="CONTENT ATTRACT">
+                        <h3>جذب</h3>
+                        <p>جذب مشاهدين جدد</p>
+                    </div>
+                    <div class="card-option" data-value="CONTENT POSITIONING">
+                        <h3>إثبات مكانة</h3>
+                        <p>إظهار الخبرة والسلطة في مجالك</p>
+                    </div>
+                    <div class="card-option" data-value="CONTENT NURTURE">
+                        <h3>توجيه وتثقيف</h3>
+                        <p>تعميق العلاقة مع الجمهور الحالي</p>
+                    </div>
+                    <div class="card-option" data-value="CONTENT CONVERSION">
+                        <h3>تحويل</h3>
+                        <p>دفع المشاهد للمتابعة، الحفظ، أو الشراء</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="step-section" id="step-3">
+                <h2>اختر تنسيق المحتوى</h2>
+                <p class="section-desc">كيف تريد تقديم هذه الرسالة؟</p>
+                <div class="options-grid">
+                    <div class="card-option" data-value="Tips & advice and mistakes">
+                        <h3>نصائح وإرشادات</h3>
+                        <p>مشاركة أطر العمل والدروس مستفادة والأخطاء</p>
+                    </div>
+                    <div class="card-option" data-value="Personal Story">
+                        <h3>قصة شخصية</h3>
+                        <p>بناء الثقة من خلال مشاركة التجارب الواقعية</p>
+                    </div>
+                    <div class="card-option" data-value="Hot take , A contrarian or unpopular opinion">
+                        <h3>رأي مثير للجدل</h3>
+                        <p>التميز برأي فريد أو غير شائع</p>
+                    </div>
+                    <div class="card-option" data-value="Behind the scenes . Process, real life, day-in-the-life">
+                        <h3>خلف الكواليس</h3>
+                        <p>إظهار كيفية سير العمل والحياة اليومية</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="step-section" id="step-4">
+                <h2>ما هي الرسالة الأساسية؟</h2>
+                <p class="section-desc">قدم الفكرة الرئيسية أو القيمة التي تريد مشاركتها.</p>
+                <div class="input-wrapper">
+                    <textarea id="message" placeholder="ما هي الرسالة أو الفكرة الرئيسية؟"></textarea>
+                </div>
+            </section>
+
+            <div class="action-footer">
+                <button id="next-btn" class="disabled">متابعة ←</button>
+                <button id="generate" style="display: none;">توليد النص</button>
+            </div>
+        </div>
+
+        <div id="result" style="display: none;"></div>
+    </div>
+
+      <div class="badge-container">
+                <span class="badge">
+                    OTM system™
+                    <span class="pulse-dot"></span>
+                </span>
+            </div>
+
+      <footer>
+        <div class="brand-statement" dir="ltr">
+        <h2>Become the brand people choose.</h2>
+      </div>
+    <div class="footer-pill">
+        <a href="/" aria-label="Home">
+            <img src="main-logo.svg" style="width:32px;" alt="Logo">
+        </a>
+
+        <nav class="footer-pill-links">
+            <a href="/privacy">سياسة الخصوصية</a>
+            <a href="/Terms-of-Service">شروط الخدمة</a>
+        </nav>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</html>
