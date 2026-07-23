@@ -1,189 +1,191 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أداة توليد الأفكار — OTM System</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTM System™ — Bariabder</title>
+  
+  <link rel="icon" type="image/png" href="main-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="main-logo.png">
 </head>
 <body>
 
-    <!-- Ambient Glowing Background Accents -->
-    <div class="bg-glow-left"></div>
-    <div class="bg-glow-right"></div>
+  <div class="container">
+    <!-- CLEAN MINIMAL TEXT NAVIGATION MENU -->
+    <nav class="top-nav">
+      <a href="https://blog.bariabder.com/">المدونة · Blog</a>
+      <span class="nav-sep">•</span>
+      <a href="https://www.bariabder.com/idea/">أداة توليد الأفكار "Free"</a>
+      
+      <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+    <!-- Sun icon for light mode -->
+    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+    <!-- Moon icon for dark mode -->
+    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  </button>
+    </nav>
 
-    <!-- Floating Top Menu Header -->
-    <header class="top-nav-header">
-        <div class="top-nav-pill">
-          
- <!-- Profile / Brand -->
-            <a href="https://blog.bariabder.com/" class="nav-brand-profile">
-              <img src="bariabder.jpg" alt="bariabder" class="profile-avatar">
-                <span class="profile-name">Bari Abder</span>
-                
-            </a>
-          
-            <!-- Center Badge (Non-clickable) -->
-            <div class="nav-center-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                <span>100% مجاني</span>
-            </div>
+    <!-- HERO HEADLINE STRUCTURE -->
+    <div class="header-box">
+      <h1>
+        النظام بالضبط اللي كنستعملوه باش نحوّلو خبرتك لـ <span class="highlight">براند شخصية كاتبيع ليك</span>، بلا ما تعتمد على الإعلانات.
+      </h1>
+      <p class="sub-description">
+        إلى كنت أصلاً متميز فالمجال ديالك، ولكن كتعاني تجيب Clients بشكل مستمر، إكتشف كيفاش <strong>OTM System™</strong> كيساعد الخبراء ورواد الأعمال يولو هما الاختيار الأول فالـمجال ديالهم.
+      </p>
 
-          
-            <!-- Light/Dark Theme Switch -->
-            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
-                <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            </button>
-          
-           
-        </div>
-    </header>
-
-    <div id="notification" class="notification"></div>
-
-    <div id="welcome-modal" class="modal-overlay">
-        <div class="modal-card">
-            <div class="modal-header-block">
-                <span class="modal-meta">ⓘ قبل البدء</span>
-                <h2>ملاحظة سريعة حول كيفية الاستخدام</h2>
-            </div>
-            <div class="modal-body-block">
-                <p>هذه الأداة تقدم اقتراحات فقط. معرفتك وخبرتك الشخصية ستساعدك على الحصول على أفضل النتائج.</p>
-                <p style="font-weight: 600; color: var(--accent);">💡 يرجى الكتابة باللغة العربية دائماً.</p>
-
-                <button id="close-modal-btn"> فلنبدأ ←</button>
-
-                <p class="modal-footer-note" style="font-size: 0.75rem; color: #a1a1aa; margin-top: 12px; text-align: center; line-height: 1.4;">
-                    باستمرارك في استخدام هذا المنتج، فإنك توافق على <a href="/Terms-of-Service" style="color: inherit; text-decoration: underline;">شروط الخدمة</a> و <a href="/privacy" style="color: inherit; text-decoration: underline;">سياسة الخصوصية</a> الخاصة بنا.
-                </p>
-            </div>
-        </div>
+      <!-- MAIN CTA 1 -->
+      <button class="btn-cta" onclick="openModal()">
+        شاهد الفيديو الآن ←
+      </button>
     </div>
 
-    <div class="container">
-        <div id="wizard-flow">
-            <header class="main-header">
-                <div class="title-wrapper">
-                    <h1>ما عندكش فكرة ديال محتوى؟<br>خذ خطة فيديو جاهزة للتصوير</h1>
-                    <svg class="sparkle-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B80F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/>
-                    </svg>
-                </div>
-                <p class="main-subtitle">أجب عن أربعة أسئلة و احصل على فكرة لفيديو, كل خطوة مع hook قوي و نص كامل يمكنك البدء في تصويره اليوم.</p>
-            </header>
-
-            <div class="wizard-card-container">
-                <div class="progress-nav">
-                    <span id="step-counter">الخطوة <span class="num">1</span> من 4</span>
-                    <button id="prev-btn" class="nav-link" style="display: none;">← السابق</button>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress-segment active"></div>
-                    <div class="progress-segment"></div>
-                    <div class="progress-segment"></div>
-                    <div class="progress-segment"></div>
-                </div>
-
-                <section class="step-section active" id="step-1">
-                    <h2>🎯 من هو الجمهور المستهدف لهذا المحتوى؟</h2>
-                    <p class="section-desc">تحدث إلى شخص واحد، وليس إلى حشد من الناس. كلما كنت أكثر تحديداً، كانت النتائج أفضل.</p>
-                    <div class="input-wrapper">
-                        <input type="text" id="audience" placeholder="مثال: رواد الأعمال">
-                    </div>
-                    <div class="meta-tip">⚡ نصيحة · اضغط على أي مثال لملئه تلقائياً</div>
-                    <div class="examples-container">
-                        <span class="example-tag">🤖 المهتمون بالذكاء الاصطناعي</span>
-                        <span class="example-tag">💪 المهتمون باللياقة</span>
-                        <span class="example-tag">🎓 الطلاب</span>
-                        <span class="example-tag">✈️ المسافرون</span>
-                        <span class="example-tag">📷 محبو التصوير</span>
-                        <span class="example-tag">🏡 الباحثون عن منزل</span>
-                    </div>
-                </section>
-
-                <section class="step-section" id="step-2">
-                    <h2>ما هو الهدف من هذا الفيديو؟</h2>
-                    <p class="section-desc">الأهداف المختلفة تتطلب أساليب مختلفة للفيديوهات.</p>
-                    <div class="options-grid">
-                        <div class="card-option" data-value="CONTENT ATTRACT">
-                            <h3>جذب</h3>
-                            <p>جذب مشاهدين جدد</p>
-                        </div>
-                        <div class="card-option" data-value="CONTENT POSITIONING">
-                            <h3>إثبات مكانة</h3>
-                            <p>إظهار الخبرة والسلطة في مجالك</p>
-                        </div>
-                        <div class="card-option" data-value="CONTENT NURTURE">
-                            <h3>توجيه وتثقيف</h3>
-                            <p>تعميق العلاقة مع الجمهور الحالي</p>
-                        </div>
-                        <div class="card-option" data-value="CONTENT CONVERSION">
-                            <h3>تحويل</h3>
-                            <p>دفع المشاهد للمتابعة، الحفظ، أو الشراء</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="step-section" id="step-3">
-                    <h2>اختر تنسيق المحتوى</h2>
-                    <p class="section-desc">كيف تريد تقديم هذه الرسالة؟</p>
-                    <div class="options-grid">
-                        <div class="card-option" data-value="Tips & advice and mistakes">
-                            <h3>نصائح وإرشادات</h3>
-                            <p>مشاركة أطر العمل والدروس مستفادة والأخطاء</p>
-                        </div>
-                        <div class="card-option" data-value="Personal Story">
-                            <h3>قصة شخصية</h3>
-                            <p>بناء الثقة من خلال مشاركة التجارب الواقعية</p>
-                        </div>
-                        <div class="card-option" data-value="Hot take , A contrarian or unpopular opinion">
-                            <h3>رأي مثير للجدل</h3>
-                            <p>التميز برأي فريد أو غير شائع</p>
-                        </div>
-                        <div class="card-option" data-value="Behind the scenes . Process, real life, day-in-the-life">
-                            <h3>خلف الكواليس</h3>
-                            <p>إظهار كيفية سير العمل والحياة اليومية</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="step-section" id="step-4">
-                    <h2>ما هي الرسالة الأساسية؟</h2>
-                    <p class="section-desc">قدم الفكرة الرئيسية أو القيمة التي تريد مشاركتها.</p>
-                    <div class="input-wrapper">
-                        <textarea id="message" placeholder="ما هي الرسالة أو الفكرة الرئيسية؟"></textarea>
-                    </div>
-                </section>
-
-                <div class="action-footer">
-                    <button id="next-btn" class="disabled">متابعة ←</button>
-                    <button id="generate" style="display: none;">توليد النص</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="result" style="display: none;"></div>
+    <!-- LARGE TESTIMONIAL IMAGE PLACEHOLDER -->
+    <div class="testimonial-placeholder-wrapper">
+      <div class="image-placeholder">
+        <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+        <span>[Image Placeholder]</span>
+      </div>
     </div>
 
+    <!-- THIS SYSTEM WORKS FOR -->
+    <div class="info-section-title">هذا النظام مخصص لـ:</div>
+    <ul class="check-list">
+      <li>المؤسسين ورواد الأعمال (founders and entrepreneurs)</li>
+      <li>المستشارين والمدربين (Coaches & Consultants)</li>
+      <li>أصحاب الخدمات عالية القيمة (High-Ticket Service Providers)</li>
+      <li>صناع المنتجات الرقمية والخبراء (Info Products & Experts)</li>
+    </ul>
+
+    <!-- WHAT YOU'LL LEARN IN THIS VIDEO -->
+    <div class="info-section-title">شنو غادي تتعلم ف هاد الفيديو:</div>
+    <ol class="numbered-list">
+      <li><span class="num">1.</span> كيفاش تبني هيكلة المحتوى (Funnel Structure) اللي كتحول المتابعين لزبناء.</li>
+      <li><span class="num">2.</span> كيفاش تطور العرض ديالك (Offer) باش يولي جذاب وصعيب يترفض.</li>
+      <li><span class="num">3.</span> دراسة السوق واكتشاف الـ Market Gaps للتفوق على المنافسين.</li>
+      <li><span class="num">4.</span> كيفاش تحول البروفايل ديالك لـ High-Converting Storefront.</li>
+      <li><span class="num">5.</span> نظام Batch Filming لتصوير المحتوى بدون ما تضيع وقتك يومياً.</li>
+      <li><span class="num">6.</span> كيفاش تراجع الـ Metrics وتضاعف المشاهدات بين 2x و 3x.</li>
+      <li><span class="num">7.</span> كيفاش تقدر تخدم معانا باش نبنيو هاد النظام معاك خطوة بخطوة.</li>
+    </ol>
+
+    <!-- MAIN CTA 2 -->
+    <button class="btn-cta" onclick="openModal()">
+      شاهد الفيديو الآن ←
+    </button>
+
+    <!-- FLOATING PILL FOOTER -->
     <footer>
-        <div class="footer-pill">
-            <a href="https://www.bariabder.com/" aria-label="Home">
-                <img src="main-logo.svg" style="width:28px;" alt="Logo">
-            </a>
-            <nav class="footer-pill-links">
-                <a href="/privacy">سياسة الخصوصية</a>
-                <a href="/Terms-of-Service">شروط الخدمة</a>
-            </nav>
-        </div>
+      <div class="footer-pill">
+        <a href="/" aria-label="Home"><img src="main-logo.svg" style="width:28px;" alt="Logo" onerror="this.src='main-logo.png'"></a>
+        <nav class="footer-pill-links">
+          <a href="/privacy">سياسة الخصوصية</a>
+          <a href="/Terms-of-Service">شروط الخدمة</a>
+        </nav>
+      </div>
+      <div class="footer-disclaimers">
+        <p>هذا الموقع مستقل وغير تابع أو مدعوم من شركة Meta Platforms, Inc.</p>
+        <p>للاستفسارات والتواصل: <a href="mailto:support@bariabder.com">support@bariabder.com</a></p>
+      </div>
     </footer>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- POPUP FORM MODAL -->
+  <div class="modal-overlay" id="leadModal">
+    <div class="modal-card">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <h2>أدخل معلوماتك لمشاهدة الفيديو ✍️</h2>
+      
+      <form id="leadForm">
+        <div class="form-group">
+          <label for="fullName">الإسم الكامل | Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="أدخل اسمك الكامل..." required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">البريد الإلكتروني | Email</label>
+          <input type="text" id="email" name="email" placeholder="example@gmail.com">
+        </div>
+
+        <div class="form-group">
+          <label for="whatsapp">رقم الواتساب | WhatsApp Number</label>
+          <input type="text" id="whatsapp" name="whatsapp" placeholder="+212 600-000000">
+        </div>
+
+        <button type="submit" class="btn-cta" style="margin-top: 10px;">
+          شاهد الفيديو الآن
+        </button>
+
+        <p class="modal-disclaimer">
+          بإدخال معلوماتك، فإنك توافق على استقبال التحديثات والمحتوى الخاص بنظام OTM System™. يمكنك إلغاء الاشتراك في أي وقت.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js">
+    const modal = document.getElementById('leadModal');
+    const form = document.getElementById('leadForm');
+
+    const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE'; 
+
+    // Auto theme check based on local device time (6 PM to 9 AM = Dark)
+    (function checkTimeTheme() {
+      const currentHour = new Date().getHours();
+      if (currentHour >= 9 && currentHour < 18) {
+        document.body.classList.add('light-theme');
+      } else {
+        document.body.classList.remove('light-theme');
+      }
+    })();
+
+    function openModal() { modal.classList.add('active'); }
+    function closeModal() { modal.classList.remove('active'); }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'جاري التحويل...';
+
+      const searchParams = new URLSearchParams(new FormData(form));
+
+      fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: searchParams
+      })
+      .then(() => {
+        window.location.href = 'https://www.bariabder.com/explainer';
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+        alert('حدث خطأ أثناء إرسال البيانات، يرجى إعادة المحاولة.');
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'شاهد الفيديو الآن';
+      });
+    });
+  </script>
+
 </body>
 </html>
