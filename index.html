@@ -284,9 +284,9 @@
   <div class="container">
     <!-- CLEAN MINIMAL TEXT NAVIGATION MENU -->
     <nav class="top-nav">
-      <a href="/blog">المدونة · Blog</a>
+      <a href="https://blog.bariabder.com/">المدونة · Blog</a>
       <span class="nav-sep">•</span>
-      <a href="/ideation-tool">أداة توليد الأفكار "Free"</a>
+      <a href="bariabder.com/idea">أداة توليد الأفكار "Free"</a>
     </nav>
 
     <!-- HERO HEADLINE STRUCTURE -->
@@ -391,7 +391,7 @@
     const modal = document.getElementById('leadModal');
     const form = document.getElementById('leadForm');
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwOY0x3vOCKvI4uIRlc1VsYGq-sN5t90U1p_7jOiELewGNeesXOqEfnFbJcZBrnFJk-QQ/exec'; 
+    const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE'; 
 
     // Auto theme check based on local device time (6 PM to 9 AM = Dark)
     (function checkTimeTheme() {
@@ -411,52 +411,29 @@
     });
 
     form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  
-  const submitBtn = form.querySelector('button[type="submit"]');
-  submitBtn.disabled = true;
-  submitBtn.innerText = 'جاري التحويل...';
+      e.preventDefault();
+      
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'جاري التحويل...';
 
-  // Encode form payload
-  const searchParams = new URLSearchParams(new FormData(form));
+      const searchParams = new URLSearchParams(new FormData(form));
 
-  fetch(scriptURL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: searchParams
-  })
-  .then(() => {
-    // Wait slightly to guarantee Google Apps Script receives the payload before page unloads
-    setTimeout(() => {
-      window.location.href = 'https://www.bariabder.com/explainer';
-    }, 300);
-  })
-  .catch(error => {
-    console.error('Error submitting form:', error);
-    alert('حدث خطأ أثناء إرسال البيانات، يرجى إعادة المحاولة.');
-    submitBtn.disabled = false;
-    submitBtn.innerText = 'شاهد الفيديو الآن';
-  });
-});
+      fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: searchParams
+      })
+      .then(() => {
+        window.location.href = 'https://www.bariabder.com/explainer';
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+        alert('حدث خطأ أثناء إرسال البيانات، يرجى إعادة المحاولة.');
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'شاهد الفيديو الآن';
+      });
+    });
   </script>
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Clear any previous manual overrides from earlier testing
-    localStorage.removeItem('theme');
-    localStorage.removeItem('userThemePreference');
-
-    const currentHour = new Date().getHours(); // Gets visitor's local hour (0-23)
-    
-    // Light theme ONLY runs between 9 AM (9) and 6 PM (18)
-    if (currentHour >= 9 && currentHour < 18) {
-      document.body.classList.add('light-theme');
-    } else {
-      document.body.classList.remove('light-theme');
-    }
-  });
-</script>
 </body>
 </html>
