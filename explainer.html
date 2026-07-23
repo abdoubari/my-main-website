@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTM System™ — Bariabder</title>
+
+  <link rel="icon" type="image/png" href="main-logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xfxluvm6i1");
+  </script>
+</head>
+<body>
+
+<button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle Dark Mode">🌙 </button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-theme');
+      toggleBtn.innerHTML = '☀️ ';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+      
+      if (document.body.classList.contains('dark-theme')) {
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.innerHTML = '☀️ ';
+      } else {
+        localStorage.setItem('theme', 'light');
+        toggleBtn.innerHTML = '🌙 ';
+      }
+    });
+  });
+</script>
+  
+<section class="hero-section" style="padding-top: 32px; padding-bottom: 40px;">
+  <div class="hero-header" style="margin-bottom: 32px;">
+    <div class="audience-badge">
+      <span class="pulse-dot"></span>
+      <span class="badge-text">خاص بـ: المؤسسين و أصحاب المشاريع</span>
+    </div>
+    <h1>
+       اكتشف النظام اللي يحول المحتوى
+      <br>
+      إلى  Clients  بدون الحاجة للإعلانات
+    </h1>
+
+    <p class="subtitle-premium-light">
+      هاد الفيديو غادي يوريك كيفاش تجيب كليان بشكل مستمر بدون ماتصرف درهم فالإعلانات  <span></span>
+    </p>
+  </div>
+
+  <div style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+    <div class="video-wrap" style="width: 100%;">
+      <script src="https://fast.wistia.com/player.js" async></script>
+      <script src="https://fast.wistia.com/embed/sv53ju3n2d.js" async type="module"></script>
+      <style>wistia-player[media-id='sv53ju3n2d']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/sv53ju3n2d/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+      <wistia-player media-id="sv53ju3n2d" aspect="1.7777777777777777"></wistia-player>
+    </div>
+    <a href="#final-form" class="btn-primary" style="display: inline-block; width: auto; min-width: 300px;">إبدأ الأن</a>
+  </div>
+</section>
+
+<div class="gradient-master-container">
+  <!-- كيفاش كيخدم نظام OTM™ -->
+  <section class="otm-process-section" id="how-otm-works">
+    <div class="otm-container">
+      <div class="otm-header">
+        <h2>كيفاش كيخدم <em>نظام OTM™</em>؟</h2>
+        <p>رحلة واضحة ومدروسة لتحويل البروفايل العادي ديالك لأقوى أصل رقمي كيجيب العملاء.</p>
+      </div>
+
+      <div class="otm-grid">
+        <!-- Card 1: Market and Signal Research -->
+        <div class="otm-card">
+          <div class="otm-visual-box">
+            <div class="mock-market-analysis">
+              <div class="analysis-column">
+                <div class="dot-cluster">
+                  <span class="cluster-dot"></span>
+                  <span class="cluster-dot"></span>
+                  <span class="cluster-dot"></span>
+                  <span class="cluster-dot"></span>
+                  <span class="cluster-dot"></span>
+                </div>
+                <span class="analysis-label">Crowded</span>
+              </div>
+              <div class="analysis-column">
+                <div class="gap-target">
+                  <span class="gap-dot"></span>
+                </div>
+                <span class="analysis-label accent">Your gap</span>
+              </div>
+            </div>
+          </div>
+          <div class="step-badge">1</div>
+          <h3>دراسة السوق و Signal Research</h3>
+          <p>كنتعمقو مزيان فـ niche ديالك باش نلقاو المواضيع الرائجة اللي خدامة دابا. ما كنقلوش هاد المحتوى، ولكن كنحددو market gaps باش تقدر تخطف الانتباه بوجهة النظر الخاصة بيك وتبان مختلف.</p>
+        </div>
+
+        <!-- Card 2: Foundation and Profile Makeover -->
+        <div class="otm-card">
+          <div class="otm-visual-box">
+            <div class="mock-profile-toggle-container">
+              <div class="mock-profile-widget">
+                <span class="profile-widget-text">Profile</span>
+                <div class="mock-switch">
+                  <span class="mock-switch-knob"></span>
+                </div>
+              </div>
+              <span class="optimized-badge">Optimized 🔥</span>
+            </div>
+          </div>
+          <div class="step-badge">2</div>
+          <h3>بناء الأساس وتحسين البروفايل</h3>
+          <p>كنستخرجو السلطة ديالك (authority) والجمهور المستهدف ديالك غير من خلال 5 الأسئلة بسيطة. ومن بعد كنقومو بتحسين كامل لحسابات السوشيال ميديا ديالك باش يتحولو من مجرد بروفايلات عادية إلى واجهات كتجيب العملاء (high-converting storefronts).</p>
+        </div>
+
+        <!-- Card 3: The Content Engine -->
+        <div class="otm-card">
+          <div class="otm-visual-box">
+            <div class="mock-growth-chart">
+              <div class="chart-metric-header">
+                <span class="metric-value">2.4x</span>
+                <span class="metric-unit">views</span>
+              </div>
+              <div class="chart-canvas">
+                <svg class="chart-curve-svg" viewBox="0 0 180 32">
+                  <path d="M 0 28 Q 70 24 174 4" fill="none" stroke="#524bb5" stroke-width="3" stroke-linecap="round"/>
+                  <circle cx="174" cy="4" r="5.5" fill="#524bb5"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="step-badge">3</div>
+          <h3>Content Engine</h3>
+          <p>كنطبقو نظام أسبوعي ساهل لتصوير المحتوى (weekly batch filming) مبني على النظام Organic trust machine ديالنا. ومن بعد أول شهر، كنراجعو performance metrics ونركزو أكثر على المحتوى اللي كيحقق بين 2x و3x مقارنة مع baseline views ديالك.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="proof-section">
+  <div class="proof-container">
+
+    <div class="proof-sidebar">
+      <span class="projects-tag">‹ شهادات ›</span>
+      <h2>فخورون بالعمل مع الأفضل</h2>
+    </div>
+
+    <div class="proof-videos-container">
+      <div class="video-card-v2">
+        <script src="https://fast.wistia.com/player.js" async></script>
+        <script src="https://fast.wistia.com/embed/9rakujkciy.js" async type="module"></script>
+        <style>
+          wistia-player[media-id='9rakujkciy']:not(:defined) {
+            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/9rakujkciy/swatch');
+            display: block;
+            filter: blur(5px);
+            padding-top: 177.78%;
+          }
+        </style>
+        <wistia-player media-id="9rakujkciy" aspect="0.5625"></wistia-player>
+      </div>
+
+      <div class="video-card-v2">
+        <script src="https://fast.wistia.com/player.js" async></script>
+        <script src="https://fast.wistia.com/embed/xlty4kee3f.js" async type="module"></script>
+        <style>
+          wistia-player[media-id='xlty4kee3f']:not(:defined) {
+            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/xlty4kee3f/swatch');
+            display: block;
+            filter: blur(5px);
+            padding-top: 177.78%;
+          }
+        </style>
+        <wistia-player media-id="xlty4kee3f" aspect="0.5625"></wistia-player>
+      </div>
+    </div>
+
+    <div class="proof-cards-stack">
+      <div class="custom-proof-box">
+        <p>"الخدمة كانت ممتازة، وماشي غير لبّات توقعات الزبناء ديالنا، بل فاقتهم."</p>
+        <div class="custom-review-author">
+          <img src="mohamed-salem-review.webp"
+               alt="Mohamed Salem review"
+               onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'48\' height=\'48\' fill=\'%23E5E7EB\'/></svg>'">
+          <div class="custom-review-info">
+            <strong>Mohamed Salem</strong>
+            <span>Business Analyst</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="custom-proof-box">
+        <p>"جودة العمل كانت رائعة. Bari ساعدني نبني أساس العيادة ديالي وحوّل الفكرة لواقع."</p>
+        <div class="custom-review-author">
+          <img src="dr-mernissi-othmane-review.webp"
+               alt="Dr. Mernissi Othmane review"
+               onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'48\' height=\'48\' fill=\'%23E5E7EB\'/></svg>'">
+          <div class="custom-review-info">
+            <strong>Dr. Mernissi Othmane</strong>
+            <span>Dentist</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="custom-proof-box">
+        <p>"ديما كنكون فرحان نخدم معاه. التواصل ساهل والخدمة ديما بجودة عالية."</p>
+        <div class="custom-review-author">
+          <img src="abdou-berrada-review.webp"
+               alt="Abdou Berrada review"
+               onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\' fill=\'%23E5E7EB\'/></svg>'">
+          <div class="custom-review-info">
+            <strong>Abdou Berrada</strong>
+            <span>Founder at @epoptique</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Centered CTA Wrapper Outside the Grid Column -->
+  <div class="proof-cta-wrapper">
+    <div class="proof-cta">
+      <a href="#final-form" class="btn-circle-cta">إبدأ الآن</a>
+    </div>
+  </div>
+</section>
+    </div>
+
+  </div>
+</section>
+  <!-- Premium Spacer Divider -->
+  <div class="otm-spacer-divider">
+    <div class="otm-spacer-line"></div>
+  </div>
+ 
+  <!-- الأسئلة الشائعة FAQ -->
+  <section class="section faq-section">
+    <div class="text-center">
+      <h2>الأسئلة <em>الشائعة</em></h2>
+      <p class="subtitle-premium-light">كل ما تحتاجه من أجوبة حول نظام OTM System™</p>
+    </div>
+
+    <div class="faq-container">
+      <details class="faq-item">
+        <summary>واش خاصني نكون كنصنع المحتوى من قبل؟</summary>
+        <div class="faq-answer">
+          <p>لا. كنبداو من الأساس: التموقع، الرسالة، وأنواع المحتوى اللي خاصك تنشر باش تبني الثقة وتجلب الجمهور المناسب.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>شحال من الوقت خاصني نخصص؟</summary>
+        <div class="faq-answer">
+          <p>هذا كيعتمد على الحالة ديالك، ولكن خاص يكون عندك استعداد تخصص وقت باش تصور المحتوى، تراجع الأفكار، وتطبق النظام بشكل مستمر.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>واش النتائج مضمونة?</summary>
+        <div class="faq-answer">
+          <p>لا. حيت النتائج كتختلف من شخص لآخر، وكتتمد على السوق، العرض، والتطبيق. ولكن اللي نقدر نضمنوه هو أننا غادي نخدمو معاك باستراتيجية واضحة ومجربة بدل التخمين والعشوائية.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>شنو المطلوب مني بالضبط؟</summary>
+        <div class="faq-answer">
+          <p>خسّك تكون عندك:</p>
+          <ul style="padding-right: 20px; margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
+            <li> خدمة أو خبرة حقيقية</li>
+            <li> استعداد تبني البراند الشخصي ديالك</li>
+            <li> التزام بتطبيق النظام</li>
+            <li> استعداد تصنع المحتوى بشكل مستمر</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>واش OTM System™ مناسب لأي مجال؟</summary>
+        <div class="faq-answer">
+          <p>النظام خدام خصوصاً مع:</p>
+          <p style="margin-top: 4px; font-weight: 700; color: var(--accent);">Founders | Consultants | Coaches | Experts | Service Providers</p>
+          <p style="margin-top: 8px;">إذا كانت القيمة ديالك كتحتاج الثقة باش الناس تشري منك، غالباً النظام مناسب ليك.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Premium Spacer Divider -->
+  <div class="otm-spacer-divider">
+    <div class="otm-spacer-line"></div>
+  </div>
+
+  <section class="about-wrapper">
+    <div class="about-container">
+      <div class="about-grid">
+        <div class="about-content">
+          <div class="founder-header">
+            <img src="bariabder.jpg" alt="Bariabder image" class="founder-img">
+            <div>
+              <h2 style="text-align: right;">شكون هو <em>Bari Abder؟</em></h2>
+              <p style="margin: 0; font-size: 15px; color: var(--accent); font-weight: 800;">مؤسس OTM System™</p>
+            </div>
+          </div>
+
+          <p>من بعد ما صرفت مئات الساعات كندرس خوارزميات المحتوى والبِرَانْدينغ الشخصي، لاحظت باللي بزاف ديال المؤسسين ماعارفينش يعبروا على القيمة ديالهم في الأنترنت — ماشي حيتاش بدون كفاءة، ولكن حيت ماعارفينش كيفاش يوصلوها للجمهور الخاص بهم.</p>
+          <p>المهمة ديالي: نعاون المؤسسين يبنيو بِرَانْد شخصي موثوق كيجيب الجمهور المناسب، كيبني ثقة حقيقية، وكيحول الانتباه لزبناء.</p>
+          <p><strong>البِرَانْدينغ ماعندو علاقة بأنك تكون مشهور — ولكن تولي الاختيار الأول ف المجال ديالك.</strong></p>
+          
+          <div class="trust-stats">
+            <div class="stat-box">
+              <span class="stat-num">+50M</span>
+              <span class="stat-label">مشاهدة موجهة</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">5</span>
+              <span class="stat-label">سنوات خبرة</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">+6</span>
+              <span class="stat-label">مؤسس عاوناهم</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta" id="final-form">
+    <div class="final-cta-wrap">
+      <div class="text-center">
+        <h2>إلى كنت باغي تولي <em>الاختيار الأول فالمجال ديالك...</em></h2>
+        <p class="subtitle-premium-light">عمّر الطلب وشوف واش OTM System™ مناسب ليك.</p>
+      </div>
+      <br>
+      <div class="application-form">
+        <form id="custom-otm-form" class="step-form-container" autocomplete="off">
+          <div class="form-fixed-header">
+            <h3>تقديم طلب الانضمام لنظام OTM System™</h3>
+            <p>يرجى الإجابة على الأسئلة بدقة لتقييم مشروعك</p>
+          </div>
+
+          <div class="form-progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+
+          <div class="form-steps-body">
+            <!-- Question 1 -->
+            <div class="form-step active" data-step="1">
+              <label for="fullName">الإسم الكامل | Full name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="أدخل اسمك الكامل هنا..." required>
+              <div class="form-navigation">
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="form-step" data-step="2">
+              <label for="whatsapp">رقم الواتساب | WhatsApp Number</label>
+              <input type="tel" id="whatsapp" name="whatsapp" placeholder="+212666666666" pattern="^\+[1-9]\d{1,14}$" title="يرجى إدخال الرقم مع رمز الدولة يبدأ بـ + (مثال: 212666666666+)" required>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="form-step" data-step="3">
+              <label for="businessDuration">شحال ديال الوقت و نتا خدام على مشروعك؟ | How long have you been in business?</label>
+              <select id="businessDuration" name="businessDuration" required>
+                <option value="" disabled selected>اختر المدة...</option>
+                <option value="أقل من سنة">أقل من سنة</option>
+                <option value="1 - 3 سنوات">1 - 3 سنوات</option>
+                <option value="+3 سنوات">+3 سنوات</option>
+              </select>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="form-step" data-step="4">
+              <label for="biggestChallenge">شنو أكبر تحدي كاتواجه الأن ؟ | What is your biggest challenge right now?</label>
+              <textarea id="biggestChallenge" name="biggestChallenge" rows="4" placeholder="اكتب هنا..." required></textarea>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="form-step" data-step="5">
+              <label>هل تقوم حاليًا بإنشاء محتوى؟ | Are you currently creating content?</label>
+              <div class="radio-group">
+                <label class="radio-label"><input type="radio" name="creatingContent" value="نعم" required> نعم / Yes</label>
+                <label class="radio-label"><input type="radio" name="creatingContent" value="لا"> لا / No</label>
+                <label class="radio-label"><input type="radio" name="creatingContent" value="بشكل متقطع"> بشكل متقطع / Intermittently</label>
+              </div>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="form-step" data-step="6">
+              <label for="growthObstacle">مالذي يمنعك من النمو أونلاين ؟ | What’s currently stopping you from growing online?</label>
+              <textarea id="growthObstacle" name="growthObstacle" rows="4" placeholder="اكتب هنا..." required></textarea>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="form-step" data-step="7">
+              <label for="socialLink">Social media ديالك | Website</label>
+              <input type="url" id="socialLink" name="socialLink" placeholder="https://instagram.com/username" title="يرجى إدخال رابط صحيح يبدأ بـ https://" required>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="form-step" data-step="8">
+              <label>إذا تم اختيارك، هل ستلتزم بتنفيذ نظام محتوى ؟ | If selected, will you implement the content system?</label>
+              <div class="radio-group">
+                <label class="radio-label"><input type="radio" name="willImplement" value="نعم، ملتزم تماماً" required> نعم، ملتزم تماماً</label>
+                <label class="radio-label"><input type="radio" name="willImplement" value="مازال متردد"> مازال متردد</label>
+              </div>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="form-step" data-step="9">
+              <label for="hearAboutUs">Where did you hear about us?</label>
+              <select id="hearAboutUs" name="hearAboutUs" required>
+                <option value="" disabled selected>اختر من القائمة...</option>
+                <option value="Instagram">Instagram</option>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="YouTube">YouTube</option>
+                <option value="Other">مكان أخر | other place</option>
+              </select>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="form-step" data-step="10">
+              <label for="experienceRating">كيف تقيّم تجربتك معنا حتى الآن؟ | How would you rate your experience with us so far?</label>
+              <select id="experienceRating" name="experienceRating" required>
+                <option value="" disabled selected>اختر التقييم...</option>
+                <option value="ممتازة جداً (5/5)">⭐⭐⭐⭐⭐ ممتازة جداً</option>
+                <option value="جيدة (4/5)">⭐⭐⭐⭐ جيدة</option>
+                <option value="مقبولة (3/5)">⭐⭐⭐ مقبولة</option>
+              </select>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="submit" class="btn-submit-form" id="submitBtn">إرسال الطلب الآن</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('custom-otm-form');
+        const steps = Array.from(form.querySelectorAll('.form-step'));
+        const progressFill = document.getElementById('progressFill');
+        const submitBtn = document.getElementById('submitBtn');
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxLNF6Io-Lz9Bif2Dy_8B55WXTAmBdTVN57baHVdFOEK4JUbUuI2j1fCMn6eHRQvQ4nVA/exec'; 
+
+        let currentStep = 0;
+
+        function updateFormDisplay() {
+          steps.forEach((step, index) => {
+            step.classList.toggle('active', index === currentStep);
+          });
+          const progressPercent = ((currentStep + 1) / steps.length) * 100;
+          progressFill.style.width = `${progressPercent}%`;
+        }
+
+        form.querySelectorAll('.btn-next').forEach(button => {
+          button.addEventListener('click', () => {
+            const inputs = steps[currentStep].querySelectorAll('input, select, textarea');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+              if(!input.checkValidity()) {
+                input.reportValidity();
+                isValid = false;
+              }
+            });
+
+            if (isValid && currentStep < steps.length - 1) {
+              currentStep++;
+              updateFormDisplay();
+            }
+          });
+        });
+
+        form.querySelectorAll('.btn-prev').forEach(button => {
+          button.addEventListener('click', () => {
+            if (currentStep > 0) {
+              currentStep--;
+              updateFormDisplay();
+            }
+          });
+        });
+
+        form.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            const nextBtn = steps[currentStep].querySelector('.btn-next');
+            if (nextBtn) {
+              nextBtn.click();
+            } else if (currentStep === steps.length - 1) {
+              form.requestSubmit();
+            }
+          }
+        });
+
+    form.addEventListener('submit', e => {
+  e.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.innerText = 'جاري إرسال الطلب...';
+
+  // Convert FormData to URL-encoded parameters for Apps Script
+  const searchParams = new URLSearchParams(new FormData(form));
+
+  fetch(scriptURL, {
+    method: 'POST',
+    mode: 'no-cors', // Prevents browser CORS blocks on redirects
+    body: searchParams
+  })
+    .then(() => {
+      // Direct user immediately to thank-you page after dispatching payload
+      window.location.href = 'https://www.bariabder.com/thank-you';
+    })
+    .catch(error => {
+      console.error('Error!', error.message);
+      alert('حدث خطأ أثناء إرسال البيانات، يرجى إعادة المحاولة.');
+      submitBtn.disabled = false;
+      submitBtn.innerText = 'إرسال الطلب الآن';
+    });
+});
+
+        updateFormDisplay();
+      });
+      </script>
+
+      <div class="brand-statement" dir="ltr">
+        <h2>Become the brand people choose.</h2>
+      </div>
+
+      <footer>
+        <div class="footer-pill">
+          <a href="/" aria-label="Home"><img src="main-logo.svg" style="width:32px;" alt="Logo"></a>
+          <nav class="footer-pill-links">
+            <a href="/privacy">سياسة الخصوصية</a>
+            <a href="/Terms-of-Service">شروط الخدمة</a>
+          </nav>
+        </div>
+        <div class="footer-disclaimers">
+          <p>هذا الموقع مستقل وغير تابع أو مدعوم من شركة Meta Platforms, Inc. علامتي Facebook و Instagram هما ملكية مسجلة لشركة Meta.</p>
+          <p><strong>إخلاء مسؤولية:</strong> النتائج المعروضة ليست نموذجية وتختلف من شخص لآخر. لا نضمن أرباحاً مالية محددة.</p>
+          <p>للاستفسارات والتواصل: <a href="mailto:support@bariabder.com">support@bariabder.com</a></p>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <script>
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    item.addEventListener('toggle', () => {
+      if (item.open) {
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.open = false;
+          }
+        });
+      }
+    });
+  });
+  </script>
+</div>
+
+</body>
+</html>
