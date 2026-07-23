@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;900&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
+  
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -21,48 +22,18 @@
 </head>
 <body>
 
-<button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle Dark Mode">🌙 </button>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.getElementById('dark-mode-toggle');
-    const savedTheme = localStorage.getItem('theme');
-
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark-theme');
-      toggleBtn.innerHTML = '☀️ ';
-    }
-
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-theme');
-      
-      if (document.body.classList.contains('dark-theme')) {
-        localStorage.setItem('theme', 'dark');
-        toggleBtn.innerHTML = '☀️ ';
-      } else {
-        localStorage.setItem('theme', 'light');
-        toggleBtn.innerHTML = '🌙 ';
-      }
-    });
-  });
-</script>
-  
+<!-- HERO SECTION -->
 <section class="hero-section" style="padding-top: 32px; padding-bottom: 40px;">
   <div class="hero-header" style="margin-bottom: 32px;">
-    <div class="audience-badge">
-      <span class="pulse-dot"></span>
-      <span class="badge-text">خاص بـ: المؤسسين و أصحاب المشاريع</span>
-    </div>
-    <h1>
-       اكتشف النظام اللي يحول المحتوى
-      <br>
-      إلى  Clients  بدون الحاجة للإعلانات
-    </h1>
+    
+    <div class="header-box">
+      <h1>
+        النظام بالضبط اللي كنستعملوه باش نحوّلو خبرتك لـ <span class="highlight">براند شخصية كاتبيع ليك</span>، بلا ما تعتمد على الإعلانات.
+      </h1>
+      <p class="sub-description">
+        إلى كنت أصلاً متميز فالمجال ديالك، ولكن كتعاني تجيب Clients بشكل مستمر، إكتشف كيفاش <strong>OTM System™</strong> كيساعد الخبراء ورواد الأعمال يولو هما الاختيار الأول فالـمجال ديالهم.
+      </p>
 
-    <p class="subtitle-premium-light">
-      هاد الفيديو غادي يوريك كيفاش تجيب كليان بشكل مستمر بدون ماتصرف درهم فالإعلانات  <span></span>
-    </p>
-  </div>
 
   <div style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 20px;">
     <div class="video-wrap" style="width: 100%;">
@@ -76,7 +47,7 @@
 </section>
 
 <div class="gradient-master-container">
-  <!-- كيفاش كيخدم نظام OTM™ -->
+  <!-- OTM PROCESS SECTION -->
   <section class="otm-process-section" id="how-otm-works">
     <div class="otm-container">
       <div class="otm-header">
@@ -85,7 +56,7 @@
       </div>
 
       <div class="otm-grid">
-        <!-- Card 1: Market and Signal Research -->
+        <!-- Step 1 -->
         <div class="otm-card">
           <div class="otm-visual-box">
             <div class="mock-market-analysis">
@@ -112,7 +83,7 @@
           <p>كنتعمقو مزيان فـ niche ديالك باش نلقاو المواضيع الرائجة اللي خدامة دابا. ما كنقلوش هاد المحتوى، ولكن كنحددو market gaps باش تقدر تخطف الانتباه بوجهة النظر الخاصة بيك وتبان مختلف.</p>
         </div>
 
-        <!-- Card 2: Foundation and Profile Makeover -->
+        <!-- Step 2 -->
         <div class="otm-card">
           <div class="otm-visual-box">
             <div class="mock-profile-toggle-container">
@@ -130,7 +101,7 @@
           <p>كنستخرجو السلطة ديالك (authority) والجمهور المستهدف ديالك غير من خلال 5 الأسئلة بسيطة. ومن بعد كنقومو بتحسين كامل لحسابات السوشيال ميديا ديالك باش يتحولو من مجرد بروفايلات عادية إلى واجهات كتجيب العملاء (high-converting storefronts).</p>
         </div>
 
-        <!-- Card 3: The Content Engine -->
+        <!-- Step 3 -->
         <div class="otm-card">
           <div class="otm-visual-box">
             <div class="mock-growth-chart">
@@ -154,104 +125,93 @@
     </div>
   </section>
   
+  <!-- SOCIAL PROOF SECTION -->
   <section class="proof-section">
-  <div class="proof-container">
-
-    <div class="proof-sidebar">
-      <span class="projects-tag">‹ شهادات ›</span>
-      <h2>فخورون بالعمل مع الأفضل</h2>
-    </div>
-
-    <div class="proof-videos-container">
-      <div class="video-card-v2">
-        <script src="https://fast.wistia.com/player.js" async></script>
-        <script src="https://fast.wistia.com/embed/9rakujkciy.js" async type="module"></script>
-        <style>
-          wistia-player[media-id='9rakujkciy']:not(:defined) {
-            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/9rakujkciy/swatch');
-            display: block;
-            filter: blur(5px);
-            padding-top: 177.78%;
-          }
-        </style>
-        <wistia-player media-id="9rakujkciy" aspect="0.5625"></wistia-player>
+    <div class="proof-container">
+      <div class="proof-sidebar">
+        <span class="projects-tag">‹ شهادات ›</span>
+        <h2>فخورون بالعمل مع الأفضل</h2>
       </div>
 
-      <div class="video-card-v2">
-        <script src="https://fast.wistia.com/player.js" async></script>
-        <script src="https://fast.wistia.com/embed/xlty4kee3f.js" async type="module"></script>
-        <style>
-          wistia-player[media-id='xlty4kee3f']:not(:defined) {
-            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/xlty4kee3f/swatch');
-            display: block;
-            filter: blur(5px);
-            padding-top: 177.78%;
-          }
-        </style>
-        <wistia-player media-id="xlty4kee3f" aspect="0.5625"></wistia-player>
-      </div>
-    </div>
+      <div class="proof-videos-container">
+        <div class="video-card-v2">
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script src="https://fast.wistia.com/embed/9rakujkciy.js" async type="module"></script>
+          <style>
+            wistia-player[media-id='9rakujkciy']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/9rakujkciy/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 177.78%;
+            }
+          </style>
+          <wistia-player media-id="9rakujkciy" aspect="0.5625"></wistia-player>
+        </div>
 
-    <div class="proof-cards-stack">
-      <div class="custom-proof-box">
-        <p>"الخدمة كانت ممتازة، وماشي غير لبّات توقعات الزبناء ديالنا، بل فاقتهم."</p>
-        <div class="custom-review-author">
-          <img src="mohamed-salem-review.webp"
-               alt="Mohamed Salem review"
-               onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'48\' height=\'48\' fill=\'%23E5E7EB\'/></svg>'">
-          <div class="custom-review-info">
-            <strong>Mohamed Salem</strong>
-            <span>Business Analyst</span>
-          </div>
+        <div class="video-card-v2">
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script src="https://fast.wistia.com/embed/xlty4kee3f.js" async type="module"></script>
+          <style>
+            wistia-player[media-id='xlty4kee3f']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/xlty4kee3f/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 177.78%;
+            }
+          </style>
+          <wistia-player media-id="xlty4kee3f" aspect="0.5625"></wistia-player>
         </div>
       </div>
 
-      <div class="custom-proof-box">
-        <p>"جودة العمل كانت رائعة. Bari ساعدني نبني أساس العيادة ديالي وحوّل الفكرة لواقع."</p>
-        <div class="custom-review-author">
-          <img src="dr-mernissi-othmane-review.webp"
-               alt="Dr. Mernissi Othmane review"
-               onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'48\' height=\'48\' fill=\'%23E5E7EB\'/></svg>'">
-          <div class="custom-review-info">
-            <strong>Dr. Mernissi Othmane</strong>
-            <span>Dentist</span>
+      <div class="proof-cards-stack">
+        <div class="custom-proof-box">
+          <p>"الخدمة كانت ممتازة، وماشي غير لبّات توقعات الزبناء ديالنا، بل فاقتهم."</p>
+          <div class="custom-review-author">
+            <img src="mohamed-salem-review.webp" alt="Mohamed Salem review" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'48\' height=\'48\' fill=\'%23E5E7EB\'/></svg>'">
+            <div class="custom-review-info">
+              <strong>Mohamed Salem</strong>
+              <span>Business Analyst</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="custom-proof-box">
-        <p>"ديما كنكون فرحان نخدم معاه. التواصل ساهل والخدمة ديما بجودة عالية."</p>
-        <div class="custom-review-author">
-          <img src="abdou-berrada-review.webp"
-               alt="Abdou Berrada review"
-               onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\' fill=\'%23E5E7EB\'/></svg>'">
-          <div class="custom-review-info">
-            <strong>Abdou Berrada</strong>
-            <span>Founder at @epoptique</span>
+        <div class="custom-proof-box">
+          <p>"جودة العمل كانت رائعة. Bari ساعدني نبني أساس العيادة ديالي وحوّل الفكرة لواقع."</p>
+          <div class="custom-review-author">
+            <img src="dr-mernissi-othmane-review.webp" alt="Dr. Mernissi Othmane review" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'48\' height=\'48\' fill=\'%23E5E7EB\'/></svg>'">
+            <div class="custom-review-info">
+              <strong>Dr. Mernissi Othmane</strong>
+              <span>Dentist</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="custom-proof-box">
+          <p>"ديما كنكون فرحان نخدم معاه. التواصل ساهل والخدمة ديما بجودة عالية."</p>
+          <div class="custom-review-author">
+            <img src="abdou-berrada-review.webp" alt="Abdou Berrada review" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'48\' height=\'48\' fill=\'%23E5E7EB\'/></svg>'">
+            <div class="custom-review-info">
+              <strong>Abdou Berrada</strong>
+              <span>Founder at @epoptique</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-  </div>
-
-  <!-- Centered CTA Wrapper Outside the Grid Column -->
-  <div class="proof-cta-wrapper">
-    <div class="proof-cta">
-      <a href="#final-form" class="btn-circle-cta">إبدأ الآن</a>
+    <div class="proof-cta-wrapper">
+      <div class="proof-cta">
+        <a href="#final-form" class="btn-circle-cta">إبدأ الآن</a>
+      </div>
     </div>
-  </div>
-</section>
-    </div>
+  </section>
 
-  </div>
-</section>
-  <!-- Premium Spacer Divider -->
+  <!-- SPACER DIVIDER -->
   <div class="otm-spacer-divider">
     <div class="otm-spacer-line"></div>
   </div>
  
-  <!-- الأسئلة الشائعة FAQ -->
+  <!-- FAQ SECTION -->
   <section class="section faq-section">
     <div class="text-center">
       <h2>الأسئلة <em>الشائعة</em></h2>
@@ -304,11 +264,12 @@
     </div>
   </section>
 
-  <!-- Premium Spacer Divider -->
+  <!-- SPACER DIVIDER -->
   <div class="otm-spacer-divider">
     <div class="otm-spacer-line"></div>
   </div>
 
+  <!-- ABOUT SECTION -->
   <section class="about-wrapper">
     <div class="about-container">
       <div class="about-grid">
@@ -321,7 +282,7 @@
             </div>
           </div>
 
-          <p>من بعد ما صرفت مئات الساعات كندرس خوارزميات المحتوى والبِرَانْدينغ الشخصي، لاحظت باللي بزاف ديال المؤسسين ماعارفينش يعبروا على القيمة ديالهم في الأنترنت — ماشي حيتاش بدون كفاءة، ولكن حيت ماعارفينش كيفاش يوصلوها للجمهور الخاص بهم.</p>
+          <p>من بعد ما صرفت مئات الساعات کندرس خوارزميات المحتوى والبِرَانْدينغ الشخصي، لاحظت باللي بزاف ديال المؤسسين ماعارفينش يعبروا على القيمة ديالهم في الأنترنت — ماشي حيتاش بدون كفاءة، ولكن حيت ماعارفينش كيفاش يوصلوها للجمهور الخاص بهم.</p>
           <p>المهمة ديالي: نعاون المؤسسين يبنيو بِرَانْد شخصي موثوق كيجيب الجمهور المناسب، كيبني ثقة حقيقية، وكيحول الانتباه لزبناء.</p>
           <p><strong>البِرَانْدينغ ماعندو علاقة بأنك تكون مشهور — ولكن تولي الاختيار الأول ف المجال ديالك.</strong></p>
           
@@ -344,6 +305,7 @@
     </div>
   </section>
 
+  <!-- MULTI-STEP FORM APPLICATION SECTION -->
   <section class="final-cta" id="final-form">
     <div class="final-cta-wrap">
       <div class="text-center">
@@ -375,7 +337,7 @@
             <!-- Question 2 -->
             <div class="form-step" data-step="2">
               <label for="whatsapp">رقم الواتساب | WhatsApp Number</label>
-              <input type="tel" id="whatsapp" name="whatsapp" placeholder="+212666666666" pattern="^\+[1-9]\d{1,14}$" title="يرجى إدخال الرقم مع رمز الدولة يبدأ بـ + (مثال: 212666666666+)" required>
+              <input type="tel" id="whatsapp" name="whatsapp" placeholder="+212666666666" dir="ltr" style="text-align: left;" required>
               <div class="form-navigation">
                 <button type="button" class="btn-prev">→ السابق</button>
                 <button type="button" class="btn-next">التالي ←</button>
@@ -434,7 +396,7 @@
             <!-- Question 7 -->
             <div class="form-step" data-step="7">
               <label for="socialLink">Social media ديالك | Website</label>
-              <input type="url" id="socialLink" name="socialLink" placeholder="https://instagram.com/username" title="يرجى إدخال رابط صحيح يبدأ بـ https://" required>
+              <input type="url" id="socialLink" name="socialLink" placeholder="https://instagram.com/username" dir="ltr" style="text-align: left;" required>
               <div class="form-navigation">
                 <button type="button" class="btn-prev">→ السابق</button>
                 <button type="button" class="btn-next">التالي ←</button>
@@ -488,93 +450,6 @@
         </form>
       </div>
 
-      <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const form = document.getElementById('custom-otm-form');
-        const steps = Array.from(form.querySelectorAll('.form-step'));
-        const progressFill = document.getElementById('progressFill');
-        const submitBtn = document.getElementById('submitBtn');
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxLNF6Io-Lz9Bif2Dy_8B55WXTAmBdTVN57baHVdFOEK4JUbUuI2j1fCMn6eHRQvQ4nVA/exec'; 
-
-        let currentStep = 0;
-
-        function updateFormDisplay() {
-          steps.forEach((step, index) => {
-            step.classList.toggle('active', index === currentStep);
-          });
-          const progressPercent = ((currentStep + 1) / steps.length) * 100;
-          progressFill.style.width = `${progressPercent}%`;
-        }
-
-        form.querySelectorAll('.btn-next').forEach(button => {
-          button.addEventListener('click', () => {
-            const inputs = steps[currentStep].querySelectorAll('input, select, textarea');
-            let isValid = true;
-            
-            inputs.forEach(input => {
-              if(!input.checkValidity()) {
-                input.reportValidity();
-                isValid = false;
-              }
-            });
-
-            if (isValid && currentStep < steps.length - 1) {
-              currentStep++;
-              updateFormDisplay();
-            }
-          });
-        });
-
-        form.querySelectorAll('.btn-prev').forEach(button => {
-          button.addEventListener('click', () => {
-            if (currentStep > 0) {
-              currentStep--;
-              updateFormDisplay();
-            }
-          });
-        });
-
-        form.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
-            e.preventDefault();
-            const nextBtn = steps[currentStep].querySelector('.btn-next');
-            if (nextBtn) {
-              nextBtn.click();
-            } else if (currentStep === steps.length - 1) {
-              form.requestSubmit();
-            }
-          }
-        });
-
-    form.addEventListener('submit', e => {
-  e.preventDefault();
-  submitBtn.disabled = true;
-  submitBtn.innerText = 'جاري إرسال الطلب...';
-
-  // Convert FormData to URL-encoded parameters for Apps Script
-  const searchParams = new URLSearchParams(new FormData(form));
-
-  fetch(scriptURL, {
-    method: 'POST',
-    mode: 'no-cors', // Prevents browser CORS blocks on redirects
-    body: searchParams
-  })
-    .then(() => {
-      // Direct user immediately to thank-you page after dispatching payload
-      window.location.href = 'https://www.bariabder.com/thank-you';
-    })
-    .catch(error => {
-      console.error('Error!', error.message);
-      alert('حدث خطأ أثناء إرسال البيانات، يرجى إعادة المحاولة.');
-      submitBtn.disabled = false;
-      submitBtn.innerText = 'إرسال الطلب الآن';
-    });
-});
-
-        updateFormDisplay();
-      });
-      </script>
-
       <div class="brand-statement" dir="ltr">
         <h2>Become the brand people choose.</h2>
       </div>
@@ -595,8 +470,106 @@
       </footer>
     </div>
   </section>
+</div>
 
-  <script>
+<!-- TIME-BASED THEME AUTO DETECT SCRIPT -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Auto theme check based on local device time (6 PM / 18:00 to 9 AM / 09:00 = Soft Dark Mode)
+    const currentHour = new Date().getHours();
+    if (currentHour >= 9 && currentHour < 18) {
+      document.body.classList.add('light-theme');
+    } else {
+      document.body.classList.remove('light-theme');
+    }
+  });
+</script>
+
+<!-- APPLICATION FORM & ACCORDION SCRIPT -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('custom-otm-form');
+  const steps = Array.from(form.querySelectorAll('.form-step'));
+  const progressFill = document.getElementById('progressFill');
+  const submitBtn = document.getElementById('submitBtn');
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwCQe0mXVSfvbGTqpzYHWp7qVU9jKEhy-qvjTYj3r6sVGEE1iDfwpcLzaZTs65rbrpGPQ/exec'; 
+
+  let currentStep = 0;
+
+  function updateFormDisplay() {
+    steps.forEach((step, index) => {
+      step.classList.toggle('active', index === currentStep);
+    });
+    const progressPercent = ((currentStep + 1) / steps.length) * 100;
+    progressFill.style.width = `${progressPercent}%`;
+  }
+
+  form.querySelectorAll('.btn-next').forEach(button => {
+    button.addEventListener('click', () => {
+      const inputs = steps[currentStep].querySelectorAll('input, select, textarea');
+      let isValid = true;
+      
+      inputs.forEach(input => {
+        if(!input.checkValidity()) {
+          input.reportValidity();
+          isValid = false;
+        }
+      });
+
+      if (isValid && currentStep < steps.length - 1) {
+        currentStep++;
+        updateFormDisplay();
+      }
+    });
+  });
+
+  form.querySelectorAll('.btn-prev').forEach(button => {
+    button.addEventListener('click', () => {
+      if (currentStep > 0) {
+        currentStep--;
+        updateFormDisplay();
+      }
+    });
+  });
+
+  form.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      const nextBtn = steps[currentStep].querySelector('.btn-next');
+      if (nextBtn) {
+        nextBtn.click();
+      } else if (currentStep === steps.length - 1) {
+        form.requestSubmit();
+      }
+    }
+  });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'جاري إرسال الطلب...';
+
+    const searchParams = new URLSearchParams(new FormData(form));
+
+    fetch(scriptURL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: searchParams
+    })
+      .then(() => {
+        window.location.href = 'https://www.bariabder.com/thank-you';
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        alert('حدث خطأ أثناء إرسال البيانات، يرجى إعادة المحاولة.');
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'إرسال الطلب الآن';
+      });
+  });
+
+  updateFormDisplay();
+
+  // Accordion Logic for FAQs
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
     item.addEventListener('toggle', () => {
@@ -609,8 +582,8 @@
       }
     });
   });
-  </script>
-</div>
+});
+</script>
 
 </body>
 </html>
