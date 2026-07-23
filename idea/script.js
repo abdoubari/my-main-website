@@ -324,3 +324,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     updateWizard();
 });
+
+// Automatically switch themes based on local time (9 AM to 6 PM)
+function updateThemeByTime() {
+    const hour = new Date().getHours();
+    const isDaytime = hour >= 9 && hour < 18; // 9:00 AM to 5:59 PM
+    
+    if (isDaytime) {
+        document.body.classList.add('light-theme');
+    } else {
+        document.body.classList.remove('light-theme');
+    }
+}
+
+// Run immediately on page load
+updateThemeByTime();
