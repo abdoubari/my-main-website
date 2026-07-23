@@ -171,10 +171,6 @@ function generate() {
                         </div>
                     </div>
                 </div>
-                <div class="mockup-meta-row">
-                    <span>OTM SYSTEM™</span>
-                    <span>00:00 / 00:30</span>
-                </div>
                 
                 <div class="result-actions">
                     <button id="res-shuffle" class="action-icon-btn dark-pill">🔀 فكرة جديدة</button>
@@ -183,7 +179,7 @@ function generate() {
                 </div>
             </div>
 
-            <div class="content-column" style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="content-column" style="display: flex; flex-direction: column; gap: 14px;">
 
                 <div class="result-card">
                     <div class="result-card-title">⚡ جذب الانتباه (The Hook)</div>
@@ -251,9 +247,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const audienceInput = document.getElementById("audience");
     const messageInput = document.getElementById("message");
 
-    document.getElementById("close-modal-btn").addEventListener("click", () => {
-        document.getElementById("welcome-modal").style.display = "none";
-    });
+   document.getElementById("close-modal-btn").addEventListener("click", () => {
+    const modal = document.getElementById("welcome-modal");
+    if (modal) {
+        modal.style.setProperty("display", "none", "important");
+    }
+});
 
     document.querySelectorAll(".example-tag").forEach(tag => {
         tag.addEventListener("click", function () {
@@ -325,10 +324,18 @@ document.addEventListener("DOMContentLoaded", () => {
     updateWizard();
 });
 
-// Automatically switch themes based on local time (9 AM to 6 PM)
+// Theme Switcher Logic
+const themeToggleBtn = document.getElementById("theme-toggle");
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+    });
+}
+
 function updateThemeByTime() {
     const hour = new Date().getHours();
-    const isDaytime = hour >= 9 && hour < 18; // 9:00 AM to 5:59 PM
+    const isDaytime = hour >= 9 && hour < 18;
     
     if (isDaytime) {
         document.body.classList.add('light-theme');
@@ -337,5 +344,4 @@ function updateThemeByTime() {
     }
 }
 
-// Run immediately on page load
 updateThemeByTime();
