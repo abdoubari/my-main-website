@@ -904,7 +904,7 @@ button#close-modal-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 2
     max-width: none;
     margin: 0 auto;
     line-height: 1.5;
-    white-space: nowrap;
+    
 }
 
         /* الكرت الأبيض الذي يحتضن الخطوة الحالية فقط */
@@ -979,14 +979,14 @@ button#close-modal-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 2
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            white-space: nowrap;
+            flex-wrap: wrap;
         }
         .section-desc {
             font-size: 0.95rem;
             color: var(--text-secondary);
             margin-bottom: 1.75rem;
             line-height: 1.6;
-            white-space: nowrap;
+            
         }
 
         /* حقل البحث الكبسولي على شكل الصورة */
