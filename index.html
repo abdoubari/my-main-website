@@ -4,169 +4,935 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OTM System™ — Bariabder</title>
-  
-  <link rel="icon" type="image/png" href="main-logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
 
+  <link rel="icon" type="image/png" href="main-logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xfxluvm6i1");
+  </script>
+
+  <!-- COMPARISON CARDS COMPONENT STYLES -->
+  <style>
+    :root {
+      --midnight: #272325;
+      --purple: var(--accent);
+      --purple-light: var(--accent-light);
+      --red-alert: #B5382E;
+      --gray-text: var(--text-muted);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', 'Segoe UI', sans-serif;
+      background: var(--bg-color);
+      padding: 60px 20px;
+      color: var(--text-main);
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+   /* Typography */
+.intro-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-main); 
+  margin-bottom: 28px;
+}
+
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 22px;
+    }
+
+    /* 3-Column Clean Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+.feature-item .title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--brand-purple);
+  margin-bottom: 6px;
+}
+
+.feature-item .desc {
+  font-size: 12px;
+  color: var(--text-main); /* Changed from var(--gray-text) for high contrast */
+  line-height: 1.6;
+}
+
+    /* Highlight Banner */
+    .highlight-banner {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px 22px;
+      margin-bottom: 24px;
+    }
+
+    .highlight-banner p {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.6;
+      color: var(--text-main);
+    }
+
+    .highlight-banner .accent {
+      color: var(--brand-purple);
+    }
+
+    /* CTA Section */
+    .cta-question {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--red-alert);
+      margin-bottom: 6px;
+    }
+
+    .cta-subtext {
+      font-size: 14px;
+      color: var(--gray-text);
+      margin-bottom: 20px;
+    }
+
+    .btn-apply {
+      background: var(--brand-purple);
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 10px 26px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 14px;
+      letter-spacing: 0.3px;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn-apply:hover {
+      opacity: 0.9;
+    }
+
+    .cta-footer-text {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 640px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+    .wrap {
+      max-width: 950px;
+      margin: 0 auto;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .comparison-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 24px 20px;
+      width: 420px;
+      max-width: 100%;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .badge {
+      display: inline-block;
+      color: #fff;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .badge.without { background: #3a3a3a; }
+    .badge.with { background: var(--brand-purple); }
+
+    .eyebrow {
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin: 0 0 4px;
+    }
+    .eyebrow b { color: var(--brand-purple); }
+    .eyebrow.gray b { color: var(--text-muted); }
+
+    .comparison-card h2 {
+      text-align: center;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0 0 18px;
+    }
+
+    .path-svg { 
+      width: 100%; 
+      height: 110px; 
+      display: block; 
+      margin-bottom: 18px; 
+    }
+
+    .cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .mini-card {
+      background: var(--bg-color);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 12px 6px;
+      text-align: center;
+      transition: background-color 0.25s ease;
+    }
+    .mini-card .icon { font-size: 18px; margin-bottom: 6px; }
+    .mini-card .title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.35;
+      margin-bottom: 3px;
+    }
+    .mini-card .sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .status-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .status {
+      text-align: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 8px 4px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .status.without { background: #8a8a8a; }
+    .status.with { background: var(--brand-purple); }
+
+    p.closer {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- CLEAN MINIMAL TEXT NAVIGATION MENU -->
-    <nav class="top-nav">
-      <a href="https://blog.bariabder.com/">المدونة · Blog</a>
-      <span class="nav-sep">•</span>
-      <a href="https://www.bariabder.com/idea/">أداة توليد الأفكار "Free"</a>
-      
-      <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
-    <!-- Sun icon for light mode -->
-    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="5"></circle>
-      <line x1="12" y1="1" x2="12" y2="3"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-      <line x1="1" y1="12" x2="3" y2="12"></line>
-      <line x1="21" y1="12" x2="23" y2="12"></line>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-    </svg>
-    <!-- Moon icon for dark mode -->
-    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-    </svg>
-  </button>
-    </nav>
+  <!-- STICKY SCROLL MENU -->
+  <nav class="sticky-top-nav" id="scrollNav">
+    <a href="https://blog.bariabder.com/">المدونة · Blog</a>
+    <span class="nav-sep">•</span>
+    <a href="https://www.bariabder.com/idea/">أداة توليد الأفكار "Free"</a>
+    
+    <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+      <!-- Sun icon -->
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <!-- Moon icon -->
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </nav>
 
-    <!-- HERO HEADLINE STRUCTURE -->
-    <div class="header-box">
-      <h1>
-        النظام بالضبط اللي كنستعملوه باش نحوّلو خبرتك لـ <span class="highlight">براند شخصية كاتبيع ليك</span>، بلا ما تعتمد على الإعلانات.
+  <!-- HERO SECTION -->
+  <section class="hero-section hero-split-layout" id="heroSection">
+    <div class="hero-content-side">
+      <h1 class="hero-headline">
+        انضم لنظام <span class="highlight">OTM System™</span> وابني براند شخصية كاتبيع ليك
       </h1>
-      <p class="sub-description">
-        إلى كنت أصلاً متميز فالمجال ديالك، ولكن كتعاني تجيب Clients بشكل مستمر، إكتشف كيفاش <strong>OTM System™</strong> كيساعد الخبراء ورواد الأعمال يولو هما الاختيار الأول فالـمجال ديالهم.
+      
+      <p class="hero-subheadline">
+        كل ما تحتاج باش تبني براند شخصي قوي
       </p>
 
-      <!-- MAIN CTA 1 -->
-      <button class="btn-cta" onclick="openModal()">
-        شاهد الفيديو الآن ←
-      </button>
-    </div>
+      <ul class="hero-benefits-list">
+        <li>
+          <span class="bullet-icon">✓</span>
+          <span>بني الثقة اللي تخليك الإختيار الأول فالسوق.</span>
+        </li>
+        <li>
+          <span class="bullet-icon">✓</span>
+          <span>عرف بالضبط شنو المحتوى اللي تنشر كل سيمانة.</span>
+        </li>
+        <li>
+          <span class="bullet-icon">✓</span>
+          <span>حسن المحتوى ديالك بالأرقام، ماشي بالتخمين.</span>
+        </li>
+      </ul>
 
-    <!-- LARGE TESTIMONIAL IMAGE PLACEHOLDER -->
-    <div class="testimonial-placeholder-wrapper">
-      <div class="image-placeholder">
-        <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
-        <span>[Image Placeholder]</span>
+      <div class="hero-cta-group">
+        <a href="#final-form" class="btn-primary hero-btn">إبدأ الآن</a>
       </div>
     </div>
 
-    <!-- THIS SYSTEM WORKS FOR -->
-    <div class="info-section-title">هذا النظام مخصص لـ:</div>
-    <ul class="check-list">
-      <li>المؤسسين ورواد الأعمال (founders and entrepreneurs)</li>
-      <li>المستشارين والمدربين (Coaches & Consultants)</li>
-      <li>أصحاب الخدمات عالية القيمة (High-Ticket Service Providers)</li>
-      <li>صناع المنتجات الرقمية والخبراء (Info Products & Experts)</li>
-    </ul>
-
-    <!-- WHAT YOU'LL LEARN IN THIS VIDEO -->
-    <div class="info-section-title">شنو غادي تتعلم ف هاد الفيديو:</div>
-    <ol class="numbered-list">
-      <li><span class="num">1.</span> كيفاش تبني هيكلة المحتوى (Funnel Structure) اللي كتحول المتابعين لزبناء.</li>
-      <li><span class="num">2.</span> كيفاش تطور العرض ديالك (Offer) باش يولي جذاب وصعيب يترفض.</li>
-      <li><span class="num">3.</span> دراسة السوق واكتشاف الـ Market Gaps للتفوق على المنافسين.</li>
-      <li><span class="num">4.</span> كيفاش تحول البروفايل ديالك لـ High-Converting Storefront.</li>
-      <li><span class="num">5.</span> نظام Batch Filming لتصوير المحتوى بدون ما تضيع وقتك يومياً.</li>
-      <li><span class="num">6.</span> كيفاش تراجع الـ Metrics وتضاعف المشاهدات بين 2x و 3x.</li>
-      <li><span class="num">7.</span> كيفاش تقدر تخدم معانا باش نبنيو هاد النظام معاك خطوة بخطوة.</li>
-    </ol>
-
-    <!-- MAIN CTA 2 -->
-    <button class="btn-cta" onclick="openModal()">
-      شاهد الفيديو الآن ←
-    </button>
-
-    <!-- FLOATING PILL FOOTER -->
-    <footer>
-      <div class="footer-pill">
-        <a href="/" aria-label="Home"><img src="main-logo.svg" style="width:28px;" alt="Logo" onerror="this.src='main-logo.png'"></a>
-        <nav class="footer-pill-links">
-          <a href="/privacy">سياسة الخصوصية</a>
-          <a href="/Terms-of-Service">شروط الخدمة</a>
-        </nav>
+    <div class="hero-media-side">
+      <div class="video-wrap">
+        <script src="https://fast.wistia.com/player.js" async></script>
+        <script src="https://fast.wistia.com/embed/sv53ju3n2d.js" async type="module"></script>
+        <style>
+          wistia-player[media-id='sv53ju3n2d']:not(:defined) {
+            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/sv53ju3n2d/swatch');
+            display: block;
+            filter: blur(5px);
+            padding-top: 56.25%;
+          }
+        </style>
+        <wistia-player media-id="sv53ju3n2d" aspect="1.7777777777777777"></wistia-player>
       </div>
-      <div class="footer-disclaimers">
-        <p>هذا الموقع مستقل وغير تابع أو مدعوم من شركة Meta Platforms, Inc.</p>
-        <p>للاستفسارات والتواصل: <a href="mailto:support@bariabder.com">support@bariabder.com</a></p>
+
+      <div class="hero-social-proof-thumbs">
+        <img src="heymossab.webp" alt="Client 1" >
+        <img src="mohamed-salem-review.webp" alt="Client 2" >
+        <img src="dr-mernissi-othmane-review.webp" alt="Client 3" >
+        <img src="abdou-berrada-review.webp" alt="Client 4" >
+       
       </div>
-    </footer>
+    </div>
+  </section>
+
+
+   <!-- SPACER DIVIDER -->
+  <div class="otm-spacer-divider">
+    <div class="otm-spacer-line"></div>
   </div>
 
-  <!-- POPUP FORM MODAL -->
-  <div class="modal-overlay" id="leadModal">
-    <div class="modal-card">
-      <button class="close-btn" onclick="closeModal()">&times;</button>
-      <h2>أدخل معلوماتك لمشاهدة الفيديو ✍️</h2>
-      
-      <form id="leadForm">
-        <div class="form-group">
-          <label for="fullName">الإسم الكامل | Full Name</label>
-          <input type="text" id="fullName" name="fullName" placeholder="أدخل اسمك الكامل..." required>
+
+
+  
+ <!-- COMPARISON CARDS SECTION -->
+  <section class="wrap">
+    <!-- WITHOUT OTM -->
+    <div class="comparison-card">
+      <div style="text-align:center"><span class="badge without">بدون OTM System</span></div>
+      <p class="eyebrow gray">طريق <b>التيهان</b></p>
+      <h2>"غادي بدون بوصلة"</h2>
+      <svg class="path-svg" viewBox="0 0 460 140">
+        <circle cx="30" cy="40" r="14" fill="#3a3a3a"/>
+        <text x="30" y="45" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">?</text>
+        <path d="M40 45 Q90 20 120 60 T200 40 Q230 90 280 70 T360 100" stroke="#9a97ab" stroke-width="2" fill="none" stroke-dasharray="5 6"/>
+        <circle cx="360" cy="100" r="14" fill="#3a3a3a"/>
+        <text x="360" y="105" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">?</text>
+        <path d="M370 100 Q400 60 430 90" stroke="#9a97ab" stroke-width="2" fill="none" stroke-dasharray="5 6"/>
+        <circle cx="430" cy="90" r="10" fill="#5a5760"/>
+      </svg>
+      <div class="cards-row">
+        <div class="mini-card">
+          <div class="icon">🔍</div>
+          <div class="title">كتنشر عشوائي</div>
+          <div class="sub">بلا نظام، بلا تكرار</div>
         </div>
-
-        <div class="form-group">
-          <label for="email">البريد الإلكتروني | Email</label>
-          <input type="text" id="email" name="email" placeholder="example@gmail.com">
+        <div class="mini-card">
+          <div class="icon">💸</div>
+          <div class="title">كتخلص فالإعلانات</div>
+          <div class="sub">مكاين ثقة مبنية</div>
         </div>
-
-        <div class="form-group">
-          <label for="whatsapp">رقم الواتساب | WhatsApp Number</label>
-          <input type="text" id="whatsapp" name="whatsapp" placeholder="+212 600-000000">
+        <div class="mini-card">
+          <div class="icon">🔄</div>
+          <div class="title">كتقلد لخرين</div>
+          <div class="sub">صوتك ضايع فالنص</div>
         </div>
+      </div>
+      <div class="status-row">
+        <div class="status without">⏱ بطيء</div>
+        <div class="status without">⚠ ريسكي</div>
+        <div class="status without">💰 غالي</div>
+      </div>
+      <p class="closer">
+        كتصاوب content بلا خطة، وكل client كايكلفك أكثر من لي قبل.
+        الناس كتشوفك اليوم وكتنساك غدا.
+      </p>
+    </div>
 
-        <button type="submit" class="btn-cta" style="margin-top: 10px;">
-          شاهد الفيديو الآن
-        </button>
+    <!-- WITH OTM -->
+    <div class="comparison-card">
+      <div style="text-align:center"><span class="badge with">مع OTM System™</span></div>
+      <p class="eyebrow">طريق <b>الثقة</b></p>
+      <h2>"عندي Brand كيبيع عليا"</h2>
+      <svg class="path-svg" viewBox="0 0 460 140">
+        <circle cx="30" cy="110" r="12" fill="#8B80F0"/>
+        <path d="M42 105 L130 80" stroke="#8B80F0" stroke-width="2" stroke-dasharray="5 6"/>
+        <circle cx="140" cy="76" r="10" fill="#8B80F0"/>
+        <path d="M150 72 L250 46" stroke="#8B80F0" stroke-width="2" stroke-dasharray="5 6"/>
+        <circle cx="260" cy="42" r="10" fill="#8B80F0"/>
+        <path d="M270 38 L400 20" stroke="#8B80F0" stroke-width="2" stroke-dasharray="5 6"/>
+        <circle cx="415" cy="18" r="16" fill="#8B80F0"/>
+        <text x="415" y="23" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">!</text>
+      </svg>
+      <div class="cards-row">
+        <div class="mini-card">
+          <div class="icon">🧠</div>
+          <div class="title">Content Engine</div>
+          <div class="sub">نظام واضح، مكرر، فعال</div>
+        </div>
+        <div class="mini-card">
+          <div class="icon">📖</div>
+          <div class="title">صوتك، قصتك</div>
+          <div class="sub">مستحيل حد يقلدك</div>
+        </div>
+        <div class="mini-card">
+          <div class="icon">📥</div>
+          <div class="title">Inbound Clients</div>
+          <div class="sub">جايينك بلا إعلانات</div>
+        </div>
+      </div>
+      <div class="status-row">
+        <div class="status with">⏱ سريع</div>
+        <div class="status with">✓ ثقة</div>
+        <div class="status with">📈 قابل للتوسع</div>
+      </div>
+      <p class="closer">
+        OTM System™ كيعطيك نظام مجرب، صوت خاص بيك، و clients كيتيقو فيك
+        قبل ما يهضرو معاك.
+      </p>
+    </div>
+  </section>
 
-        <p class="modal-disclaimer">
-          بإدخال معلوماتك، فإنك توافق على استقبال التحديثات والمحتوى الخاص بنظام OTM System™. يمكنك إلغاء الاشتراك في أي وقت.
-        </p>
-      </form>
+<br>
+
+  <div class="container">
+
+  <p class="intro-text">
+    ماخصكش تبقى بوحدك كتحاول تبني براند شخصي بطريقة عشوائية.
+    OTM System™ كيعطيك نظام واضح باش تبني الثقة، تتموقع فالصح، وتولي الاختيار الأول عند العملاء ديالك.
+  </p>
+
+  <p class="section-title">
+    علاش OTM System™ مختلف؟
+  </p>
+
+  <!-- Clean 3-Column Section -->
+  <div class="features-grid">
+    <div class="feature-item">
+      <p class="title">Positioning™</p>
+      <p class="desc">
+        كنلقاو المكان اللي تقدر تملكو فالسوق، باش الناس تفتاكرك.
+      </p>
+    </div>
+    <div class="feature-item">
+      <p class="title">Framework™</p>
+      <p class="desc">
+        نظام واضح ومجرب، مبني على بيانات حقيقية ماشي تخمين.
+      </p>
+    </div>
+    <div class="feature-item">
+      <p class="title">Content Engine™</p>
+      <p class="desc">
+        كل محتوى عندو هدف: ثقة، مكانة، وعملاء.
+      </p>
     </div>
   </div>
 
-  <script src="script.js">
-    const modal = document.getElementById('leadModal');
-    const form = document.getElementById('leadForm');
+  <!-- Highlight Banner -->
+  <div class="highlight-banner">
+    <p>
+      نظام كامل باش تحول الخبرة ديالك إلى براند شخصي الناس <span class="accent">كيثقو فيه</span>،
+      وكيختاروك <span class="accent">قبل المنافسين</span>.
+    </p>
+  </div>
 
-    const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE'; 
+  <!-- CTA Section -->
+  <p class="cta-question">
+    إلى الناس ما كيعرفوكش، علاش غادي يختاروك؟
+  </p>
+  
+<br>
 
-    // Auto theme check based on local device time (6 PM to 9 AM = Dark)
-    (function checkTimeTheme() {
-      const currentHour = new Date().getHours();
-      if (currentHour >= 9 && currentHour < 18) {
-        document.body.classList.add('light-theme');
-      } else {
-        document.body.classList.remove('light-theme');
+  <a href="#final-form" class="btn-circle-cta">إبدأ الآن</a>
+      </div>
+
+
+
+
+  <!-- SPACER DIVIDER -->
+  <div class="otm-spacer-divider">
+    <div class="otm-spacer-line"></div>
+  </div>
+
+  
+  
+  
+  <!-- SOCIAL PROOF SECTION -->
+  <section class="proof-section">
+    <div class="proof-container">
+      <div class="proof-sidebar">
+        <span class="projects-tag">‹ شهادات ›</span>
+        <h2>فخورون بالعمل مع الأفضل</h2>
+      </div>
+
+      <div class="proof-videos-container">
+        <div class="video-card-v2">
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script src="https://fast.wistia.com/embed/9rakujkciy.js" async type="module"></script>
+          <style>
+            wistia-player[media-id='9rakujkciy']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/9rakujkciy/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 177.78%;
+            }
+          </style>
+          <wistia-player media-id="9rakujkciy" aspect="0.5625"></wistia-player>
+        </div>
+
+        <div class="video-card-v2">
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script src="https://fast.wistia.com/embed/xlty4kee3f.js" async type="module"></script>
+          <style>
+            wistia-player[media-id='xlty4kee3f']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/xlty4kee3f/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 177.78%;
+            }
+          </style>
+          <wistia-player media-id="xlty4kee3f" aspect="0.5625"></wistia-player>
+        </div>
+      </div>
+
+      <div class="proof-cards-stack">
+        <div class="custom-proof-box">
+          <p>"الخدمة كانت ممتازة، وماشي غير لبّات توقعات الزبناء ديالنا، بل فاقتهم."</p>
+          <div class="custom-review-author">
+            <img src="mohamed-salem-review.webp" alt="Mohamed Salem review" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'48\' height=\'48\' fill=\'%23E5E7EB\'/></svg>'">
+            <div class="custom-review-info">
+              <strong>Mohamed Salem</strong>
+              <span>Business Analyst</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="custom-proof-box">
+          <p>"جودة العمل كانت رائعة. Bari ساعدني نبني أساس العيادة ديالي وحوّل الفكرة لواقع."</p>
+          <div class="custom-review-author">
+            <img src="dr-mernissi-othmane-review.webp" alt="Dr. Mernissi Othmane review" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'48\' height=\'48\' fill=\'%23E5E7EB\'/></svg>'">
+            <div class="custom-review-info">
+              <strong>Dr. Mernissi Othmane</strong>
+              <span>Dentist</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="custom-proof-box">
+          <p>"ديما كنكون فرحان نخدم معاه. التواصل ساهل والخدمة ديما بجودة عالية."</p>
+          <div class="custom-review-author">
+            <img src="abdou-berrada-review.webp" alt="Abdou Berrada review" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'48\' height=\'48\' fill=\'%23E5E7EB\'/></svg>'">
+            <div class="custom-review-info">
+              <strong>Abdou Berrada</strong>
+              <span>Founder at @epoptique</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proof-cta-wrapper">
+      <div class="proof-cta">
+        <a href="#final-form" class="btn-circle-cta">إبدأ الآن</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPACER DIVIDER -->
+  <div class="otm-spacer-divider">
+    <div class="otm-spacer-line"></div>
+  </div>
+
+  <!-- FAQ SECTION -->
+  <section class="section faq-section">
+    <div class="text-center">
+      <h2>الأسئلة <em>الشائعة</em></h2>
+      <p class="subtitle-premium-light">كل ما تحتاجه من أجوبة حول نظام OTM System™</p>
+    </div>
+
+    <div class="faq-container">
+      <details class="faq-item">
+        <summary>واش خاصني نكون كنصنع المحتوى من قبل؟</summary>
+        <div class="faq-answer">
+          <p>لا. كنبداو من الأساس: التموقع، الرسالة، وأنواع المحتوى اللي خاصك تنشر باش تبني الثقة وتجلب الجمهور المناسب.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>شحال من الوقت خاصني نخصص؟</summary>
+        <div class="faq-answer">
+          <p>هذا كيعتمد على الحالة ديالك، ولكن خاص يكون عندك استعداد تخصص وقت باش تصور المحتوى، تراجع الأفكار، وتطبق النظام بشكل مستمر.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>واش النتائج مضمونة?</summary>
+        <div class="faq-answer">
+          <p>لا. حيت النتائج كتختلف من شخص لآخر، وكتتمد على السوق، العرض، والتطبيق. ولكن اللي نقدر نضمنوه هو أننا غادي نخدمو معاك باستراتيجية واضحة ومجربة بدل التخمين والعشوائية.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>شنو المطلوب مني بالضبط؟</summary>
+        <div class="faq-answer">
+          <p>خسّك تكون عندك:</p>
+          <ul style="padding-right: 20px; margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
+            <li> خدمة أو خبرة حقيقية</li>
+            <li> استعداد تبني البراند الشخصي ديالك</li>
+            <li> التزام بتطبيق النظام</li>
+            <li> استعداد تصنع المحتوى بشكل مستمر</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>واش OTM System™ مناسب لأي مجال؟</summary>
+        <div class="faq-answer">
+          <p>النظام خدام خصوصاً مع:</p>
+          <p style="margin-top: 4px; font-weight: 700; color: var(--accent);">Founders | Consultants | Coaches | Experts | Service Providers</p>
+          <p style="margin-top: 8px;">إذا كانت القيمة ديالك كتحتاج الثقة باش الناس تشري منك، غالباً النظام مناسب ليك.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- SPACER DIVIDER -->
+  <div class="otm-spacer-divider">
+    <div class="otm-spacer-line"></div>
+  </div>
+
+ 
+  
+  
+  <!-- ABOUT SECTION -->
+  <section class="about-wrapper">
+    <div class="about-container">
+      <div class="about-grid">
+        <div class="about-content">
+          <div class="founder-header">
+            <img src="bariabder.jpg" alt="Bariabder image" class="founder-img">
+            <div>
+              <h2 style="text-align: right;">شكون هو <em>Bari Abder؟</em></h2>
+              <p style="margin: 0; font-size: 15px; color: var(--accent); font-weight: 800;">مؤسس OTM System™</p>
+            </div>
+          </div>
+
+          <p>من بعد ما صرفت مئات الساعات کندرس خوارزميات المحتوى والبِرَانْدينغ الشخصي، لاحظت باللي بزاف ديال المؤسسين ماعارفينش يعبروا على القيمة ديالهم في الأنترنت — ماشي حيتاش بدون كفاءة، ولكن حيت ماعارفينش كيفاش يوصلوها للجمهور الخاص بهم.</p>
+          <p>المهمة ديالي: نعاون المؤسسين يبنيو بِرَانْد شخصي موثوق كيجيب الجمهور المناسب، كيبني ثقة حقيقية، وكيحول الانتباه لزبناء.</p>
+          <p><strong>البِرَانْدينغ ماعندو علاقة بأنك تكون مشهور — ولكن تولي الاختيار الأول ف المجال ديالك.</strong></p>
+          
+          <div class="trust-stats">
+            <div class="stat-box">
+              <span class="stat-num">+50M</span>
+              <span class="stat-label">مشاهدة موجهة</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">5</span>
+              <span class="stat-label">سنوات خبرة</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">+6</span>
+              <span class="stat-label">مؤسس عاوناهم</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MULTI-STEP FORM APPLICATION SECTION -->
+  <section class="final-cta" id="final-form">
+    <div class="final-cta-wrap">
+      <div class="text-center">
+        <h2>إلى كنت باغي تولي <em>الاختيار الأول فالمجال ديالك...</em></h2>
+        <p class="subtitle-premium-light">عمّر الطلب وشوف واش OTM System™ مناسب ليك.</p>
+      </div>
+      <br>
+      <div class="application-form">
+        <form id="custom-otm-form" class="step-form-container" autocomplete="off">
+          <div class="form-fixed-header">
+            <h3>تقديم طلب الانضمام لنظام OTM System™</h3>
+            <p>يرجى الإجابة على الأسئلة بدقة لتقييم مشروعك</p>
+          </div>
+
+          <div class="form-progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+
+          <div class="form-steps-body">
+            <!-- Question 1 -->
+            <div class="form-step active" data-step="1">
+              <label for="fullName">الإسم الكامل | Full name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="أدخل اسمك الكامل هنا..." required>
+              <div class="form-navigation">
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="form-step" data-step="2">
+              <label for="whatsapp">رقم الواتساب | WhatsApp Number</label>
+              <input type="tel" id="whatsapp" name="whatsapp" placeholder="+212666666666" dir="ltr" style="text-align: left;" required>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="form-step" data-step="3">
+              <label for="businessDuration">شحال ديال الوقت و نتا خدام على مشروعك؟ | How long have you been in business?</label>
+              <select id="businessDuration" name="businessDuration" required>
+                <option value="" disabled selected>اختر المدة...</option>
+                <option value="أقل من سنة">أقل من سنة</option>
+                <option value="1 - 3 سنوات">1 - 3 سنوات</option>
+                <option value="+3 سنوات">+3 سنوات</option>
+              </select>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="form-step" data-step="4">
+              <label for="biggestChallenge">شنو أكبر تحدي كاتواجه الأن ؟ | What is your biggest challenge right now?</label>
+              <textarea id="biggestChallenge" name="biggestChallenge" rows="4" placeholder="اكتب هنا..." required></textarea>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="form-step" data-step="5">
+              <label>هل تقوم حاليًا بإنشاء محتوى؟ | Are you currently creating content?</label>
+              <div class="radio-group">
+                <label class="radio-label"><input type="radio" name="creatingContent" value="نعم" required> نعم / Yes</label>
+                <label class="radio-label"><input type="radio" name="creatingContent" value="لا"> لا / No</label>
+                <label class="radio-label"><input type="radio" name="creatingContent" value="بشكل متقطع"> بشكل متقطع / Intermittently</label>
+              </div>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="form-step" data-step="6">
+              <label for="growthObstacle">مالذي يمنعك من النمو أونلاين ؟ | What’s currently stopping you from growing online?</label>
+              <textarea id="growthObstacle" name="growthObstacle" rows="4" placeholder="اكتب هنا..." required></textarea>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="form-step" data-step="7">
+              <label for="socialLink">Social media ديالك | Website</label>
+              <input type="url" id="socialLink" name="socialLink" placeholder="https://instagram.com/username" dir="ltr" style="text-align: left;" required>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="form-step" data-step="8">
+              <label>إذا تم اختيارك، هل ستلتزم بتنفيذ نظام محتوى ؟ | If selected, will you implement the content system?</label>
+              <div class="radio-group">
+                <label class="radio-label"><input type="radio" name="willImplement" value="نعم، ملتزم تماماً" required> نعم، ملتزم تماماً</label>
+                <label class="radio-label"><input type="radio" name="willImplement" value="مازال متردد"> مازال متردد</label>
+              </div>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="form-step" data-step="9">
+              <label for="hearAboutUs">Where did you hear about us?</label>
+              <select id="hearAboutUs" name="hearAboutUs" required>
+                <option value="" disabled selected>اختر من القائمة...</option>
+                <option value="Instagram">Instagram</option>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="YouTube">YouTube</option>
+                <option value="Other">مكان أخر | other place</option>
+              </select>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="button" class="btn-next">التالي ←</button>
+              </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="form-step" data-step="10">
+              <label for="experienceRating">كيف تقيّم تجربتك معنا حتى الآن؟ | How would you rate your experience with us so far?</label>
+              <select id="experienceRating" name="experienceRating" required>
+                <option value="" disabled selected>اختر التقييم...</option>
+                <option value="ممتازة جداً (5/5)">⭐⭐⭐⭐⭐ ممتازة جداً</option>
+                <option value="جيدة (4/5)">⭐⭐⭐⭐ جيدة</option>
+                <option value="مقبولة (3/5)">⭐⭐⭐ مقبولة</option>
+              </select>
+              <div class="form-navigation">
+                <button type="button" class="btn-prev">→ السابق</button>
+                <button type="submit" class="btn-submit-form" id="submitBtn">إرسال الطلب الآن</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="brand-statement" dir="ltr">
+        <h2>Become the brand people choose.</h2>
+      </div>
+
+      <footer>
+        <div class="footer-pill">
+          <a href="/" aria-label="Home"><img src="main-logo.svg" style="width:32px;" alt="Logo"></a>
+          <nav class="footer-pill-links">
+            <a href="/privacy">سياسة الخصوصية</a>
+            <a href="/Terms-of-Service">شروط الخدمة</a>
+          </nav>
+        </div>
+        <div class="footer-disclaimers">
+          <p>هذا الموقع مستقل وغير تابع أو مدعوم من شركة Meta Platforms, Inc. علامتي Facebook و Instagram هما ملكية مسجلة لشركة Meta.</p>
+          <p><strong>إخلاء مسؤولية:</strong> النتائج المعروضة ليست نموذجية وتختلف من شخص لآخر. لا نضمن أرباحاً مالية محددة.</p>
+          <p>للاستفسارات والتواصل: <a href="mailto:support@bariabder.com">support@bariabder.com</a></p>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <!-- External JS File -->
+  <script src="script.js"></script>
+
+  <!-- Inline Page Interaction Script -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('custom-otm-form');
+    if (!form) return;
+
+    const steps = Array.from(form.querySelectorAll('.form-step'));
+    const progressFill = document.getElementById('progressFill');
+    const submitBtn = document.getElementById('submitBtn');
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwCQe0mXVSfvbGTqpzYHWp7qVU9jKEhy-qvjTYj3r6sVGEE1iDfwpcLzaZTs65rbrpGPQ/exec'; 
+
+    let currentStep = 0;
+
+    function updateFormDisplay() {
+      steps.forEach((step, index) => {
+        step.classList.toggle('active', index === currentStep);
+      });
+      if (progressFill) {
+        const progressPercent = ((currentStep + 1) / steps.length) * 100;
+        progressFill.style.width = `${progressPercent}%`;
       }
-    })();
+    }
 
-    function openModal() { modal.classList.add('active'); }
-    function closeModal() { modal.classList.remove('active'); }
+    form.querySelectorAll('.btn-next').forEach(button => {
+      button.addEventListener('click', () => {
+        const inputs = steps[currentStep].querySelectorAll('input, select, textarea');
+        let isValid = true;
+        
+        inputs.forEach(input => {
+          if(!input.checkValidity()) {
+            input.reportValidity();
+            isValid = false;
+          }
+        });
 
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
+        if (isValid && currentStep < steps.length - 1) {
+          currentStep++;
+          updateFormDisplay();
+        }
+      });
     });
 
-    form.addEventListener('submit', (e) => {
+    form.querySelectorAll('.btn-prev').forEach(button => {
+      button.addEventListener('click', () => {
+        if (currentStep > 0) {
+          currentStep--;
+          updateFormDisplay();
+        }
+      });
+    });
+
+    form.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        const nextBtn = steps[currentStep].querySelector('.btn-next');
+        if (nextBtn) {
+          nextBtn.click();
+        } else if (currentStep === steps.length - 1) {
+          form.requestSubmit();
+        }
+      }
+    });
+
+    form.addEventListener('submit', e => {
       e.preventDefault();
-      
-      const submitBtn = form.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      submitBtn.innerText = 'جاري التحويل...';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'جاري إرسال الطلب...';
+      }
 
       const searchParams = new URLSearchParams(new FormData(form));
 
@@ -175,16 +941,50 @@
         mode: 'no-cors',
         body: searchParams
       })
-      .then(() => {
-        window.location.href = 'https://www.bariabder.com/explainer';
-      })
-      .catch(error => {
-        console.error('Error submitting form:', error);
-        alert('حدث خطأ أثناء إرسال البيانات، يرجى إعادة المحاولة.');
-        submitBtn.disabled = false;
-        submitBtn.innerText = 'شاهد الفيديو الآن';
+        .then(() => {
+          window.location.href = 'https://www.bariabder.com/thank-you';
+        })
+        .catch(error => {
+          console.error('Error!', error.message);
+          alert('حدث خطأ أثناء إرسال البيانات، يرجى إعادة المحاولة.');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'إرسال الطلب الآن';
+          }
+        });
+    });
+
+    updateFormDisplay();
+
+    // Accordion Logic for FAQs
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.open = false;
+            }
+          });
+        }
       });
     });
+
+    // Reveal Sticky Top Nav
+    const scrollNav = document.getElementById('scrollNav');
+    const heroSection = document.getElementById('heroSection');
+
+    if (scrollNav && heroSection) {
+      window.addEventListener('scroll', () => {
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        if (heroBottom < 0) {
+          scrollNav.classList.add('visible');
+        } else {
+          scrollNav.classList.remove('visible');
+        }
+      });
+    }
+  });
   </script>
 
 </body>
