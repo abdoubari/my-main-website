@@ -1,42 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
+
   // ==========================================
   // 1. THEME TOGGLE LOGIC
   // ==========================================
+
   const themeToggleBtn = document.getElementById('themeToggle');
   const savedTheme = localStorage.getItem('theme');
 
-  if (savedTheme) {
-    if (savedTheme === 'light') {
+  function applyTheme(isLight) {
+    if (isLight) {
       document.body.classList.add('light-theme');
+      document.body.classList.remove('dark-theme');
     } else {
-      document.body.classList.remove('light-theme');
-    }
-  } else {
-    // Default time check: 9 AM to 6 PM = Light Theme
-    const currentHour = new Date().getHours();
-    if (currentHour >= 9 && currentHour < 18) {
-      document.body.classList.add('light-theme');
-    } else {
+      document.body.classList.add('dark-theme');
       document.body.classList.remove('light-theme');
     }
   }
 
+  // Check saved theme first; otherwise, Light Theme is 9 AM to 6 PM (9 - 17)
+  if (savedTheme !== null) {
+    applyTheme(savedTheme === 'light');
+  } else {
+    const currentHour = new Date().getHours();
+    // Light theme from 9:00 AM until 5:59 PM; Dark theme from 6:00 PM to 8:59 AM
+    const isDayTime = currentHour >= 9 && currentHour < 18;
+    applyTheme(isDayTime);
+  }
+
+  // Toggle click listener
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('light-theme');
-      const isLight = document.body.classList.contains('light-theme');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      const isCurrentlyLight = document.body.classList.contains('light-theme');
+      const newLightState = !isCurrentlyLight;
+      
+      applyTheme(newLightState);
+      localStorage.setItem('theme', newLightState ? 'light' : 'dark');
     });
   }
 
   // ==========================================
   // 2. POPUP MODAL LOGIC
   // ==========================================
+
   const modal = document.getElementById('leadModal');
   const form = document.getElementById('leadForm');
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwOY0x3vOCKvI4uIRlc1VsYGq-sN5t90U1p_7jOiELewGNeesXOqEfnFbJcZBrnFJk-QQ/exec'; 
 
-  // Make openModal and closeModal globally accessible for inline onclick handlers
   window.openModal = function() {
     if (modal) modal.classList.add('active');
   };
@@ -45,14 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modal) modal.classList.remove('active');
   };
 
-  // Close modal when clicking outside the card
   if (modal) {
     modal.addEventListener('click', (e) => {
       if (e.target === modal) window.closeModal();
     });
   }
 
-  // Handle Form Submission
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
