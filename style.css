@@ -683,12 +683,12 @@ footer {
     }
 
     .nav-profile img {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid rgba(139, 128, 240, 0.3);
-    }
+  height: 36px;       /* Set desired height */
+  width: auto;        /* Let the width adjust automatically based on proportions */
+  border-radius: 0;   /* Removes the circular cropping */
+  object-fit: contain; /* Preserves full aspect ratio without clipping */
+  border: none;       /* Optional: removes the circular border line */
+}
 
     .nav-profile-info {
       display: flex;
@@ -1226,4 +1226,7 @@ footer {
     }
 #final-form {
     scroll-margin-top: 80px; /* Try 60px, 80px, 100px, etc. */
+}
+html {
+  scroll-behavior: smooth;
 }
