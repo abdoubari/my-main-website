@@ -683,7 +683,7 @@ footer {
     }
 
     .nav-profile img {
-  height: 60px;       /* Set desired height */
+  height: 80px;       /* Set desired height */
   width: auto;        /* Let the width adjust automatically based on proportions */
   border-radius: 0;   /* Removes the circular cropping */
   object-fit: contain; /* Preserves full aspect ratio without clipping */
