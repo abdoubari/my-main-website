@@ -1,68 +1,80 @@
-<script src="script.js"></script>
+// Define nextStep globally outside DOMContentLoaded so HTML inline onclick="nextStep(event)" can access it immediately
+let currentStep = 0;
+let steps = [];
+let progressFill = null;
 
-<!-- Inline Script for Interactions -->
-<script>
+function updateFormDisplay() {
+  steps.forEach((step, index) => {
+    if (index === currentStep) {
+      step.style.setProperty('display', 'flex', 'important');
+    } else {
+      step.style.setProperty('display', 'none', 'important');
+    }
+  });
+
+  if (progressFill) {
+    const progressPercent = ((currentStep + 1) / steps.length) * 100;
+    progressFill.style.width = `${progressPercent}%`;
+  }
+}
+
+// Globally exported function for Next button click
+window.nextStep = function(e) {
+  if (e) e.preventDefault();
+
+  if (!steps.length) return;
+
+  const currentStepEl = steps[currentStep];
+  const inputs = Array.from(currentStepEl.querySelectorAll('input, select, textarea'));
+
+  // Validate fields in current active step
+  for (let input of inputs) {
+    if (!input.checkValidity()) {
+      input.reportValidity();
+      return; // Stop on first invalid input
+    }
+  }
+
+  if (currentStep < steps.length - 1) {
+    currentStep++;
+    updateFormDisplay();
+  }
+};
+
+// Global Previous Step handler
+window.prevStep = function(e) {
+  if (e) e.preventDefault();
+  if (currentStep > 0) {
+    currentStep--;
+    updateFormDisplay();
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('custom-otm-form');
   if (!form) return;
 
-  const steps = Array.from(form.querySelectorAll('.form-step'));
-  const progressFill = document.getElementById('progressFill');
+  steps = Array.from(form.querySelectorAll('.form-step'));
+  progressFill = document.getElementById('progressFill');
   const submitBtn = document.getElementById('submitBtn');
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwCQe0mXVSfvbGTqpzYHWp7qVU9jKEhy-qvjTYj3r6sVGEE1iDfwpcLzaZTs65rbrpGPQ/exec'; 
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwCQe0mXVSfvbGTqpzYHWp7qVU9jKEhy-qvjTYj3r6sVGEE1iDfwpcLzaZTs65rbrpGPQ/exec';
 
-  let currentStep = 0;
-
-  function updateFormDisplay() {
-    steps.forEach((step, index) => {
-      step.classList.toggle('active', index === currentStep);
-    });
-    if (progressFill) {
-      const progressPercent = ((currentStep + 1) / steps.length) * 100;
-      progressFill.style.width = `${progressPercent}%`;
-    }
-  }
-
-  // Next Button Navigation
+  // Attach click listeners to all Next buttons automatically
   form.querySelectorAll('.btn-next').forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-      const currentStepEl = steps[currentStep];
-      const inputs = currentStepEl.querySelectorAll('input, select, textarea');
-      let isValid = true;
-
-      inputs.forEach(input => {
-        if (!input.checkValidity()) {
-          input.reportValidity();
-          isValid = false;
-        }
-      });
-
-      if (isValid && currentStep < steps.length - 1) {
-        currentStep++;
-        updateFormDisplay();
-      }
-    });
+    button.addEventListener('click', window.nextStep);
   });
 
-  // Previous Button Navigation
+  // Attach click listeners to all Prev buttons automatically
   form.querySelectorAll('.btn-prev').forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (currentStep > 0) {
-        currentStep--;
-        updateFormDisplay();
-      }
-    });
+    button.addEventListener('click', window.prevStep);
   });
 
-  // Enable Enter-key progression for text inputs
+  // Enable Enter key navigation
   form.querySelectorAll('input[type="text"], input[type="tel"]').forEach(input => {
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         e.preventDefault();
-        const nextBtn = steps[currentStep].querySelector('.btn-next');
-        if (nextBtn) nextBtn.click();
+        window.nextStep(e);
       }
     });
   });
@@ -70,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Form Submission Handler
   form.addEventListener('submit', e => {
     e.preventDefault();
+
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.innerText = 'جاري إرسال الطلب...';
@@ -95,20 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 
+  // Initialize display
   updateFormDisplay();
-
-  // Accordion Logic for FAQs
-  const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
-    item.addEventListener('toggle', () => {
-      if (item.open) {
-        faqItems.forEach(otherItem => {
-          if (otherItem !== item) {
-            otherItem.open = false;
-          }
-        });
-      }
-    });
-  });
 });
-</script>
