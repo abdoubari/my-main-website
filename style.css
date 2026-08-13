@@ -10,11 +10,38 @@
 }
 
 * {
+    font-family: "SF Arabic"!important;
+}
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Cairo', sans-serif;
+  font-family: "SF Arabic" sans-serif;
 }
+/* Regular Weight (400) */
+@font-face {
+  font-family: "SF Arabic";
+
+
+
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold Weight (700) */
+@font-face {
+font-family: "SF Arabic";
+
+
+
+
+
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 body {
   background-color: var(--bg-color);
@@ -23,7 +50,21 @@ body {
   direction: rtl;
   text-align: right;
   overflow-x: hidden;
+font-family: "SF Arabic";
+
+
+
+  font-size-adjust: 0.48;
 }
+body, nav, p, button {
+  font-family: "SF Arabic" , sans-serif;
+}
+}
+
+h1, h2, h3, strong, b , .hero-title{
+  font-weight: 700; /* Uses AraHamah1964B-Bold.woff2 */
+}
+
 
 /* STICKY TOP NAV */
 .sticky-top-nav {
