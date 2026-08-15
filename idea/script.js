@@ -134,9 +134,11 @@ function generate() {
         }).catch(() => {});
     }
 
-    document.getElementById("wizard-flow").style.display = "none";
+    const wizardFlow = document.getElementById("wizard-flow");
+    if (wizardFlow) wizardFlow.style.display = "none";
 
     const resultContainer = document.getElementById("result");
+    if (!resultContainer) return;
     resultContainer.style.display = "block";
 
     const safeConcept = escapeHtml(concept);
@@ -220,18 +222,28 @@ function generate() {
         </div>
     `;
 
-    document.getElementById("copy-reel-btn").addEventListener("click", function () {
-        const reel = `CONCEPT\n${concept}\n\nHOOK\n${textOnScreen}\n\nSAY OUT LOUD\n${sayOutLoud}\n\nPROBLEM\n${problem}\n\nPURSUIT\n${pursuit}\n\nPAYOFF\n${payoff}`;
-        navigator.clipboard.writeText(reel);
-        this.innerText = "✓ تم النسخ";
-        showNotification("تم نسخ النص بنجاح");
-        setTimeout(() => { this.innerText = "📋 نسخ النص"; }, 1500);
-    });
+    const copyBtn = document.getElementById("copy-reel-btn");
+    if (copyBtn) {
+        copyBtn.addEventListener("click", function () {
+            const reel = `CONCEPT\n${concept}\n\nHOOK\n${textOnScreen}\n\nSAY OUT LOUD\n${sayOutLoud}\n\nPROBLEM\n${problem}\n\nPURSUIT\n${pursuit}\n\nPAYOFF\n${payoff}`;
+            navigator.clipboard.writeText(reel);
+            this.innerText = "✓ تم النسخ";
+            showNotification("تم نسخ النص بنجاح");
+            setTimeout(() => { this.innerText = "📋 نسخ النص"; }, 1500);
+        });
+    }
 
-    document.getElementById("res-shuffle").addEventListener("click", generate);
-    document.getElementById("res-restart").addEventListener("click", () => {
-        window.location.reload();
-    });
+    const shuffleBtn = document.getElementById("res-shuffle");
+    if (shuffleBtn) {
+        shuffleBtn.addEventListener("click", generate);
+    }
+
+    const restartBtn = document.getElementById("res-restart");
+    if (restartBtn) {
+        restartBtn.addEventListener("click", () => {
+            window.location.reload();
+        });
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -246,18 +258,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const generateBtn = document.getElementById("generate");
     const audienceInput = document.getElementById("audience");
     const messageInput = document.getElementById("message");
+    const closeModalBtn = document.getElementById("close-modal-btn");
 
-   document.getElementById("close-modal-btn").addEventListener("click", () => {
-    const modal = document.getElementById("welcome-modal");
-    if (modal) {
-        modal.style.setProperty("display", "none", "important");
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener("click", () => {
+            const modal = document.getElementById("welcome-modal");
+            if (modal) {
+                modal.style.setProperty("display", "none", "important");
+            }
+        });
     }
-});
 
     document.querySelectorAll(".example-tag").forEach(tag => {
         tag.addEventListener("click", function () {
-            const cleanText = this.textContent.replace(/"/g, "");
-            audienceInput.value = cleanText;
+            const cleanText = this.textContent.replace(/"/g, "").trim();
+            if (audienceInput) {
+                audienceInput.value = cleanText;
+            }
             formState.audience = cleanText;
             validateCurrentStep();
         });
@@ -265,19 +282,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".card-option").forEach(card => {
         card.addEventListener("click", function () {
-            const parentSection = this.closest(".step-section").id;
+            const parentSection = this.closest(".step-section");
+            if (!parentSection) return;
+
             this.parentElement.querySelectorAll(".card-option").forEach(c => c.classList.remove("selected"));
             this.classList.add("selected");
             const selectionValue = this.getAttribute("data-value");
 
-            if (parentSection === "step-2") formState.goal = selectionValue;
-            if (parentSection === "step-3") formState.shape = selectionValue;
+            if (parentSection.id === "step-2") formState.goal = selectionValue;
+            if (parentSection.id === "step-3") formState.shape = selectionValue;
             validateCurrentStep();
         });
     });
 
-    audienceInput.addEventListener("input", (e) => { formState.audience = e.target.value.trim(); validateCurrentStep(); });
-    messageInput.addEventListener("input", (e) => { formState.message = e.target.value.trim(); validateCurrentStep(); });
+    if (audienceInput) {
+        audienceInput.addEventListener("input", (e) => {
+            formState.audience = e.target.value.trim();
+            validateCurrentStep();
+        });
+    }
+
+    if (messageInput) {
+        messageInput.addEventListener("input", (e) => {
+            formState.message = e.target.value.trim();
+            validateCurrentStep();
+        });
+    }
 
     function validateCurrentStep() {
         let isValid = false;
@@ -287,40 +317,62 @@ document.addEventListener("DOMContentLoaded", () => {
         if (currentStep === 4 && formState.message.length > 5) isValid = true;
 
         if (isValid) {
-            nextBtn.classList.remove("disabled"); nextBtn.classList.add("ready");
-            generateBtn.classList.remove("disabled"); generateBtn.classList.add("ready");
+            if (nextBtn) { nextBtn.classList.remove("disabled"); nextBtn.classList.add("ready"); }
+            if (generateBtn) { generateBtn.classList.remove("disabled"); generateBtn.classList.add("ready"); }
         } else {
-            nextBtn.classList.add("disabled"); nextBtn.classList.remove("ready");
-            generateBtn.classList.add("disabled"); generateBtn.classList.remove("ready");
+            if (nextBtn) { nextBtn.classList.add("disabled"); nextBtn.classList.remove("ready"); }
+            if (generateBtn) { generateBtn.classList.add("disabled"); generateBtn.classList.remove("ready"); }
         }
     }
 
     function updateWizard() {
         steps.forEach((step, idx) => { step.classList.toggle("active", idx + 1 === currentStep); });
         segments.forEach((seg, idx) => { seg.classList.toggle("active", idx < currentStep); });
-        stepCounter.innerHTML = `الخطوة <span class="num">${currentStep}</span> من ${totalSteps}`;
-        prevBtn.style.display = currentStep > 1 ? "block" : "none";
+        
+        if (stepCounter) {
+            stepCounter.innerHTML = `الخطوة <span class="num">${currentStep}</span> من ${totalSteps}`;
+        }
+
+        if (prevBtn) {
+            prevBtn.style.display = currentStep > 1 ? "block" : "none";
+        }
 
         if (currentStep === totalSteps) {
-            nextBtn.style.display = "none"; generateBtn.style.display = "block";
+            if (nextBtn) nextBtn.style.display = "none";
+            if (generateBtn) generateBtn.style.display = "block";
         } else {
-            nextBtn.style.display = "block"; generateBtn.style.display = "none";
+            if (nextBtn) nextBtn.style.display = "block";
+            if (generateBtn) generateBtn.style.display = "none";
         }
         validateCurrentStep();
     }
 
-    nextBtn.addEventListener("click", () => {
-        if (currentStep < totalSteps && nextBtn.classList.contains("ready")) { currentStep++; updateWizard(); }
-    });
-    prevBtn.addEventListener("click", () => {
-        if (currentStep > 1) { currentStep--; updateWizard(); }
-    });
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+            if (currentStep < totalSteps && nextBtn.classList.contains("ready")) {
+                currentStep++;
+                updateWizard();
+            }
+        });
+    }
 
-    generateBtn.addEventListener("click", () => {
-        if (generateBtn.classList.contains("ready")) {
-            generate();
-        }
-    });
+    if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+            if (currentStep > 1) {
+                currentStep--;
+                updateWizard();
+            }
+        });
+    }
+
+    if (generateBtn) {
+        generateBtn.addEventListener("click", () => {
+            if (generateBtn.classList.contains("ready")) {
+                generate();
+            }
+        });
+    }
+
     updateWizard();
 });
 
