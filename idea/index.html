@@ -7,83 +7,56 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="main-logo.png">
 </head>
 <body>
 
-    <!-- Ambient Glowing Background Accents -->
-    <div class="bg-glow-left"></div>
-    <div class="bg-glow-right"></div>
-
-    <!-- Floating Top Menu Header -->
+    <!-- Floating Minimal Top Navigation -->
     <header class="top-nav-header">
-        <div class="top-nav-pill">
-          
- <!-- Profile / Brand -->
-            <a href="https://blog.bariabder.com/" class="nav-brand-profile">
-              <img src="bariabder.jpg" alt="bariabder" class="profile-avatar">
-                <span class="profile-name">Bari Abder</span>
-                
-            </a>
-          
-            <!-- Center Badge (Non-clickable) -->
-            <div class="nav-center-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                <span>100% مجاني</span>
-            </div>
-
-          
-            <!-- Light/Dark Theme Switch -->
-            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
-                <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            </button>
-          
-           
-        </div>
+        <nav class="top-nav-pill">
+            <a href="https://bariabder.com/" class="nav-btn-cta">إكتشف ™OTM System</a>
+            <a href="https://blog.bariabder.com/" class="nav-link-item">المدونة</a>
+            <span class="nav-badge-free">100% مجاني</span>
+        </nav>
     </header>
 
     <div id="notification" class="notification"></div>
 
+    <!-- Welcome Modal Overlay -->
     <div id="welcome-modal" class="modal-overlay">
         <div class="modal-card">
             <div class="modal-header-block">
-                <span class="modal-meta">ⓘ قبل البدء</span>
-                <h2>ملاحظة سريعة حول كيفية الاستخدام</h2>
+                <span class="modal-meta">ملاحظة سريعة</span>
+                <h2>قبل البدء</h2>
             </div>
             <div class="modal-body-block">
                 <p>هذه الأداة تقدم اقتراحات فقط. معرفتك وخبرتك الشخصية ستساعدك على الحصول على أفضل النتائج.</p>
-                <p style="font-weight: 600; color: var(--accent);">💡 يرجى الكتابة باللغة العربية دائماً.</p>
+                <p class="modal-highlight">يرجى الكتابة باللغة العربية دائماً.</p>
 
-                <button id="close-modal-btn"> فلنبدأ ←</button>
+                <button id="close-modal-btn">فلنبدأ ←</button>
 
-                <p class="modal-footer-note" style="font-size: 0.75rem; color: #a1a1aa; margin-top: 12px; text-align: center; line-height: 1.4;">
-                    باستمرارك في استخدام هذا المنتج، فإنك توافق على <a href="/Terms-of-Service" style="color: inherit; text-decoration: underline;">شروط الخدمة</a> و <a href="/privacy" style="color: inherit; text-decoration: underline;">سياسة الخصوصية</a> الخاصة بنا.
+                <p class="modal-footer-note">
+                    باستمرارك في استخدام هذا المنتج، فإنك توافق على <a href="/Terms-of-Service">شروط الخدمة</a> و <a href="/privacy">سياسة الخصوصية</a>.
                 </p>
             </div>
         </div>
     </div>
 
-    <div class="container">
+    <!-- Main Container -->
+    <main class="container">
         <div id="wizard-flow">
-            <header class="main-header">
-                <div class="title-wrapper">
-                    <h1>ما عندكش فكرة ديال محتوى؟<br>خذ خطة فيديو جاهزة للتصوير</h1>
-                    <svg class="sparkle-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B80F0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/>
-                    </svg>
-                </div>
-                <p class="main-subtitle">أجب عن أربعة أسئلة و احصل على فكرة لفيديو, كل خطوة مع hook قوي و نص كامل يمكنك البدء في تصويره اليوم.</p>
-            </header>
-
             <div class="wizard-card-container">
-                <div class="progress-nav">
-                    <span id="step-counter">الخطوة <span class="num">1</span> من 4</span>
-                    <button id="prev-btn" class="nav-link" style="display: none;">← السابق</button>
-                </div>
+                
+                <!-- Compact Hero Header -->
+                <header class="main-header">
+                    <h1>ما عندكش فكرة ديال محتوى؟ <span>خذ خطة فيديو جاهزة</span></h1>
+                    <p class="main-subtitle">أجب عن 4 أسئلة واحصل على فكرة فيديو مع Hook ونص كامل للتصوير.</p>
+                </header>
+
+                <!-- Thin Minimal Progress Bar -->
                 <div class="progress-bar">
                     <div class="progress-segment active"></div>
                     <div class="progress-segment"></div>
@@ -91,96 +64,136 @@
                     <div class="progress-segment"></div>
                 </div>
 
+                <!-- Step 1 -->
                 <section class="step-section active" id="step-1">
-                    <h2>🎯 من هو الجمهور المستهدف لهذا المحتوى؟</h2>
-                    <p class="section-desc">تحدث إلى شخص واحد، وليس إلى حشد من الناس. كلما كنت أكثر تحديداً، كانت النتائج أفضل.</p>
-                    <div class="input-wrapper">
-                        <input type="text" id="audience" placeholder="مثال: رواد الأعمال">
+                    <div class="step-header">
+                        <h2>من هو الجمهور المستهدف؟</h2>
+                        <span class="step-num">01 / 04</span>
                     </div>
-                    <div class="meta-tip">⚡ نصيحة · اضغط على أي مثال لملئه تلقائياً</div>
+                    <div class="input-wrapper">
+                        <input type="text" id="audience" placeholder="مثال: رواد الأعمال، المهتمون باللياقة..." autocomplete="off">
+                    </div>
                     <div class="examples-container">
-                        <span class="example-tag">🤖 المهتمون بالذكاء الاصطناعي</span>
-                        <span class="example-tag">💪 المهتمون باللياقة</span>
-                        <span class="example-tag">🎓 الطلاب</span>
-                        <span class="example-tag">✈️ المسافرون</span>
-                        <span class="example-tag">📷 محبو التصوير</span>
-                        <span class="example-tag">🏡 الباحثون عن منزل</span>
+                        <span class="example-tag">رواد الأعمال</span>
+                        <span class="example-tag">المهتمون بالذكاء الاصطناعي</span>
+                        <span class="example-tag">المهتمون باللياقة</span>
+                        <span class="example-tag">الطلاب</span>
+                        <span class="example-tag">المسافرون</span>
+                        <span class="example-tag">محبو التصوير</span>
                     </div>
                 </section>
 
+                <!-- Step 2 -->
                 <section class="step-section" id="step-2">
-                    <h2>ما هو الهدف من هذا الفيديو؟</h2>
-                    <p class="section-desc">الأهداف المختلفة تتطلب أساليب مختلفة للفيديوهات.</p>
+                    <div class="step-header">
+                        <h2>ما هو الهدف من هذا الفيديو؟</h2>
+                        <span class="step-num">02 / 04</span>
+                    </div>
                     <div class="options-grid">
                         <div class="card-option" data-value="CONTENT ATTRACT">
                             <h3>جذب</h3>
-                            <p>جذب مشاهدين جدد</p>
+                            <p>مشاهدين جدد</p>
                         </div>
                         <div class="card-option" data-value="CONTENT POSITIONING">
-                            <h3>إثبات مكانة</h3>
-                            <p>إظهار الخبرة والسلطة في مجالك</p>
+                            <h3>مكانة</h3>
+                            <p>إظهار الخبرة والسلطة</p>
                         </div>
                         <div class="card-option" data-value="CONTENT NURTURE">
-                            <h3>توجيه وتثقيف</h3>
-                            <p>تعميق العلاقة مع الجمهور الحالي</p>
+                            <h3>تثقيف</h3>
+                            <p>تعميق الثقة مع الجمهور</p>
                         </div>
                         <div class="card-option" data-value="CONTENT CONVERSION">
                             <h3>تحويل</h3>
-                            <p>دفع المشاهد للمتابعة، الحفظ، أو الشراء</p>
+                            <p>متابعة، حفظ، أو شراء</p>
                         </div>
                     </div>
                 </section>
 
+                <!-- Step 3 -->
                 <section class="step-section" id="step-3">
-                    <h2>اختر تنسيق المحتوى</h2>
-                    <p class="section-desc">كيف تريد تقديم هذه الرسالة؟</p>
+                    <div class="step-header">
+                        <h2>اختر أسلوب المحتوى</h2>
+                        <span class="step-num">03 / 04</span>
+                    </div>
                     <div class="options-grid">
                         <div class="card-option" data-value="Tips & advice and mistakes">
                             <h3>نصائح وإرشادات</h3>
-                            <p>مشاركة أطر العمل والدروس مستفادة والأخطاء</p>
+                            <p>أطر عمل ودروس مستفادة</p>
                         </div>
                         <div class="card-option" data-value="Personal Story">
                             <h3>قصة شخصية</h3>
-                            <p>بناء الثقة من خلال مشاركة التجارب الواقعية</p>
+                            <p>تجارب واقعية لبناء الثقة</p>
                         </div>
                         <div class="card-option" data-value="Hot take , A contrarian or unpopular opinion">
-                            <h3>رأي مثير للجدل</h3>
-                            <p>التميز برأي فريد أو غير شائع</p>
+                            <h3>رأي ضد السائد</h3>
+                            <p>رأي غير مألوف يثير التفاعل</p>
                         </div>
                         <div class="card-option" data-value="Behind the scenes . Process, real life, day-in-the-life">
                             <h3>خلف الكواليس</h3>
-                            <p>إظهار كيفية سير العمل والحياة اليومية</p>
+                            <p>سير العمل والحياة اليومية</p>
                         </div>
                     </div>
                 </section>
 
+                <!-- Step 4 -->
                 <section class="step-section" id="step-4">
-                    <h2>ما هي الرسالة الأساسية؟</h2>
-                    <p class="section-desc">قدم الفكرة الرئيسية أو القيمة التي تريد مشاركتها.</p>
+                    <div class="step-header">
+                        <h2>ما هي الرسالة أو القيمة الأساسية؟</h2>
+                        <span class="step-num">04 / 04</span>
+                    </div>
                     <div class="input-wrapper">
-                        <textarea id="message" placeholder="ما هي الرسالة أو الفكرة الرئيسية؟"></textarea>
+                        <textarea id="message" placeholder="اكتب الفكرة أو النتيجة الأساسية التي تريد مشاركتها..."></textarea>
                     </div>
                 </section>
 
+                <!-- Action Footer -->
                 <div class="action-footer">
-                    <button id="next-btn" class="disabled">متابعة ←</button>
-                    <button id="generate" style="display: none;">توليد النص</button>
+                    <button id="prev-btn" class="btn-secondary" style="display: none;">السابق</button>
+                    <button id="next-btn" class="btn-primary disabled">متابعة ←</button>
+                    <button id="generate" class="btn-primary" style="display: none;">توليد النص</button>
                 </div>
             </div>
         </div>
 
         <div id="result" style="display: none;"></div>
-    </div>
+    </main>
 
-    <footer>
-        <div class="footer-pill">
-            <a href="https://www.bariabder.com/" aria-label="Home">
-                <img src="main-logo.svg" style="width:28px;" alt="Logo">
-            </a>
-            <nav class="footer-pill-links">
-                <a href="/privacy">سياسة الخصوصية</a>
-                <a href="/Terms-of-Service">شروط الخدمة</a>
-            </nav>
+    <!-- Screenshot Style Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top-row">
+                <div class="footer-slogan">Become the brand people choose.</div>
+                <div class="footer-socials">
+                    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                    </a>
+                    <a href="https://x.com" target="_blank" rel="noopener" aria-label="X">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <p class="footer-disclaimer">
+                هذا الموقع مستقل وغير تابع أو مدعوم من شركة Meta Platforms, Inc. علامتي Facebook و Instagram هما ملكية مسجلة لشركة Meta. النتائج المعروضة تختلف من شخص لآخر حسب التطبيق والاستراتيجية.
+            </p>
+
+            <div class="footer-bottom-row">
+                <div class="footer-copy">
+                    © 2026 OTM System™ by Bari Abder. جميع الحقوق محفوظة.
+                </div>
+                <div class="footer-contact-legal">
+                    <a href="/privacy">سياسة الخصوصية</a>
+                    <span class="dot-sep">·</span>
+                    <a href="/Terms-of-Service">شروط الخدمة</a>
+                    <span class="dot-sep">·</span>
+                    <a href="mailto:support@bariabder.com" class="footer-email">support@bariabder.com</a>
+                </div>
+            </div>
         </div>
     </footer>
 
