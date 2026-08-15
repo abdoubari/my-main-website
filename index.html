@@ -7,12 +7,11 @@
   <title>OTM System™ — Bariabder</title>
 
   <link rel="icon" type="image/png" href="fav-icon.png">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://db.onlinewebfonts.com/c/b7c33064302dec9d5105f7ab62827c8a?family=SF+Arabic" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600;1,700&family=SF+Arabic:wght@400;700;900&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2.0">
   
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -24,128 +23,130 @@
 </head>
 <body>
 
-  <!-- TARGET TOP NAVBAR STRUCTURE -->
-  <header class="top-navbar" id="scrollNav">
-    <div class="nav-profile">
-      <div class="nav-profile-info"></div>
-      <img src="logo-wide.png" alt="logo-otm">
-    </div>
+  <!-- TARGET TOP NAVBAR (CENTERED FLOATING PILL WITH MOBILE MENU) -->
+  <header class="top-navbar-wrapper">
+    <nav class="top-navbar" id="scrollNav">
+      <a href="/" class="nav-profile">
+        <img src="logo-wide.png" alt="logo-otm">
+      </a>
 
-    <nav class="nav-links-center">
-      <a href="#hero-video">تعرف على النظام</a>
-      <a href="https://blog.bariabder.com/">المدونة</a>
-      <a href="https://www.bariabder.com/idea/">أداة توليد الأفكار</a>
+      <!-- Desktop Navigation Links -->
+      <div class="nav-links-center" id="navLinks">
+        <a href="#hero-video">تعرف على النظام</a>
+        <a href="https://blog.bariabder.com/">المدونة</a>
+        <a href="https://www.bariabder.com/idea/">أداة توليد الأفكار</a>
+      </div>
+
+      <!-- Center/Right Action Button -->
+      <a href="#hero-video" class="nav-cta-btn">إبدأ الأن</a>
+
+      <!-- Mobile Hamburger Toggle Button -->
+      <button class="nav-mobile-toggle" id="mobileMenuBtn" aria-label="Toggle menu" onclick="document.getElementById('navLinks').classList.toggle('mobile-open')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
-
-    <a href="#hero-video" class="nav-cta-btn">إبدأ الأن</a>
   </header>
 
-  <!-- TARGET HERO SECTION STRUCTURE WITH YOUR CUSTOM TEXT -->
+  <!-- TARGET HERO SECTION STRUCTURE -->
   <section class="hero-section-custom" id="heroSection">
     <h1 class="hero-main-title">
       أهلاً، أنا باري <span class="wave-emoji">👋</span><br>
-      كانعاونك تبني <span style="color: #8B80F0;">براند شخصية</span> تخلي الناس تثق فيك وتشري منك
+      كانعاونك تبني <span class="highlight-purple">براند شخصية</span> تخلي الناس تثق فيك وتشري منك
     </h1>
 
-    <div style="margin-top: 10px;">
-      <a href="#final-form" class="hero-main-btn">بلا إعلانات، وبلا محتوى عشوائي</a>
+    <!-- Clean, Borderless Subtitle -->
+    <p class="hero-subheadline">بلا إعلانات، وبلا محتوى عشوائي</p>
+
+    <!-- Dual CTA Buttons Group -->
+    <div class="hero-cta-group">
+      <a href="#final-form" class="hero-btn-primary">
+        <span>بدا تبني البراند ديالك</span>
+        <span class="btn-arrow">←</span>
+      </a>
+      <a href="#hero-video" class="hero-btn-secondary">
+        <span>شوف كيفاش كيخدم OTM</span>
+        <span class="btn-arrow">←</span>
+      </a>
     </div>
   </section>
 
   <!-- SPACER DIVIDER -->
   <div class="otm-spacer-divider"><div class="otm-spacer-line"></div></div>
 
-  <!-- BLOCK 2: PATHS COMPARISON SECTION -->
+  <!-- BLOCK 2: STREAMLINED COMPARISON SECTION -->
   <section class="wrap">
-    <div style="width: 100%; text-align: center; margin-bottom: 10px;">
-      <h2 style="font-size: 24px; font-weight: 900;">إذا قررت تبدأ بناء علامتك الشخصية اليوم، فأمامك خياران:</h2>
+    <div class="comparison-header">
+      <h2>إذا قررت تبدأ بناء علامتك الشخصية اليوم، فأمامك خياران:</h2>
     </div>
 
-    <!-- WITHOUT OTM -->
-    <div class="comparison-card">
-      <div style="text-align:center"><span class="badge without">بدون OTM System</span></div>
-      <p class="eyebrow gray">طريق <b>التيهان</b></p>
-      <h2>"غادي بدون بوصلة"</h2>
-      <svg class="path-svg" viewBox="0 0 460 140">
-        <circle cx="30" cy="40" r="14" fill="#3a3a3a"/>
-        <text x="30" y="45" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">?</text>
-        <path d="M40 45 Q90 20 120 60 T200 40 Q230 90 280 70 T360 100" stroke="#9a97ab" stroke-width="2" fill="none" stroke-dasharray="5 6"/>
-        <circle cx="360" cy="100" r="14" fill="#3a3a3a"/>
-        <text x="360" y="105" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">?</text>
-        <path d="M370 100 Q400 60 430 90" stroke="#9a97ab" stroke-width="2" fill="none" stroke-dasharray="5 6"/>
-        <circle cx="430" cy="90" r="10" fill="#5a5760"/>
-      </svg>
-      <div class="cards-row">
-        <div class="mini-card">
-          <div class="icon">🔍</div>
-          <div class="title">كتنشر عشوائي</div>
-          <div class="sub">بلا نظام</div>
-        </div>
-        <div class="mini-card">
-          <div class="icon">💸</div>
-          <div class="title">كتخلص فالإعلانات</div>
-          <div class="sub">مكاين ثقة</div>
-        </div>
-        <div class="mini-card">
-          <div class="icon">🔄</div>
-          <div class="title">كتقلد لخرين</div>
-          <div class="sub">صوتك ضايع</div>
-        </div>
+    <!-- WITHOUT OTM (MUTED & COMPACT) -->
+    <div class="comparison-card without-card">
+      <div class="card-head">
+        <span class="badge without">بدون OTM System</span>
+        <h3>طريق التيهان</h3>
       </div>
-      <div class="status-row">
-        <div class="status without">⏱ بطيء</div>
-        <div class="status without">⚠ ريسكي</div>
-        <div class="status without">💰 غالي</div>
-      </div>
-      <p class="closer">
-        كتصاوب content بلا خطة، وكل client كايكلفك أكثر من لي قبل.
-      </p>
+
+      <ul class="comparison-list">
+        <li>
+          <span class="cross-icon">✕</span>
+          <div>
+            <strong>نشر عشوائي</strong>
+            <p>بلا استراتيجية، كتضيع الوقت والمجهود</p>
+          </div>
+        </li>
+        <li>
+          <span class="cross-icon">✕</span>
+          <div>
+            <strong>اعتماد كلي على الإعلانات</strong>
+            <p>كتخسر فلوس وماكايناش ثقة حقيقية</p>
+          </div>
+        </li>
+        <li>
+          <span class="cross-icon">✕</span>
+          <div>
+            <strong>صوت مستنسخ</strong>
+            <p>كتقلد المنافسين والجمهور كينساك  </p>
+          </div>
+        </li>
+      </ul>
     </div>
 
-    <!-- WITH OTM -->
-    <div class="comparison-card">
-      <div style="text-align:center"><span class="badge with">مع OTM System™</span></div>
-      <p class="eyebrow">طريق <b>الثقة</b></p>
-      <h2>"عندي Brand كيبيع عليا"</h2>
-      <svg class="path-svg" viewBox="0 0 460 140">
-        <circle cx="30" cy="110" r="12" fill="#8B80F0"/>
-        <path d="M42 105 L130 80" stroke="#8B80F0" stroke-width="2" stroke-dasharray="5 6"/>
-        <circle cx="140" cy="76" r="10" fill="#8B80F0"/>
-        <path d="M150 72 L250 46" stroke="#8B80F0" stroke-width="2" stroke-dasharray="5 6"/>
-        <circle cx="260" cy="42" r="10" fill="#8B80F0"/>
-        <path d="M270 38 L400 20" stroke="#8B80F0" stroke-width="2" stroke-dasharray="5 6"/>
-        <circle cx="415" cy="18" r="16" fill="#8B80F0"/>
-        <text x="415" y="23" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">!</text>
-      </svg>
-      <div class="cards-row">
-        <div class="mini-card">
-          <div class="icon">🧠</div>
-          <div class="title">Content Engine</div>
-          <div class="sub">نظام واضح</div>
-        </div>
-        <div class="mini-card">
-          <div class="icon">📖</div>
-          <div class="title">صوتك، قصتك</div>
-          <div class="sub">مستحيل تقليد</div>
-        </div>
-        <div class="mini-card">
-          <div class="icon">📥</div>
-          <div class="title">Inbound Clients</div>
-          <div class="sub">جايينك</div>
-        </div>
+    <!-- WITH OTM (ELEVATED HERO CHOICE) -->
+    <div class="comparison-card with-card">
+      <div class="card-head">
+        <span class="badge with">مع OTM System™</span>
+        <h3>طريق الثقة والنمو</h3>
       </div>
-      <div class="status-row">
-        <div class="status with">⏱ سريع</div>
-        <div class="status with">✓ ثقة</div>
-        <div class="status with">📈 قابل</div>
-      </div>
-      <p class="closer">
-        OTM System™ كيعطيك نظام مجرب، صوت خاص بيك، و clients كيتيقو فيك.
-      </p>
+
+      <ul class="comparison-list">
+        <li>
+          <span class="check-icon">✓</span>
+          <div>
+            <strong>Content Engine™</strong>
+            <p>نظام محتوى مجرب كيجيب ليك كليان مهتمين</p>
+          </div>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <div>
+            <strong>تموقع وسلطة (Positioning)</strong>
+            <p>الناس كتثق فيك وكتشري بالقيمة ديالك</p>
+          </div>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <div>
+            <strong>صوت فريد خاص بيك</strong>
+            <p>مستحيل يتقلد، وكيخليك الاختيار الأول</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 
-  <!-- REDESIGNED VALUE PROPOSITION HIGHLIGHT CONTAINER -->
+  <!-- VALUE PROPOSITION HIGHLIGHT CONTAINER -->
   <div class="value-prop-card">
     <div class="value-prop-inner">
       <p>
@@ -159,17 +160,17 @@
   <div class="otm-spacer-divider"><div class="otm-spacer-line"></div></div>
 
   <!-- BLOCK 3: WHY OTM SYSTEM DIFFERENT -->
-  <section class="container" style="padding-top: 0; padding-bottom: 0;">
-    <h2 style="margin-bottom: 24px; text-align: center;">علاش OTM System™ مختلف؟</h2>
-    <div class="features-grid" style="grid-template-columns: repeat(1, 1fr); max-width: 600px; gap: 12px;">
-      <div class="feature-item" style="background: var(--card-bg); border: 1px solid var(--border-color); padding: 16px 20px; border-radius: 12px; text-align: right;">
-        <p class="title" style="font-weight: 900; margin-bottom: 4px;">01 | Positioning™ | <span style="color: var(--text-muted); font-weight: normal;">كنلقاو المكان اللي تقدر تملكو فالسوق.</span></p>
+  <section class="container">
+    <h2 class="section-title">علاش OTM System™ مختلف؟</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <p class="title">01 | Positioning™ | <span class="desc">كنلقاو المكان اللي تقدر تملكو فالسوق.</span></p>
       </div>
-      <div class="feature-item" style="background: var(--card-bg); border: 1px solid var(--border-color); padding: 16px 20px; border-radius: 12px; text-align: right;">
-        <p class="title" style="font-weight: 900; margin-bottom: 4px;">02 | Framework™ | <span style="color: var(--text-muted); font-weight: normal;">نظام واضح ومجرب، مبني على بيانات حقيقية.</span></p>
+      <div class="feature-item">
+        <p class="title">02 | Framework™ | <span class="desc">نظام واضح ومجرب، مبني على بيانات حقيقية.</span></p>
       </div>
-      <div class="feature-item" style="background: var(--card-bg); border: 1px solid var(--border-color); padding: 16px 20px; border-radius: 12px; text-align: right;">
-        <p class="title" style="font-weight: 900; margin-bottom: 4px;">03 | Content Engine™ | <span style="color: var(--text-muted); font-weight: normal;">كل محتوى عندو هدف: ثقة، مكانة، وعملاء.</span></p>
+      <div class="feature-item">
+        <p class="title">03 | Content Engine™ | <span class="desc">كل محتوى عندو هدف: ثقة، مكانة، وعملاء.</span></p>
       </div>
     </div>
   </section>
@@ -177,9 +178,9 @@
   <!-- SPACER DIVIDER -->
   <div class="otm-spacer-divider"><div class="otm-spacer-line"></div></div>
 
-  <!-- BLOCK 4: TWO SMALLER VIDEO TESTIMONIALS + HORIZONTAL SLOW INFINITE MARQUEE TESTIMONIALS -->
+  <!-- BLOCK 4: TESTIMONIALS -->
   <section class="proof-section">
-    <div class="text-center" style="margin-bottom: 20px;">
+    <div class="text-center" style="margin-bottom: 24px;">
       <h2>شنو كايقولو الناس علينا</h2>
     </div>
 
@@ -199,8 +200,6 @@
 
     <div class="testimonials-marquee-wrapper">
       <div class="testimonials-track">
-      
-
         <div class="custom-proof-box">
           <p>"من أول شهر وأنا خدام مع باري، وبصراحة الخدمة ديالو عجباتني بزاف. كيهتم بالتفاصيل، والنتيجة ديما كتفوت التوقعات"</p>
           <div class="custom-review-author">
@@ -212,7 +211,7 @@
           </div>
         </div>
 
-          <div class="custom-proof-box">
+        <div class="custom-proof-box">
           <p>"باري من أفضل الناس اللي خدمت معهم. تعاملت معاه قرابة عامين، وبكل صراحة إنسان راقي، تقدر تثق فيه بكل راحة، وما عمرني واجهت معاه أي مشكل."</p>
           <div class="custom-review-author">
             <img src="heymossab.jpg" alt="heymossab" class="custom-review-avatar">
@@ -223,7 +222,6 @@
           </div>
         </div>
 
-        
         <div class="custom-proof-box">
           <p>"الخدمة كانت ممتازة، وماشي غير لبّات توقعات الزبناء ديالنا، بل فاقتهم."</p>
           <div class="custom-review-author">
@@ -256,10 +254,6 @@
             </div>
           </div>
         </div>
-
-      
-
-      
       </div>
     </div>
   </section>
@@ -268,7 +262,7 @@
   <div class="otm-spacer-divider"><div class="otm-spacer-line"></div></div>
 
   <!-- BLOCK 5: FAQ SECTION -->
-  <section class="section faq-section" id="faqSection" style="max-width: 750px; margin: 0 auto;">
+  <section class="section faq-section" id="faqSection">
     <div class="text-center">
       <h2>الأسئلة الشائعة</h2>
       <p class="subtitle-premium-light">كل ما تحتاجه من أجوبة حول نظام OTM System™</p>
@@ -276,44 +270,44 @@
 
     <div class="faq-container">
       <details class="faq-item">
-        <summary>▼ واش خاصني نكون كنصنع المحتوى من قبل؟</summary>
+        <summary>واش خاصني نكون كنصنع المحتوى من قبل؟</summary>
         <div class="faq-answer">
           <p>لا. كنبداو من الأساس: التموقع، الرسالة، وأنواع المحتوى اللي خاصك تنشر باش تبني الثقة وتجلب الجمهور المناسب.</p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary>▼ شحال من الوقت خاصني نخصص؟</summary>
+        <summary>شحال من الوقت خاصني نخصص؟</summary>
         <div class="faq-answer">
           <p>هذا كيعتمد على الحالة ديالك، ولكن خاص يكون عندك استعداد تخصص وقت باش تصور المحتوى، تراجع الأفكار، وتطبق النظام بشكل مستمر.</p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary>▼ واش النتائج مضمونة؟</summary>
+        <summary>واش النتائج مضمونة؟</summary>
         <div class="faq-answer">
           <p>لا. حيت النتائج كتختلف من شخص لآخر، وكتتمد على السوق، العرض، والتطبيق. ولكن اللي نقدر نضمنوه هو أننا غادي نخدمو معاك باستراتيجية واضحة ومجربة بدل التخمين والعشوائية.</p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary>▼ شنو المطلوب مني بالضبط؟</summary>
+        <summary>شنو المطلوب مني بالضبط؟</summary>
         <div class="faq-answer">
           <p>خسّك تكون عندك:</p>
           <ul style="padding-right: 20px; margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
-            <li> خدمة أو خبرة حقيقية</li>
-            <li> استعداد تبني البراند الشخصي ديالك</li>
-            <li> التزام بتطبيق النظام</li>
-            <li> استعداد تصنع المحتوى بشكل مستمر</li>
+            <li>خدمة أو خبرة حقيقية</li>
+            <li>استعداد تبني البراند الشخصي ديالك</li>
+            <li>التزام بتطبيق النظام</li>
+            <li>استعداد تصنع المحتوى بشكل مستمر</li>
           </ul>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary>▼ واش OTM System™ مناسب لأي مجال؟</summary>
+        <summary>واش OTM System™ مناسب لأي مجال؟</summary>
         <div class="faq-answer">
           <p>النظام خدام خصوصاً مع:</p>
-          <p style="margin-top: 4px; font-weight: 700; color: var(--accent);">Founders | Consultants | Coaches | Experts | Service Providers</p>
+          <p style="margin-top: 4px; font-weight: 700; color: var(--brand-purple);">Founders | Consultants | Coaches | Experts | Service Providers</p>
           <p style="margin-top: 8px;">إذا كانت القيمة ديالك كتحتاج الثقة باش الناس تشري منك، غالباً النظام مناسب ليك.</p>
         </div>
       </details>
@@ -323,7 +317,7 @@
   <!-- SPACER DIVIDER -->
   <div class="otm-spacer-divider"><div class="otm-spacer-line"></div></div>
 
-  <!-- BLOCK 6: REDESIGNED FOUNDER / ABOUT SECTION WITH PICTURE & SPECS -->
+  <!-- BLOCK 6: ABOUT SECTION -->
   <section class="about-wrapper">
     <div class="about-redesigned-card">
       <div class="about-grid-content">
@@ -357,16 +351,14 @@
   <!-- SPACER DIVIDER -->
   <div class="otm-spacer-divider"><div class="otm-spacer-line"></div></div>
 
-  <!-- BLOCK 7: APPLICATION MULTI-STEP FORM SECTION -->
+  <!-- BLOCK 7: APPLICATION FORM -->
   <section class="final-cta">
     <div class="final-cta-wrap">
-      <!-- Hero Header & Video -->
-      <div id="hero-video" style="margin-bottom: 24px; text-align: center; scroll-margin-top: 120px;">
-        <h2 style="font-size: 28px; font-weight: 800; color: #fffffe; line-height: 1.4; margin-bottom: 16px;">
+      <div id="hero-video" style="margin-bottom: 24px; text-align: center;">
+        <h2 class="video-hero-heading">
           انضم لنظام OTM System™ وابني براند شخصية كاتبيع ليك
         </h2>
         
-        <!-- HERO VIDEO BEFORE THE FORM -->
         <div class="standalone-hero-video-wrapper">
           <div class="hero-form-video-container">
             <script src="https://fast.wistia.com/player.js" async></script>
@@ -376,14 +368,12 @@
           </div>
         </div>
         
-        <a href="#final-form" class="hero-main-btn" style="margin-top: 0;">احجز مقعدك الآن</a>
+        <a href="#final-form" class="hero-btn-secondary" style="margin-top: 0;">احجز مقعدك الآن</a>
       </div>
 
-      <!-- SPACER DIVIDER -->
       <div class="otm-spacer-divider"><div class="otm-spacer-line"></div></div>
 
-      <!-- TARGET SCROLL LOCATION FOR ALL #final-form CTA BUTTONS -->
-      <div id="final-form" class="application-form" style="scroll-margin-top: 100px;">
+      <div id="final-form" class="application-form">
         <div class="text-center" style="margin-bottom: 20px;">
           <h2>إلى كنت باغي تولي الاختيار الأول فالمجال ديالك...</h2>
           <p class="subtitle-premium-light" style="margin-bottom: 0;">عمّر الطلب وشوف واش OTM System™ مناسب ليك.</p>
@@ -524,36 +514,52 @@
     </div>
   </section>
 
-  <!-- BLOCK 8: UPDATED FOOTER (OUTSIDE THE SECTION) -->
-  <footer>
-    <div class="footer-brand-title">Become the brand people choose</div>
-    
-    <!-- Social Media Logos / Links -->
-    <div class="footer-social-icons">
-      <a href="https://instagram.com/bariabder" target="_blank" aria-label="Instagram">
-        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-      </a>
-      <a href="https://www.youtube.com/@bariabder" target="_blank" aria-label="YouTube">
-        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-      </a>
-      <a href="https://x.com/bariabder" target="_blank" aria-label="X">
-        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-    </div>
+  <!-- APPLE-INSPIRED MINIMAL FOOTER -->
+  <footer class="apple-footer">
+    <div class="apple-footer-inner">
+      <div class="apple-footer-top">
+        <div class="apple-footer-brand">
+          <span class="apple-brand-quote">Become the brand people choose.</span>
+        </div>
+        
+        <div class="apple-social-links">
+          <a href="https://x.com/bariabder" target="_blank" aria-label="X" class="apple-social-icon">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@bariabder" target="_blank" aria-label="YouTube" class="apple-social-icon">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://instagram.com/bariabder" target="_blank" aria-label="Instagram" class="apple-social-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
 
-    <div class="footer-action-pill">
-      <a href="/" aria-label="Home"><img src="main-logo.svg" style="width:28px;" alt="Logo"></a>
-      <a href="/privacy">سياسة الخصوصية</a>
-      <a href="/Terms-of-Service">شروط الخدمة</a>
-    </div>
+      <div class="apple-footer-divider"></div>
 
-    <div class="footer-disclaimers-custom">
-      <p>هذا الموقع مستقل وغير تابع أو مدعوم من شركة Meta Platforms, Inc. علامتي Facebook و Instagram هما ملكية مسجلة لشركة Meta.</p>
-      <p><strong>إخلاء مسؤولية:</strong> النتائج المعروضة ليست نموذجية وتختلف من شخص لآخر. لا نضمن أرباحاً مالية محددة.</p>
-      <p>للاستفسارات والتواصل: <a href="mailto:support@bariabder.com">support@bariabder.com</a></p>
+      <div class="apple-footer-disclaimers">
+        <p>هذا الموقع مستقل وغير تابع أو مدعوم من شركة Meta Platforms, Inc. علامتي Facebook و Instagram هما ملكية مسجلة لشركة Meta.</p>
+        <p>النتائج المعروضة ليست نموذجية وتختلف من شخص لآخر حسب التطبيق والالتزام والاستراتيجية. لا نضمن أرباحاً مالية محددة.</p>
+      </div>
+
+      <div class="apple-footer-divider sub"></div>
+
+      <div class="apple-footer-bottom">
+        <div class="apple-copyright">
+          © 2026 OTM System™ by Bari Abder. جميع الحقوق محفوظة.
+        </div>
+        
+        <div class="apple-legal-links">
+          <a href="/privacy">سياسة الخصوصية</a>
+          <span class="apple-dot">•</span>
+          <a href="/Terms-of-Service">شروط الخدمة</a>
+          <span class="apple-dot">•</span>
+          <a href="mailto:support@bariabder.com">support@bariabder.com</a>
+        </div>
+      </div>
     </div>
-    <script src="script.js"></script>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
