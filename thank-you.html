@@ -1,336 +1,268 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تم استلام طلبك — Organic Trust Machine™</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شكراً لك | تم استلام طلبك</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* ==========================================================================
+       THANK YOU PAGE CUSTOM LAYOUT
+       ========================================================================== */
+    .thankyou-viewport {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    .thankyou-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+    }
 
-<style>
-:root {
-  --bg-main: #ffffff;
-  --text-main: #0b0b0c;
-  --text-muted: #66666e;
-  --purple-brand: #524bb5; /* اللون المعتمد الجديد */
-  --purple-soft: #f4f3ff;
-  --purple-accent: #d3c5f7;
-  --border-subtle: rgba(82, 75, 181, 0.08);
-}
+    .thankyou-card {
+      background: var(--apple-surface) !important;
+      border: 1px solid var(--apple-border) !important;
+      border-radius: var(--radius-xl);
+      padding: 45px 36px 40px;
+      max-width: 680px;
+      width: 100%;
+      box-shadow: var(--apple-shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    /* Top Accent Progress Bar to match the form top style */
+    .thankyou-top-bar {
+      width: 100%;
+      height: 4px;
+      background: var(--apple-surface-tertiary);
+      border-radius: var(--radius-full);
+      margin-bottom: 32px;
+      overflow: hidden;
+      position: relative;
+    }
 
-body {
-  font-family: 'Cairo', sans-serif;
-  background-color: var(--bg-main);
-  color: var(--text-main);
-  line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
-  padding-bottom: 100px;
-}
+    .thankyou-top-bar-fill {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: var(--brand-purple);
+      border-radius: var(--radius-full);
+    }
 
-.wrapper {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 60px 24px;
-}
+    /* Card Content */
+    .thankyou-card h1 {
+      font-size: clamp(24px, 4vw, 30px);
+      font-weight: 900;
+      color: var(--apple-text-primary);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
 
-/* HEADER SECTION */
-.header-section {
-  text-align: center;
-  margin-bottom: 40px;
-}
+    .thankyou-card .sub-caption {
+      font-size: 14.5px;
+      color: var(--apple-text-secondary);
+      margin-bottom: 30px;
+      font-weight: 500;
+      line-height: 1.6;
+    }
 
-.success-badge {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  color: var(--purple-brand);
-  background: var(--purple-soft);
-  padding: 6px 16px;
-  border-radius: 30px;
-  margin-bottom: 20px;
-}
+    /* Information Box */
+    .info-summary-box {
+      width: 100%;
+      background: var(--apple-surface-secondary);
+      border: 1px solid var(--apple-border);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: right;
+    }
 
-h1 {
-  font-size: clamp(24px, 5vw, 34px);
-  font-weight: 900;
-  letter-spacing: -0.5px;
-  line-height: 1.4;
-  margin-bottom: 12px;
-}
+    .info-summary-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--apple-text-primary);
+    }
 
-.subtitle {
-  color: var(--text-muted);
-  font-size: 15px;
-  font-weight: 400;
-}
+    .info-check-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--brand-purple-tint);
+      color: var(--brand-purple);
+      font-size: 12px;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
 
-/* PROGRESS INDICATOR */
-.progress-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 24px;
-}
+    /* Direct WhatsApp Button (Matched to the purple button layout in the image) */
+    .btn-action-group {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start; /* Matches screenshot button alignment (left in RTL) */
+      align-items: center;
+      gap: 16px;
+    }
 
-.progress-track {
-  width: 140px;
-  height: 4px;
-  background: #f0edf9;
-  border-radius: 2px;
-  overflow: hidden;
-}
+    .btn-whatsapp-next {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--brand-purple) !important;
+      color: #FFFFFF !important;
+      padding: 12px 26px;
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 14px var(--brand-purple-glow);
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+    }
 
-.progress-fill {
-  width: 90%;
-  height: 100%;
-  background: var(--purple-accent);
-  border-radius: 2px;
-}
+    .btn-whatsapp-next:hover {
+      background: var(--brand-purple-hover) !important;
+      transform: translateY(-1px);
+    }
 
-.progress-label {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--text-muted);
-}
+    .btn-whatsapp-next svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
 
-/* VIDEO CONTAINER */
-.video-container {
-  background: var(--purple-soft);
-  border: none; /* تم إزالة الحافة هنا */
-  border-radius: 16px;
-  padding: 8px;
-  margin-bottom: 32px;
-}
+    .btn-whatsapp-next .arrow {
+      font-size: 16px;
+      line-height: 1;
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
 
-.video-player {
-  width: 100%;
-  aspect-ratio: 16/9;
-  background: #09090b;
-  border-radius: 10px;
-  overflow: hidden;
-}
+    .btn-whatsapp-next:hover .arrow {
+      transform: translateX(-3px);
+    }
 
-/* PREMIUM PURPLE CTA BUTTON */
-.cta-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background: var(--purple-brand);
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 16px;
-  padding: 18px 32px;
-  border-radius: 12px;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  margin-bottom: 40px;
-  box-shadow: 0 10px 25px rgba(82, 75, 181, 0.15);
-}
-
-.cta-button:hover {
-  background: #413a9e;
-  transform: translateY(-1px);
-  box-shadow: 0 12px 30px rgba(82, 75, 181, 0.25);
-}
-
-.cta-button svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-}
-
-/* EXPECTATION LIST (WHAT HAPPENS NEXT) */
-.info-box {
-  background: var(--purple-soft);
-  border: 1px solid var(--border-subtle);
-  border-radius: 14px;
-  padding: 24px;
-  text-align: right;
-  margin-bottom: 40px;
-}
-
-.info-box h2 {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 16px;
-}
-
-.info-list {
-  list-style: none;
-}
-
-.info-list li {
-  font-size: 14px;
-  color: var(--text-muted);
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.info-list li:last-child {
-  margin-bottom: 0;
-}
-
-.info-list li::before {
-  content: "";
-  display: block;
-  width: 6px;
-  height: 6px;
-  background: var(--purple-brand);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-/* TRUST FOOTER */
-.profile-trust {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.profile-img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #f0edf9;
-  object-fit: cover;
-  border: 2px solid var(--purple-accent);
-}
-
-.profile-info {
-  text-align: right;
-}
-
-.profile-info p {
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.profile-info span {
-  font-size: 12px;
-  color: var(--text-muted);
-  display: block;
-}
-
-/* STICKY BOTTOM BAR FOR MOBILE */
-.mobile-sticky-bar {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  padding: 16px 24px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  z-index: 1000;
-}
-
-.mobile-sticky-bar .cta-button {
-  margin-bottom: 0;
-  padding: 14px 24px;
-  font-size: 15px;
-}
-
-@media (max-width: 768px) {
-  .mobile-sticky-bar {
-    display: block;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<div class="wrapper">
-
-  <!-- HEADER -->
-  <header class="header-section">
-    <span class="success-badge">✓ تم استلام الطلب بنجاح</span>
-    <h1>باقي غير خطوة وحدة ونبدأو.</h1>
-    <p class="subtitle">شاهد الفيديو أسفله لتأكيد حجز مكانك فوراً.</p>
-    
-    <div class="progress-wrapper">
-      <div class="progress-track">
-        <div class="progress-fill"></div>
-      </div>
-      <span class="progress-label">90% مكتمل</span>
-    </div>
-  </header>
-
- <!-- VIDEO VIEW -->
-<div class="video-container">
-  <div class="video-player">
-    <!-- وسم الفيديو هنا -->
-    <script src="https://fast.wistia.com/player.js" async></script>
-    <script src="https://fast.wistia.com/embed/l5c1wupvip.js" async type="module"></script>
-    <style>
-      wistia-player[media-id='l5c1wupvip']:not(:defined) { 
-        background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/l5c1wupvip/swatch'); 
-        display: block; 
-        filter: blur(5px); 
-        padding-top:56.25%; 
+    @media (max-width: 768px) {
+      .thankyou-card {
+        padding: 30px 20px;
       }
-    </style> 
-    <wistia-player media-id="l5c1wupvip" aspect="1.7777777777777777"></wistia-player>
-  </div>
-</div>
+      .btn-action-group {
+        justify-content: center;
+      }
+      .btn-whatsapp-next {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body class="thankyou-viewport">
 
-  <!-- MAIN PURPLE CTA -->
-  <a class="cta-button" 
-     href="https://wa.me/212630089356?text=%D8%A3%D9%86%D8%A7%20%D8%AC%D8%A7%D9%87%D8%B2" 
-     target="_blank">
-    <svg viewBox="0 0 24 24">
-      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-3.859c1.644.975 3.51 1.49 5.415 1.491 5.432 0 9.851-4.42 9.855-9.852.002-2.633-1.025-5.107-2.892-6.976C17.15 2.935 14.674 1.907 12.004 1.907c-5.435 0-9.856 4.42-9.86 9.854-.001 1.996.522 3.946 1.517 5.672l-.995 3.636 3.73-.978zm11.567-7.382c-.315-.158-1.86-.918-2.149-1.023-.289-.105-.499-.158-.709.158-.21.316-.813 1.023-.996 1.233-.183.21-.367.237-.682.079-.315-.158-1.33-.49-2.532-1.562-.936-.836-1.568-1.868-1.751-2.184-.183-.315-.02-.486.138-.643.142-.142.315-.368.473-.553.158-.184.21-.316.315-.527.105-.21.053-.395-.026-.553-.079-.158-.709-1.71-.972-2.34-.257-.614-.517-.531-.709-.541-.183-.01-.394-.012-.604-.012-.21 0-.552.079-.841.395-.289.316-1.104 1.079-1.104 2.632 0 1.553 1.13 3.053 1.288 3.264.158.21 2.221 3.391 5.38 4.756.752.325 1.339.519 1.797.665.756.24 1.444.207 1.989.126.608-.09 1.86-.76 2.122-1.458.263-.697.263-1.29.184-1.418-.079-.127-.289-.205-.604-.363z"/>
-    </svg>
-    إرسال "أنا جاهز" لتأكيد حجز مكانك
-  </a>
+  <main class="thankyou-main">
+    <div class="thankyou-card">
+      
+      <div class="thankyou-top-bar">
+        <div class="thankyou-top-bar-fill"></div>
+      </div>
 
-  <!-- WHAT HAPPENS NEXT -->
-  <div class="info-box">
-    <h2>ماذا سيحدث بعد إرسال الرسالة?</h2>
-    <ul class="info-list">
-      <li>مراجعة دقيقة وتدقيق للمعلومات التي أرسلتها.</li>
-      <li>التواصل المباشر معك عبر واتساب لتأكيد التفاصيل.</li>
-      <li>بدء التخطيط الفعلي لبناء وتطوير البراند الشخصي الخاص بك.</li>
-    </ul>
-  </div>
+      <h1>شكراً لك، تم استلام طلبك بنجاح!</h1>
+      <p class="sub-caption">المعلومات ديالك راها وصلات لينا وغادي نتواصلو معاك قريباً باش نكملو باقي التفاصيل.</p>
 
-  <!-- PERSONAL TRUST FOOTER -->
-  <footer class="profile-trust">
-    <div class="profile-info">
-      <p>سأراجع طلبك بشكل شخصي</p>
-      <span>نلتقي في الواتساب لبناء الـ Trust Machine الخاصة بك.</span>
+      <div class="info-summary-box">
+        <div class="info-summary-item">
+          <span class="info-check-icon">✓</span>
+          <span>تم تسجيل الطلب في لائحة الانتظار لـ <strong>OTM System™</strong>.</span>
+        </div>
+        <div class="info-summary-item">
+          <span class="info-check-icon">✓</span>
+          <span>غادي يتم التواصل معك مباشرة عبر <strong>WhatsApp</strong> للإجابة على التساؤلات.</span>
+        </div>
+      </div>
+
+      <div class="btn-action-group">
+        <a href="https://wa.me/satrva" class="btn-whatsapp-next" target="_blank" rel="noopener noreferrer">
+         
+         <span>عندك سؤال؟ سولنا فـ WhatsApp</span>
+     <svg viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+        </a>
+      </div>
+
     </div>
-    <img src="your-photo.jpg" alt="Consultant" class="profile-img" onerror="this.style.display='none'">
+  </main>
+
+   <footer class="apple-footer">
+    <div class="apple-footer-inner">
+      <div class="apple-footer-top">
+        <div class="apple-footer-brand">
+          <span class="apple-brand-quote">Become the brand people choose.</span>
+        </div>
+        
+        <div class="apple-social-links">
+          <a href="https://x.com/bariabder" target="_blank" aria-label="X" class="apple-social-icon">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@bariabder" target="_blank" aria-label="YouTube" class="apple-social-icon">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://instagram.com/bariabder" target="_blank" aria-label="Instagram" class="apple-social-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="apple-footer-divider"></div>
+
+      <div class="apple-footer-disclaimers">
+        <p>هذا الموقع مستقل وغير تابع أو مدعوم من شركة Meta Platforms, Inc. علامتي Facebook و Instagram هما ملكية مسجلة لشركة Meta.</p>
+        <p>النتائج المعروضة ليست نموذجية وتختلف من شخص لآخر حسب التطبيق والالتزام والاستراتيجية. لا نضمن أرباحاً مالية محددة.</p>
+      </div>
+
+      <div class="apple-footer-divider sub"></div>
+
+      <div class="apple-footer-bottom">
+        <div class="apple-copyright">
+          © 2026 OTM System™ by Bari Abder. جميع الحقوق محفوظة.
+        </div>
+        
+        <div class="apple-legal-links">
+          <a href="/privacy">سياسة الخصوصية</a>
+          <span class="apple-dot">•</span>
+          <a href="/Terms-of-Service">شروط الخدمة</a>
+          <span class="apple-dot">•</span>
+          <a href="mailto:support@bariabder.com">support@bariabder.com</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
-</div>
-
-<!-- STICKY BAR FOR MOBILE -->
-<div class="mobile-sticky-bar">
-  <a class="cta-button" 
-     href="https://wa.me/212630089356?text=%D8%A3%D9%86%D8%A7%20%D8%AC%D8%A7%D9%87%D8%B2" 
-     target="_blank">
-    🚀 إرسال "أنا جاهز"
-  </a>
-</div>
+  <script src="script.js"></script>
 
 </body>
 </html>
