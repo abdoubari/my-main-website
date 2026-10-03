@@ -31,7 +31,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "SF Arabic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro AR", "SF Pro Display", "SF Arabic", "Segoe UI", Roboto, sans-serif;
 }
 
 html {
@@ -63,7 +63,7 @@ a {
 
 #final-form,
 #hero-video {
-  scroll-margin-top: 110px;
+  scroll-margin-top: 80px;
 }
 
 .text-center {
@@ -184,14 +184,21 @@ a {
 }
 
 /* ==========================================================================
-   HERO SECTION
+   HERO / EMPTY SECTION REMOVAL
    ========================================================================== */
+.hero-section-custom:empty {
+  display: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 0 !important;
+}
+
 .hero-section-custom {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 140px 20px 45px 20px;
+  padding: 85px 20px 10px 20px;
   max-width: 880px;
   margin: 0 auto;
 }
@@ -477,7 +484,7 @@ a {
 }
 
 /* ==========================================================================
-   TESTIMONIALS & PROOF
+   TESTIMONIALS & PROOF (FIXED: NO BLACK PILLARBOX STROKE)
    ========================================================================== */
 .proof-section {
   max-width: 1000px;
@@ -488,20 +495,38 @@ a {
 .small-video-testimonials-grid {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 20px;
-  max-width: 650px;
+  max-width: 560px;
   margin: 0 auto 30px;
   padding: 0 16px;
 }
 
 .small-video-testimonial-card {
   flex: 1;
-  max-width: 300px;
-  background: var(--apple-surface);
+  max-width: 225px; /* Keeps width controlled for compact height */
+  aspect-ratio: 9 / 16; /* Guarantees strict native aspect ratio without black letterboxing */
+  background: transparent !important;
   border: 1px solid var(--apple-border);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: var(--apple-shadow-sm);
+  box-shadow: var(--apple-shadow-md);
+  position: relative;
+}
+
+.small-video-testimonial-card wistia-player {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  border-radius: inherit;
+  overflow: hidden;
+  background-color: transparent !important;
+}
+
+/* Removes any inner dark stroke artifacting from player shadow DOM */
+.small-video-testimonial-card wistia-player::part(container) {
+  border-radius: var(--radius-xl);
+  background: transparent !important;
 }
 
 .testimonials-marquee-wrapper {
@@ -580,7 +605,7 @@ a {
 }
 
 /* ==========================================================================
-   FAQ SECTION
+   FAQ SECTION (BENCHMARK WIDTH = 750px)
    ========================================================================== */
 .faq-section {
   max-width: 750px;
@@ -737,12 +762,12 @@ a {
 }
 
 /* ==========================================================================
-   FINAL CTA & APPLICATION FORM
+   HERO VIDEO BOX & APPLICATION FORM (MATCHED TO FAQ 750px WIDTH)
    ========================================================================== */
 .final-cta {
-  max-width: 750px;
+  max-width: 750px; /* Matched exactly to FAQ width */
   margin: 0 auto;
-  padding: 30px 20px 60px;
+  padding: 75px 20px 50px;
 }
 
 .hero-video-box {
@@ -751,28 +776,76 @@ a {
 }
 
 .video-hero-heading {
-  font-size: 24px;
-  font-weight: 800;
-  color: #FFFFFF;
-  line-height: 1.4;
-  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  line-height: 1.35;
+  margin-bottom: 22px;
 }
 
+/* The Dream Outcome (Prominent & Crisp) */
+.heading-promise {
+  font-size: clamp(23px, 4vw, 34px);
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  max-width: 800px;
+}
+
+/* The Pain (High-converting contrast badge) */
+.heading-pain-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(239, 68, 68, 0.15); /* Soft crimson/red tint for pain */
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  color: #FECACA !important;
+  -webkit-text-fill-color: #FECACA !important;
+  font-size: clamp(15px, 2.6vw, 19px);
+  font-weight: 800;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.heading-pain-badge .pain-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.3);
+  color: #F87171 !important;
+  -webkit-text-fill-color: #F87171 !important;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+/* Main hero video is prominently sized */
 .standalone-hero-video-wrapper {
-  max-width: 540px;
-  margin: 20px auto 30px;
+  max-width: 750px;
+  width: 100%;
+  margin: 16px auto 28px;
 }
 
 .hero-form-video-container {
   width: 100%;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: var(--apple-shadow-md);
+  box-shadow: var(--apple-shadow-lg);
   border: 1px solid var(--apple-border);
   background: #000000;
 }
 
+/* Form Matches FAQ Exactly */
 .application-form {
+  width: 100%;
+  max-width: 750px; /* Same width as FAQ */
+  margin: 0 auto;
   background: var(--apple-surface);
   border: 1px solid var(--apple-border);
   border-radius: var(--radius-xl);
@@ -1035,7 +1108,114 @@ a {
   color: rgba(255, 255, 255, 0.4);
   font-size: 9px;
 }
+/* ==========================================================================
+   CLEAN CLOCKWISE GLOW & STROKE ANIMATION FOR CTA BUTTONS
+   ========================================================================== */
 
+/* Modern CSS property registration for smooth 360-degree rotation */
+@property --beam-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes clockwiseBorderBeam {
+  0% {
+    --beam-angle: 0deg;
+  }
+  100% {
+    --beam-angle: 360deg;
+  }
+}
+
+/* Fallback rotation for browsers that do not support @property */
+@keyframes clockwiseSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Target all primary CTA buttons */
+.nav-cta-btn,
+.hero-btn-secondary,
+.btn-submit-form {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  overflow: visible;
+  /* Smooth scale on hover */
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+/* The Animated Clockwise Stroke Beam */
+.nav-cta-btn::before,
+.hero-btn-secondary::before,
+.btn-submit-form::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px; /* Stroke thickness */
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--beam-angle),
+    transparent 0deg,
+    rgba(255, 255, 255, 0.05) 90deg,
+    rgba(255, 255, 255, 0.85) 180deg,
+    rgba(165, 180, 252, 1) 220deg,     /* Indigo/light purple accent */
+    transparent 270deg
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: clockwiseBorderBeam 4s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Subtle glowing aura traveling behind the button */
+.nav-cta-btn::after,
+.hero-btn-secondary::after,
+.btn-submit-form::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--beam-angle),
+    transparent 120deg,
+    rgba(255, 255, 255, 0.3) 180deg,
+    rgba(129, 140, 248, 0.45) 220deg,
+    transparent 280deg
+  );
+  filter: blur(6px);
+  opacity: 0.7;
+  animation: clockwiseBorderBeam 4s linear infinite;
+  pointer-events: none;
+  z-index: -2;
+  transition: opacity 0.3s ease;
+}
+
+/* Glow intensifies and slightly speeds up on hover */
+.nav-cta-btn:hover::after,
+.hero-btn-secondary:hover::after,
+.btn-submit-form:hover::after {
+  opacity: 1;
+  filter: blur(8px);
+}
+
+.nav-cta-btn:hover,
+.hero-btn-secondary:hover,
+.btn-submit-form:hover {
+  transform: translateY(-1px) scale(1.02);
+}
 /* ==========================================================================
    MOBILE RESPONSIVENESS
    ========================================================================== */
@@ -1083,8 +1263,8 @@ a {
     display: flex; 
   }
 
-  .nav-mobile-toggle span {
-    background-color: #FFFFFF;
+  .nav-mobile-toggle span { 
+    background-color: #FFFFFF; 
   }
 
   .nav-links-center {
@@ -1125,12 +1305,26 @@ a {
     color: #FFFFFF;
   }
 
+  /* No dead space above the video on mobile */
   .hero-section-custom { 
-    padding-top: 110px; 
+    display: none !important;
+    padding: 0 !important; 
+    margin: 0 !important;
   }
-  
-  .hero-main-title { 
-    font-size: 30px; 
+
+  .final-cta {
+    padding-top: 70px !important;
+    padding-bottom: 40px;
+  }
+
+  .standalone-hero-video-wrapper {
+    max-width: 100%;
+    margin: 10px auto 20px;
+  }
+
+  .video-hero-heading {
+    font-size: 20px;
+    margin-bottom: 12px;
   }
 
   .wrap {
@@ -1173,11 +1367,12 @@ a {
     transform: none;
   }
 
+  /* Compact mobile testimonial cards without black borders */
   .small-video-testimonials-grid {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    gap: 14px;
+    gap: 12px;
     width: 100%;
     max-width: 100%;
     padding: 10px 20px 20px 20px;
@@ -1194,13 +1389,14 @@ a {
   }
 
   .small-video-testimonial-card {
-    flex: 0 0 78%;
-    max-width: 78%;
+    flex: 0 0 58%;
+    max-width: 200px;
+    aspect-ratio: 9 / 16;
     scroll-snap-align: center;
     border-radius: var(--radius-xl);
     box-shadow: var(--apple-shadow-md);
   }
-  
+
   .about-grid-content { 
     flex-direction: column; 
     text-align: center; 
@@ -1230,13 +1426,6 @@ a {
     align-items: flex-start;
     gap: 8px;
   }
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro AR", "SF Pro Display", "Segoe UI", Roboto, sans-serif !important;
 }
 
 /* Force visible off-white on all text elements and symbols */
