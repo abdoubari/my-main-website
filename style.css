@@ -1,5 +1,5 @@
-wistia-player[media-id='sv53ju3n2d']:not(:defined) {
-  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/sv53ju3n2d/swatch');
+wistia-player[media-id='49ixtifad7']:not(:defined) {
+  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/49ixtifad7/swatch');
   display: block;
   filter: blur(5px);
   padding-top: 56.25%;
@@ -74,29 +74,51 @@ body {
   border-bottom: 1px solid var(--border-subtle);
 }
 
+@property --beam-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes clockwiseBorderBeam {
+  0% {
+    --beam-angle: 0deg;
+  }
+  100% {
+    --beam-angle: 360deg;
+  }
+}
+
+
 .btn-main {
   position: relative;
+  z-index: 1;
+  isolation: isolate;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  background: #FFFFFF;
-  color: #0F172A;
-  padding: 13px 32px;
-  border-radius: var(--radius-pill);
-  font-weight: 800;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 15px;
-  border: 1px solid #FFFFFF;
-  cursor: pointer;
-  font-family: inherit;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  isolation: isolate;
-  overflow: visible;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background 0.2s ease;
+  font-weight: 700;
   text-decoration: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              background 0.25s ease, 
+              border-color 0.25s ease, 
+              box-shadow 0.25s ease;
 }
 
+/* Animated Clockwise Rotating Border Stroke */
 .btn-main::before {
   content: "";
   position: absolute;
@@ -111,12 +133,8 @@ body {
     rgba(165, 180, 252, 1) 220deg,
     transparent 270deg
   );
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   animation: clockwiseBorderBeam 4s linear infinite;
@@ -124,6 +142,7 @@ body {
   z-index: -1;
 }
 
+/* Soft Glowing Back-Aura */
 .btn-main::after {
   content: "";
   position: absolute;
@@ -136,29 +155,26 @@ body {
     rgba(129, 140, 248, 0.45) 220deg,
     transparent 280deg
   );
-  filter: blur(6px);
+  filter: blur(8px);
   opacity: 0.7;
   animation: clockwiseBorderBeam 4s linear infinite;
   pointer-events: none;
   z-index: -2;
-  transition: opacity 0.3s ease, filter 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
+/* Hover States */
 .btn-main:hover {
-  background: #F8FAFC;
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.4);
   transform: translateY(-1px) scale(1.02);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .btn-main:hover::after {
   opacity: 1;
-  filter: blur(8px);
+  filter: blur(10px);
 }
-
-.btn-main:active {
-  transform: scale(0.98);
-}
-
 .font-light { font-weight: 300; opacity: 0.9; }
 .font-bold { font-weight: 700; }
 
@@ -674,11 +690,12 @@ body {
 }
 
 .custom-review-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-full);
+  border-radius: 50%;
   object-fit: cover;
-  border: 1px solid var(--border-light);
+  aspect-ratio: 1 / 1;
+  width: 48px;  
+  height: 48px;
+  display: block;
 }
 
 .custom-review-info strong {
@@ -878,33 +895,3 @@ body {
     height: 240px;
   }
   .solution-panel {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-  .footer-inner-content {
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 600px) {
-  .problem-grid, .fit-grid {
-    grid-template-columns: 1fr;
-  }
-  .btn-main {
-    width: 100%;
-  }
-  .small-video-testimonials-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-  .small-video-testimonial-card {
-    width: 100%;
-    max-width: 260px;
-  }
-  .footer-links-group {
-    justify-content: center;
-    gap: 14px;
-  }
-}
