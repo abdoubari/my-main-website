@@ -34,7 +34,36 @@ const videoModal = document.getElementById('videoModal');
 const videoContainer = document.getElementById('videoContainer');
 
 function openVideoModal() {
-  videoContainer.innerHTML = '<wistia-player media-id="sv53ju3n2d" aspect="1.7777777777777777" auto-play="true"></wistia-player>';
+  videoContainer.innerHTML = `
+    <wistia-player id="heroWistiaPlayer" media-id="49ixtifad7" aspect="1.7777777777777777" auto-play="true"></wistia-player>
+    <div style="text-align: center; margin-top: 36px;">
+      <button id="modalCtaBtn" class="btn-main" type="button">
+        احجز جلستك المجانية الآن
+      </button>
+    </div>
+  `;
+
+  const modalCtaBtn = document.getElementById('modalCtaBtn');
+  modalCtaBtn.addEventListener('click', () => {
+
+    const player = document.getElementById('heroWistiaPlayer');
+    if (player && typeof player.pause === 'function') {
+      player.pause();
+    }
+
+
+    if (window.Cal && window.Cal.ns && window.Cal.ns["free-discovery"]) {
+      window.Cal.ns["free-discovery"]("modal", {
+        calLink: "bariabder/free-discovery",
+        config: {
+          layout: "month_view",
+          useSlotsViewOnSmallScreen: true,
+          theme: "auto"
+        }
+      });
+    }
+  });
+
   videoModal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
