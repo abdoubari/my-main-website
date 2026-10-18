@@ -1,434 +1,860 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bariabder | OTMsystem™ </title>
+  <title>Bari Abder — Content Engine</title>
+
+  <style>
+    @font-face {
+      font-family: 'Graphik Arabic';
+      src: url('Graphik Arabic SemiBold.ttf') format('truetype');
+      font-weight: 600;
+      font-style: normal;
+    }
+  </style>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <script src="https://fast.wistia.com/player.js" async></script>
-  <script src="https://fast.wistia.com/embed/49ixtifad7.js" async type="module"></script>
-  <script src="https://fast.wistia.com/embed/xlty4kee3f.js" async type="module"></script>
-  <script src="https://fast.wistia.com/embed/9rakujkciy.js" async type="module"></script>
-
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="fav-icon.png">
-
-  
-  <script type="text/javascript">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { fontFamily: { sans: ['Graphik Arabic', 'Inter', '-apple-system', 'Segoe UI', 'sans-serif'] } } }
+    }
+  </script>
+    <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "xfxluvm6i1");
   </script>
+
+  <!-- Wistia Scripts & Swatch Style -->
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/9rakujkciy.js" async type="module"></script>
+  <style>
+    wistia-player[media-id='9rakujkciy']:not(:defined) { 
+      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/9rakujkciy/swatch'); 
+      display: block; 
+      filter: blur(5px); 
+    }
+
+  </style>
+
+  <style>
+    body { background:#FBF9F5; color:#141413; font-family:'Graphik Arabic','Inter',-apple-system,sans-serif; overflow-x:hidden; letter-spacing:-0.015em; }
+    
+    /* Button Hover Scale Animation */
+    .btn-glow { 
+      background:linear-gradient(180deg,#6366F1 0%,#4F46E5 100%); 
+      color:#fff; 
+      box-shadow:0 4px 20px -2px rgba(79,70,229,.45), inset 0 1px 0 rgba(255,255,255,.2); 
+      transition:transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s cubic-bezier(.16,1,.3,1); 
+      will-change:transform;
+    }
+    .btn-glow:hover { 
+      transform:scale(1.03) translateY(-1px); 
+      box-shadow:0 8px 26px -2px rgba(79,70,229,.6), inset 0 1px 0 rgba(255,255,255,.3); 
+    }
+    .btn-glow:active {
+      transform:scale(0.98);
+    }
+
+    /* Keyword Highlight Box */
+    .hl-box {
+      position: relative;
+      display: inline-block;
+      padding: 0 0.25em;
+      z-index: 1;
+      white-space: nowrap;
+    }
+    .hl-box::before {
+      content: "";
+      position: absolute;
+      inset: 12% -0.08em 8% -0.08em;
+      background-color: #EDE9FE;
+      border-radius: 6px;
+      z-index: -1;
+      transform: rotate(-1deg);
+    }
+
+    .editorial-box { background:#fff; border:1px solid #E7E3D8; border-radius:1.25rem; box-shadow:0 12px 32px -10px rgba(79,70,229,.30), 0 2px 6px rgba(79,70,229,.08); }
+    .purple-shadow { box-shadow:0 18px 44px -12px rgba(79,70,229,.40), 0 2px 8px rgba(79,70,229,.10); }
+    .sf { font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Inter','Segoe UI',sans-serif; font-weight:800; letter-spacing:-0.03em; line-height:1.05; }
+    .dark-box { background:#1d1c1a; border:1px solid #2f2d29; border-radius:1.25rem; box-shadow:0 14px 34px -14px rgba(99,102,241,.45); }
+    .sig { font-family:'Caveat','Segoe Script',cursive; font-weight:700; font-size:1.5rem; line-height:1.1; letter-spacing:0; }
+
+    /* FAQ Section */
+    .faq-section { max-width:680px; margin:0 auto; }
+    .faq-title { color:#141413; font-size:42px; font-weight:800; letter-spacing:-1.5px; line-height:1.1; text-align:center; margin-bottom:28px; }
+    .faq-item { background:#fff; border:1px solid #E7E3D8; border-radius:19px; margin-bottom:14px; overflow:hidden; box-shadow:0 10px 26px -10px rgba(79,70,229,.2); }
+    .faq-question { width:100%; display:flex; flex-direction:row; justify-content:space-between; align-items:center; gap:16px; padding:20px; background:transparent; border:none; color:#141413; font-family:inherit; font-size:16.5px; font-weight:700; line-height:1.6; text-align:right; cursor:pointer; }
+    .faq-question span:first-child { flex:1; text-align:right; direction:rtl; }
+    .faq-icon { color:#4F46E5; font-weight:700; font-size:24px; line-height:1; flex-shrink:0; user-select:none; }
+    .faq-answer { display:none; padding:14px 22px 22px; color:#4B4842; font-size:15px; line-height:1.85; text-align:right; direction:rtl; border-top:1px solid #F3F0EA; }
+    .faq-item.active .faq-answer { display:block; }
+    @media (max-width:600px) { .faq-title { font-size:32px; } .faq-question { font-size:15px; padding:16px; } }
+
+    .site-footer {
+      background-color: #0b0c0f;
+      color: #9ca3af;
+      padding: 64px 24px 32px;
+      font-family: inherit;
+      font-size: 14px;
+    }
+    .footer-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .footer-brand-col {
+      max-width: 380px;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .brand-badge {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #8a80f0;
+      box-shadow: 0 0 10px rgba(132, 204, 22, 0.4);
+    }
+    .brand-name {
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+    }
+    .brand-tagline {
+      color: #6b7280;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .footer-socials {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .footer-socials a {
+      color: #9ca3af;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .footer-socials a:hover {
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+    .footer-links-group {
+      display: flex;
+      gap: 60px;
+    }
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .col-title {
+      color: #6b7280;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .footer-col a {
+      color: #d1d5db;
+      text-decoration: none;
+      font-size: 13.5px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover {
+      color: #ffffff;
+    }
+    .footer-divider {
+      height: 1px;
+      background-color: #1f2937;
+      margin: 48px 0 28px;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 12.5px;
+      color: #6b7280;
+    }
+    .footer-legal {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .footer-legal a {
+      color: #9ca3af;
+      text-decoration: none;
+    }
+    .footer-legal a:hover {
+      color: #ffffff;
+    }
+
+    /* Visual Component Styles */
+    .pv2-wrap { max-width:820px; margin:0 auto; padding:48px 0 0; width:100%; }
+    .pv2-card { background:#fff; border:1px solid #E7E3D8; border-radius:24px; padding:34px 36px 12px; box-shadow:0 18px 44px -12px rgba(79,70,229,.30), 0 2px 8px rgba(79,70,229,.08); text-align:right; }
+    .pv2-grid { display:grid; grid-template-columns:1fr 44px 1fr; align-items:center; column-gap:16px; }
+    .pv2-head { padding-bottom:22px; border-bottom:1px solid #F3F0EA; }
+    .pv2-sig { font-family:'Caveat','Segoe Script',cursive; font-weight:700; font-size:1.7rem; line-height:1; letter-spacing:0; direction:ltr; text-align:right; color:#9C988C; margin-bottom:6px; }
+    .pv2-sig.on { color:#4F46E5; }
+    .pv2-art svg { width:100%; height:auto; display:block; }
+    .pv2-row { padding:20px 0; border-bottom:1px solid #F3F0EA; }
+    .pv2-row:last-child { border-bottom:none; }
+    .pv2-item { display:flex; align-items:center; gap:12px; font-size:16px; line-height:1.5; }
+    .pv2-item.no { color:#8A867C; }
+    .pv2-item.yes { color:#141413; font-weight:700; }
+    .pv2-ico { flex-shrink:0; width:22px; height:22px; border-radius:50%; display:grid; place-items:center; }
+    .pv2-ico svg { width:11px; height:11px; }
+    .no .pv2-ico { background:#F3F0EA; color:#9C988C; }
+    .yes .pv2-ico { background:#EEEFFF; color:#4F46E5; }
+    .pv2-mid { display:grid; place-items:center; color:#C7CBFF; }
+    .pv2-mid svg { width:18px; height:18px; }
+
+    @media (max-width:640px) {
+      .pv2-card { padding:20px 16px 8px; border-radius:20px; }
+      .pv2-grid { grid-template-columns:1fr 1fr; column-gap:12px; }
+      .pv2-mid { display:none; }
+      .pv2-row { padding:14px 0; }
+      .pv2-sig { font-size:1.35rem; }
+      .pv2-item { font-size:13.5px; gap:8px; line-height:1.4; }
+      .pv2-ico { width:18px; height:18px; }
+      .pv2-ico svg { width:9px; height:9px; }
+    }
+
+    ::-webkit-scrollbar { width:5px; }
+    ::-webkit-scrollbar-track { background:#FBF9F5; }
+    ::-webkit-scrollbar-thumb { background:#D8D4CA; border-radius:2px; }
+  </style>
+
+  <!-- Cal element-click embed code begins -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "free-discovery", {origin:"https://app.cal.com"});
+    Cal.config = Cal.config || {};
+    Cal.config.forwardQueryParams = true;
+
+    Cal.ns["free-discovery"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#4F46E5"}},"hideEventTypeDetails":true,"layout":"month_view"});
+  </script>
+  <!-- Cal element-click embed code ends -->
 </head>
-<body>
+<body class="selection:bg-[#4F46E5] selection:text-white antialiased">
+
+  <!-- TOP BAR -->
+  <header class="sticky top-0 z-40 w-full px-4 sm:px-6 py-3 bg-[#FBF9F5]/90 backdrop-blur border-b border-[#E7E3D8]">
+    <div class="max-w-5xl mx-auto flex items-center justify-between gap-3">
+      <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-[#E7E3D8] bg-white">
+        <img
+          src="bariabder.Webp"
+          alt="Bari Abder"
+          class="w-6 h-6 rounded-full object-cover"
+        />
+        <div class="flex items-center gap-2 text-xs sm:text-sm font-medium">
+          <a
+            href="https://www.instagram.com/bariabder/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-bold hover:opacity-70 transition-opacity"
+          >
+            @bariabder
+          </a>
+          <span class="text-gray-300 hidden sm:inline">,</span>
+          <span class="text-[#66645E] hidden sm:inline"> Content Engine</span>
+        </div>
+      </div>
+      <button
+        data-cal-link="bariabder/free-discovery"
+        data-cal-namespace="free-discovery"
+        data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"}'
+        class="btn-glow px-5 py-2.5 rounded-lg text-sm font-bold cursor-pointer"
+      >
+        Start Now
+      </button>
+    </div>
+  </header>
 
   <main>
-    <section class="section-wrap hero-wrap">
-      <div class="container">
-        
-        <h1 class="hero-headline">
-          <span class="font-light">الخبرة ديالك تستاهل</span> <span class="font-bold">توصل لناس أكثر.</span>
-        </h1>
 
-        <p class="hero-subheadline">
-          كنعاونوك تحوّل المعرفة والخبرة ديالك لـ Personal Brand كتكسب ثقة الناس وكتجذب ليك العملاء المناسبين، بمحتوى مبني على استراتيجية واضحة.
-        </p>
+    <!-- 1. HERO -->
+    <section class="pt-16 pb-14 px-6 max-w-4xl mx-auto text-center flex flex-col items-center">
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl leading-[1.12] tracking-tight font-black max-w-3xl mb-6">
+       كنعاونو الـ Founders <span class="hl-box">يكبّرو الحضور</span> ديالهم أونلاين
+      </h1>
 
-        <div>
-          <button 
-            class="btn-main"
-            data-cal-link="bariabder/free-discovery"
-            data-cal-namespace="free-discovery"
-            data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>
-            احجز جلستك المجانية الآن
-          </button>
-        </div>
+      <p class="text-base sm:text-xl text-[#66645E] max-w-2xl leading-relaxed mb-4">
+        من خلال Content System مبني على الخبرة و البزنس ديالك 
+      </p>
 
-        <div class="panoramic-box">
-          <div class="post-card-preview">
-            <div class="post-header">
-              <img src="bariabder.jpg" alt="Bari Abder" class="post-avatar-img">
-              <div>
-                <div class="post-author-name">Bari Abder</div>
-                <div class="post-author-handle">founder of @otmsystem</div>
+      <p class="text-base sm:text-lg text-[#141413] max-w-2xl leading-relaxed mb-6">
+        من الـStrategy حتى للـ Publishing، حنا كنتكلفو بالجزء الكبير من الخدمة.
+      </p>
+
+      <button data-cal-link="bariabder/free-discovery" data-cal-namespace="free-discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"}' class="btn-glow px-10 py-4 rounded-xl text-base font-bold cursor-pointer w-full sm:w-auto min-w-[280px]">
+        Apply to  Content Engine &larr;
+      </button>
+
+      <!-- Problem -> Solution Visual -->
+      <div class="pv2-wrap">
+        <div class="pv2-card">
+          <!-- header: two illustrations -->
+          <div class="pv2-grid pv2-head">
+            <div>
+              <div class="pv2-sig">You right now</div>
+              <div class="pv2-art" aria-hidden="true">
+                <svg viewBox="0 0 300 90" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 62 C 30 20, 52 84, 70 40 S 96 10, 112 56 S 140 80, 152 30 S 184 58, 168 70 S 128 22, 196 34 S 236 76, 256 28 S 276 52, 292 38" stroke="#B9B5AA" stroke-width="1.8"/>
+                </svg>
               </div>
             </div>
-            <p class="post-quote-text">
-              "الناس ما كتشريش غير الخبرة ديالك. خاصها تفهم كيفاش كتفكّر وتثق فقدرتك على حل المشكل ديالها قبل ما تاخذ قرار التعاقد."
-            </p>
-          </div>
-
-          <div class="video-card-portrait" onclick="openVideoModal()" role="button" aria-label="مشاهدة العرض">
-            <img src="baripreview.jpg" alt="Video Preview" class="video-poster-img" />
-            <div class="video-overlay-tint"></div>
-            <div class="play-btn-circle">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <div class="pv2-mid" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4M10 6l-6 6 6 6"/></svg>
+            </div>
+            <div>
+              <div class="pv2-sig on">with us</div>
+              <div class="pv2-art" aria-hidden="true">
+                <svg viewBox="0 0 300 90" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <defs>
+                    <linearGradient id="pv2g" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#4F46E5" stop-opacity=".14"/>
+                      <stop offset="1" stop-color="#4F46E5" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M8 72 C 90 70, 170 56, 280 18 L 280 88 L 8 88 Z" fill="url(#pv2g)"/>
+                  <path d="M8 72 C 90 70, 170 56, 280 18" stroke="#4F46E5" stroke-width="2.2"/>
+                  <circle cx="280" cy="18" r="9" fill="#4F46E5" opacity=".15"/>
+                  <circle cx="280" cy="18" r="4.5" fill="#4F46E5"/>
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
 
+          <!-- rows -->
+          <div class="pv2-grid pv2-row">
+            <div class="pv2-item no"><span class="pv2-ico"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 2l8 8M10 2l-8 8"/></svg></span>كتنشر بلا خطة</div>
+            <div class="pv2-mid" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></div>
+            <div class="pv2-item yes"><span class="pv2-ico"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg></span>كتعرف شنو غادي تنشر</div>
+          </div>
+
+          
+
+          <div class="pv2-grid pv2-row">
+            <div class="pv2-item no"><span class="pv2-ico"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 2l8 8M10 2l-8 8"/></svg></span>الـContent ديالك عام وما كيشبهكش</div>
+            <div class="pv2-mid" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></div>
+            <div class="pv2-item yes"><span class="pv2-ico"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg></span>الـContent كيهضر بصوتك</div>
+          </div>
+
+          <div class="pv2-grid pv2-row">
+            <div class="pv2-item no"><span class="pv2-ico"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 2l8 8M10 2l-8 8"/></svg></span>الـLeads ديالك ضعاف</div>
+            <div class="pv2-mid" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></div>
+            <div class="pv2-item yes"><span class="pv2-ico"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg></span>الـBrand كيجيب ليك Leads</div>
+          </div>
+
+
+          <div class="pv2-grid pv2-row">
+            <div class="pv2-item no"><span class="pv2-ico"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 2l8 8M10 2l-8 8"/></svg></span>ما عارفش شكون كتخاطب</div>
+            <div class="pv2-mid" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></div>
+            <div class="pv2-item yes"><span class="pv2-ico"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5l2.6 2.6L10 3.5"/></svg></span>كتعرف شكون كتخاطب</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section-wrap">
-      <div class="container">
-        <div style="max-width: 680px; margin-bottom: 24px;">
-          <div class="title-with-icon">
-            <div class="airbnb-icon">
-              <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-            </div>
-            <h2 style="font-size: clamp(23px, 2.8vw, 32px); line-height: 1.35;">
-              <span class="font-light">عندك الخبرة، ولكن</span> <span class="font-bold">واش الناس كيشوفو القيمة ديالك أونلاين؟</span>
-            </h2>
+    <!-- 2. WHAT'S INCLUDED -->
+    <section class="py-16 px-6 border-t border-[#E7E3D8] bg-[#F4F1EA]/40">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl sm:text-4xl font-black mb-3">شنو داخل فالخدمة؟</h2>
+          <p class="text-sm sm:text-base text-[#66645E]">سواء كنت غادي تبدا من الصفر أو بغيتي تطوّر Content ديجا كاين، كنتكلفو بالمنظومة كاملة:</p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 text-center">
+          <div class="editorial-box p-4 sm:p-5">
+            <span class="font-bold text-sm sm:text-base text-[#141413] block">Positioning</span>
+            <span class="text-xs text-[#66645E] mt-1 block">بشنو باغي تكون معروف فالسوق</span>
           </div>
-          <p style="color: var(--color-text-dim); font-size: 15.5px; line-height: 1.7;">
-            تقدر تكون مدرب مزيان وعندك عرض كيعاون الناس فعلاً، ولكن الحضور ديالك أونلاين ما كيعكسش المستوى ديالك.
+          <div class="editorial-box p-4 sm:p-5">
+            <span class="font-bold text-sm sm:text-base text-[#141413] block">Content Strategy</span>
+            <span class="text-xs text-[#66645E] mt-1 block">الزوايا والمواضيع اللي كتخدم البزنس</span>
+          </div>
+          <div class="editorial-box p-4 sm:p-5">
+            <span class="font-bold text-sm sm:text-base text-[#141413] block">Hooks & Scripts</span>
+            <span class="text-xs text-[#66645E] mt-1 block">سكربتات جاهزة مستخرجة من خبرتك</span>
+          </div>
+          <div class="editorial-box p-4 sm:p-5">
+            <span class="font-bold text-sm sm:text-base text-[#141413] block">Video Editing</span>
+            <span class="text-xs text-[#66645E] mt-1 block">مونتاج احترافي بدون تعقيد</span>
+          </div>
+          <div class="editorial-box p-4 sm:p-5">
+            <span class="font-bold text-sm sm:text-base text-[#141413] block">Publishing</span>
+            <span class="text-xs text-[#66645E] mt-1 block">تنظيم ونشر منتظم للمحتوى</span>
+          </div>
+          <div class="editorial-box p-4 sm:p-5">
+            <span class="font-bold text-sm sm:text-base text-[#141413] block">Analytics</span>
+            <span class="text-xs text-[#66645E] mt-1 block">قراءة الأرقام وتحسين المستمر</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. HOW IT WORKS -->
+    <section class="py-20 px-6 bg-[#0E0E0E] text-white">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-sm text-[#818cf8] font-medium block mb-2">طريقة العمل</span>
+          <h2 class="text-3xl sm:text-5xl font-black mb-3 text-white">
+            كيفاش كنخدمو معاك
+          </h2>
+          <p class="text-sm sm:text-base text-gray-400">
+            5 خطوات عملية بدون تضييع وقت:
           </p>
         </div>
 
-        <div class="problem-grid">
-          <div class="problem-item">
-            <h3>الناس ما كيعرفوكش مزيان</h3>
-            <p>صعيب يثقو فيك إلا ما فهموش كيفاش كتقدر تعاونهم.</p>
-          </div>
-
-          <div class="problem-item">
-            <h3>المحتوى بلا استراتيجية</h3>
-            <p>كتنشر، ولكن ماشي كل منشور كيساعد الناس يفهمو القيمة ديالك.</p>
-          </div>
-
-          <div class="problem-item">
-            <h3>الاعتماد على التوصيات</h3>
-            <p>الفرص كتجي من حين لآخر، وما عندكش حضور رقمي قوي يدعمك باستمرار.</p>
-          </div>
-
-          <div class="problem-item">
-            <h3>صناعة المحتوى كتستهلك وقتك</h3>
-            <p>عندك الكليان ديالك ، وماشي ضروري تبقى مسؤول على كل تفصيلة فالمحتوى.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-wrap">
-      <div class="container">
-        <div class="solution-panel">
-          <div class="solution-content">
-            <div class="title-with-icon">
-              <h2>
-                <span class="font-light">ما محتاجش تنشر أكثر.</span> <span class="font-bold">محتاج محتوى كيبني الثقة.</span>
-              </h2>
+        <div class="space-y-3.5 text-right">
+          <div class="dark-box p-5">
+            <div class="flex items-baseline justify-between mb-1">
+              <span class="text-base font-bold text-white">01 — Extraction Call أسبوعي</span>
+              <span class="text-xs text-[#A5A8FF] font-bold">Call</span>
             </div>
-            
-            <p>
-              OTM System™ هي منظومة استراتيجية كتعاونك تحوّل الخبرة ديالك لمحتوى كيوضّح شكون نتا، كيفاش كتفكّر، وعلاش العميل المناسب يقدر يختارك.
-            </p>
-            <p>
-              نتا كتجيب الخبرة والأفكار ديالك. حنا كنخدمو على الاستراتيجية وصناعة المحتوى معاك، باش تبني حضور رقمي كيعكس القيمة الحقيقية ديالك.
-            </p>
-            <p style="font-weight: 600; color: #FFFFFF; margin-top: 12px; font-size: 16.5px;">
-              الهدف ماشي تولّي Influencer. الهدف هو الناس المناسبين يفهمو القيمة ديالك ويكون عندهم سبب يثقو فيك.
-            </p>
+            <p class="text-sm text-gray-300">كنستخرجو من عندك الأفكار والتجارب فـمكالمة مركزة بلا ما تحتاج تحضير مسبق.</p>
           </div>
 
-          <div class="solution-img-visual">
-            <svg style="width: 48px; height: 48px; fill: currentColor;" viewBox="0 0 24 24">
-              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
-            </svg>
+          <div class="dark-box p-5">
+            <div class="flex items-baseline justify-between mb-1">
+              <span class="text-base font-bold text-white">02 — Strategy & Positioning</span>
+              <span class="text-xs text-[#A5A8FF] font-bold">خطة</span>
+            </div>
+            <p class="text-sm text-gray-300">كنحددو شنو خاصك تكون معروف بيه، شكون الناس اللي باغي توصل ليهم، والمواضيع اللي كتخدم الـBrand ديالك.</p>
+          </div>
+
+          <div class="dark-box p-5">
+            <div class="flex items-baseline justify-between mb-1">
+              <span class="text-base font-bold text-white">03 — Ideas, Hooks & Scripts</span>
+              <span class="text-xs text-[#A5A8FF] font-bold">كتابة</span>
+            </div>
+            <p class="text-sm text-gray-300">كنحوّلو الهضرة ديالك لـHooks وسكربتات واجدة للتصوير باش ما تبقاش حاير شنو تقول قدام الكاميرا.</p>
+          </div>
+
+          <div class="dark-box p-5">
+            <div class="flex items-baseline justify-between mb-1">
+              <span class="text-base font-bold text-white">04 — Editing & Publishing</span>
+              <span class="text-xs text-[#A5A8FF] font-bold">تنفيذ</span>
+            </div>
+            <p class="text-sm text-gray-300">نتا كتسجّل. حنا كنعدّلو الفيديوهات، كنصاوبو العناوين، وكننظمو النشر عبر الحسابات ديالك.</p>
+          </div>
+
+          <div class="dark-box p-5">
+            <div class="flex items-baseline justify-between mb-1">
+              <span class="text-base font-bold text-white">05 — Analytics & Optimization</span>
+              <span class="text-xs text-[#A5A8FF] font-bold">تطوير</span>
+            </div>
+            <p class="text-sm text-gray-300">كنراجعو النتائج كل أسبوع، وكنستعملوها باش نحسّنو الـContent الجاي ونركزو على اللي كيبيع.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section-wrap">
-      <div class="container">
-        <div style="text-align: center; max-width: 640px; margin: 0 auto;">
-          <h2 style="font-size: clamp(25px, 3vw, 36px);">
-            <span class="font-light">من الخبرة ديالك</span> <span class="font-bold">لمحتوى عندو هدف</span>
+    <!-- 4. PROOF / CASE STUDY -->
+    <section class="py-24 px-4 sm:px-6 border-t border-[#E7E3D8] bg-[#FBF9F5]">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black text-[#141413] tracking-tight">
+           شنو قدرنا نبنيو مع <span class="hl-box">مؤسسين</span> آخرين
           </h2>
         </div>
 
-        <div class="wave-pipeline-wrap">
-          <div class="wave-svg-container" aria-hidden="true">
-            <svg viewBox="0 0 900 220" fill="none" preserveAspectRatio="none" style="width: 100%; height: 220px;">
-              <path class="wave-path-line" d="M 30 160 C 120 160, 140 45, 230 45 C 320 45, 340 160, 450 160 C 560 160, 580 45, 670 45 C 760 45, 780 150, 870 150" />
-            </svg>
-          </div>
-
-          <div class="wave-steps-grid">
-            <div class="wave-step-column pos-top">
-              <div class="wave-content-box">
-                <span class="watermark-number">1</span>
-                <h3>01 — Positioning</h3>
-                <p>كنحددو شنو كيميّزك، شكون العميل اللي كتخدمو، وشنو خاص الناس يفهمو عليك ويتذكروك به.</p>
-              </div>
-              <div class="wave-node-icon">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-              </div>
+        <div class="bg-white rounded-[2rem] sm:rounded-[2.5rem] border border-[#E7E3D8] p-5 sm:p-14 shadow-[0_22px_55px_rgba(0,0,0,0.06)] max-w-4xl mx-auto text-right">
+          
+          <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 pb-8 border-b border-gray-100">
+            <div class="w-24 h-24 sm:w-36 sm:h-36 rounded-2xl overflow-hidden shrink-0 border border-gray-200 shadow-sm bg-gray-50">
+              <img src="heymossab.webp" alt="Mossab" class="w-full h-full object-cover">
             </div>
 
-            <div class="wave-step-column pos-bottom">
-              <div class="wave-node-icon">
-                <svg viewBox="0 0 24 24"><path d="M11.99 18.54l-7.37-5.73L3 14.07l9 7 9-7-1.63-1.27-7.38 5.74zM12 16l7.36-5.73L21 9.01l-9-7-9 7 1.63 1.27L12 16z"/></svg>
+            <div class="flex-1 text-center sm:text-right">
+              <div class="flex items-center justify-center sm:justify-start gap-2 mb-3">
+                <span class="text-xs font-bold text-gray-800 bg-gray-100 px-3 py-1 rounded-md border border-gray-200">HeyMossab</span>
+                <span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-md border border-emerald-200">E-commerce Founder</span>
               </div>
-              <div class="wave-content-box">
-                <span class="watermark-number">2</span>
-                <h3>02 — Content Strategy</h3>
-                <p>كنبنيو استراتيجية محتوى مرتبطة بالعرض ديالك، بالأسئلة اللي كيسولها العميل، وبالأسباب اللي كتخليه يتردد قبل ما يشري.</p>
-              </div>
-            </div>
 
-            <div class="wave-step-column pos-top">
-              <div class="wave-content-box">
-                <span class="watermark-number">3</span>
-                <h3>03 — Content Creation</h3>
-                <p>كتشارك معانا الأفكار والخبرة ديالك، وحنا كنحوّلوها لمحتوى مكتوب وبصري مناسب للبراند الشخصية ديالك، مع الحفاظ على الأسلوب والصوت ديالك.</p>
-              </div>
-              <div class="wave-node-icon">
-                <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
-              </div>
-            </div>
+              <h3 class="text-xl sm:text-2xl font-black text-[#141413] mb-3 leading-snug">
+                "أكثر من عامين وحنا كنبنيو Content حقيقي كيحقق مبيعات وAuthority مباشرة فالسوق."
+              </h3>
 
-            <div class="wave-step-column pos-bottom">
-              <div class="wave-node-icon">
-                <svg viewBox="0 0 24 24"><path d="M13.13 2.21l1.84 1.84c.39.39.39 1.02 0 1.41l-1.06 1.06 3.75 3.75 1.06-1.06c.39-.39 1.02-.39 1.41 0l1.84 1.84c.39.39.39 1.02 0 1.41L18.42 16l-3.75-3.75-4.24 4.24 2.83 2.83-1.41 1.41-4.24-4.24-2.83 2.83 1.41 1.41-1.41 1.41-3.54-3.54c-.78-.78-.78-2.05 0-2.83l9.9-9.9c.39-.39 1.02-.39 1.41 0z"/></svg>
-              </div>
-              <div class="wave-content-box">
-                <span class="watermark-number">4</span>
-                <h3>04 — Publishing & Optimization</h3>
-                <p>كننظمو نشر المحتوى، وكنراجعو شنو كيتفاعل معاه الجمهور المناسب، وكنحسّنو الاستراتيجية حسب النتائج والملاحظات.</p>
-              </div>
+              <p class="text-sm sm:text-base text-[#66645E] leading-relaxed">
+                خدمنا مع مصعب على تحويل خبرته اليومية فالتجارة الإلكترونية إلى محتوى مستمر يبني المصداقية ويقنع الزبائن، من مرحلة الفكرة واستخراج المواضيع حتى المونتاج والنشر والتحليل.
+              </p>
             </div>
           </div>
+
+          <!-- stats image container fixed for full mobile width -->
+          <div class="mt-6 sm:mt-8 w-full overflow-hidden rounded-xl sm:rounded-2xl border border-[#E7E3D8] bg-[#F7F8FF]">
+            <img src="statsmossab.png" alt="Stats Mossab" class="w-full h-auto block object-contain">
+          </div>
+
+          <!-- Stats Grid -->
+          <div class="mt-10 sm:mt-12 pt-8 border-t border-[#E7E3D8] text-center">
+            <span class="text-sm text-[#818cf8] font-bold block mb-4">إحصائياتنا</span>
+            <div class="grid grid-cols-3 gap-2 sm:gap-8">
+              <div>
+                <div class="sf text-2xl sm:text-5xl text-[#4F46E5]" dir="ltr">500+</div>
+                <div class="text-xs sm:text-base text-[#66645E] mt-1 font-medium">Content منشور</div>
+              </div>
+              <div>
+                <div class="sf text-2xl sm:text-5xl" dir="ltr">480K+</div>
+                <div class="text-xs sm:text-base text-[#66645E] mt-1 font-medium">Followers بنيناهم</div>
+              </div>
+              <div>
+                <div class="sf text-2xl sm:text-5xl text-[#4F46E5]" dir="ltr">$100K+</div>
+                <div class="text-xs sm:text-base text-[#66645E] mt-1 font-medium">Revenue ولّدناهم بالمحتوى</div>
+              </div>
+            </div>
+
+            <!-- Purple Testimonial Trigger Link under Numbers -->
+            <div class="mt-8">
+              <button 
+                id="open-video-btn" 
+                type="button" 
+                class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#6366F1] hover:text-[#4338CA] underline underline-offset-4 transition-all duration-200 hover:-translate-x-1 cursor-pointer bg-transparent border-0"
+              >
+                <span>شاهد فيديو شهادة مصعب علينا</span>
+                <span>&larr;</span>
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section-wrap">
-       <div style="text-align: center; max-width: 640px; margin: 0 auto;">
-          <h2 style="font-size: clamp(25px, 3vw, 36px);">
-            <span class="font-light">واش هاد النظام</span> <span class="font-bold">مناسب ليك ؟</span>
-          </h2>
-        </div>
-      <div class="container">
-        <div class="fit-grid">
-          <div class="fit-card positive">
-            <h3>OTM مناسب ليك إلا كنت:</h3>
-            <ul class="fit-list">
-              <li>Coach عندك عرض واضح وخبرة حقيقية كتقدّمها.</li>
-              <li>باغي تبني الثقة والمصداقية ديالك أونلاين.</li>
-              <li>كتقلب على طريقة استراتيجية لصناعة المحتوى بلا ما تدير كلشي بوحدك.</li>
-              <li>مستعد تشارك الأفكار والخبرة ديالك وتعاون فبناء البراند الشخصية ديالك.</li>
+    <!-- 5. FIT CHECK - FIXED CONSISTENT TEXT HIERARCHY -->
+    <section class="py-16 px-5 sm:px-6 border-t border-[#E7E3D8]">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl sm:text-4xl font-extrabold mb-8">واش الخدمة معانا مناسبة ليك؟</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 text-right max-w-2xl mx-auto">
+          <!-- Fits you -->
+          <div class="editorial-box p-6 sm:p-7 border-t-4 border-t-emerald-500">
+            <h3 class="text-base sm:text-lg font-bold text-emerald-600 mb-4 flex items-center gap-2">
+              <span>✓</span>
+              <span>مناسبة ليك إلا:</span>
+            </h3>
+            <ul class="space-y-3.5 text-[15px] sm:text-base text-[#141413] leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-500 font-bold text-lg leading-none mt-0.5">•</span>
+                <span>عندك Offer واضح وكيبيع ديجا.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-500 font-bold text-lg leading-none mt-0.5">•</span>
+                <span>نتا المؤسس وباغي تشارك خبرتك.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-500 font-bold text-lg leading-none mt-0.5">•</span>
+                <span>باغي تبني Authority مستمرة على المدى الطويل.</span>
+              </li>
             </ul>
           </div>
 
-          <div class="fit-card negative">
-            <h3>OTM ماشي مناسب ليك إلا كنت:</h3>
-            <ul class="fit-list">
-              <li>باقي ما حددتيش العرض ديالك.</li>
-              <li>كتقلب غير على المشاهدات.</li>
-              <li>كتسنى المحتوى يضمن ليك المبيعات بلا مجهود منك.</li>
+          <!-- Doesn't fit you -->
+          <div class="editorial-box p-6 sm:p-7 border-t-4 border-t-rose-500">
+            <h3 class="text-base sm:text-lg font-bold text-rose-600 mb-4 flex items-center gap-2">
+              <span>✕</span>
+              <span>ما مناسبش ليك إلا:</span>
+            </h3>
+            <ul class="space-y-3.5 text-[15px] sm:text-base text-[#141413] leading-relaxed">
+              <li class="flex items-start gap-2.5">
+                <span class="text-rose-500 font-bold text-lg leading-none mt-0.5">•</span>
+                <span>مازال ما عندكش Offer وما بديتيش البزنس.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-rose-500 font-bold text-lg leading-none mt-0.5">•</span>
+                <span>الهدف الوحيد ديالك هو المشاهدات (Viral Views).</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-rose-500 font-bold text-lg leading-none mt-0.5">•</span>
+                <span>كتسنى مبيعات فورية مضمونة غير من المحتوى بوحدو.</span>
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="proof-section">
-      <div style="text-align: center; margin-bottom: 28px;">
-        <h2 style="font-size: clamp(24px, 3vw, 34px);">شنو كايقولو الناس علينا</h2>
-      </div>
-
-      <div class="small-video-testimonials-grid">
-        <div class="small-video-testimonial-card">
-          <wistia-player media-id="xlty4kee3f" aspect="0.5625"></wistia-player>
-        </div>
-
-        <div class="small-video-testimonial-card">
-          <wistia-player media-id="9rakujkciy" aspect="0.5625"></wistia-player>
-        </div>
-      </div>
-
-      <div class="testimonials-marquee-wrapper">
-        <div class="testimonials-track">
-          <div class="custom-proof-box">
-            <p>"من أول شهر وأنا خدام مع باري، وبصراحة الخدمة ديالو عجباتني بزاف. كيهتم بالتفاصيل، والنتيجة ديما كتفوت التوقعات"</p>
-            <div class="custom-review-author">
-              <img src="amine.jpg" alt="Amine Halibi" class="custom-review-avatar" loading="lazy">
-              <div class="custom-review-info">
-                <strong>Amine halibi</strong>
-                <span>Entrepreneur</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="custom-proof-box">
-            <p>"باري من أفضل الناس اللي خدمت معهم. تعاملت معاه قرابة عامين، وبكل صراحة إنسان راقي، تقدر تثق فيه بكل راحة، وما عمرني واجهت معاه أي مشكل."</p>
-            <div class="custom-review-author">
-              <img src="heymossab.jpg" alt="Mossab Balatif" class="custom-review-avatar" loading="lazy">
-              <div class="custom-review-info">
-                <strong>Mossab Balatif</strong>
-                <span>Entrepreneur</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="custom-proof-box">
-            <p>"الخدمة كانت ممتازة، وماشي غير لبّات توقعات الزبناء ديالنا، بل فاقتهم."</p>
-            <div class="custom-review-author">
-              <img src="mohamed-salem-review.webp" alt="Mohamed Salem" class="custom-review-avatar" loading="lazy">
-              <div class="custom-review-info">
-                <strong>Mohamed Salem</strong>
-                <span>Business Analyst</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="custom-proof-box">
-            <p>"جودة العمل كانت رائعة. Bari ساعدني نبني أساس العيادة ديالي وحوّل الفكرة لواقع."</p>
-            <div class="custom-review-author">
-              <img src="dr-mernissi-othmane-review.webp" alt="Dr. Mernissi Othmane" class="custom-review-avatar" loading="lazy">
-              <div class="custom-review-info">
-                <strong>Dr. Mernissi Othmane</strong>
-                <span>Dentist</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="custom-proof-box">
-            <p>"ديما كنكون فرحان نخدم معاه. التواصل ساهل والخدمة ديما بجودة عالية."</p>
-            <div class="custom-review-author">
-              <img src="abdou-berrada-review.webp" alt="Abdou Berrada" class="custom-review-avatar" loading="lazy">
-              <div class="custom-review-info">
-                <strong>Abdou Berrada</strong>
-                <span>Founder at @epoptique</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="custom-proof-box">
-            <p>"من أول شهر وأنا خدام مع باري، وبصراحة الخدمة ديالو عجباتني بزاف. كيهتم بالتفاصيل، والنتيجة ديما كتفوت التوقعات"</p>
-            <div class="custom-review-author">
-              <img src="amine.jpg" alt="Amine Halibi" class="custom-review-avatar" loading="lazy">
-              <div class="custom-review-info">
-                <strong>Amine halibi</strong>
-                <span>Entrepreneur</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="custom-proof-box">
-            <p>"باري من أفضل الناس اللي خدمت معهم. تعاملت معاه قرابة عامين، وبكل صراحة إنسان راقي، تقدر تثق فيه بكل راحة، وما عمرني واجهت معاه أي مشكل."</p>
-            <div class="custom-review-author">
-              <img src="heymossab.jpg" alt="Mossab Balatif" class="custom-review-avatar" loading="lazy">
-              <div class="custom-review-info">
-                <strong>Mossab Balatif</strong>
-                <span>Entrepreneur</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-wrap">
-      <div class="container">
-        <div style="text-align: center; margin-bottom: 28px;">
-          <h2 style="font-size: clamp(23px, 2.8vw, 32px);">الأسئلة الشائعة</h2>
-        </div>
-
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question" type="button">
-              <span>واش خاصني نكون كننشر من قبل؟</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              لا. المهم يكون عندك عرض واضح وخبرة نقدروا نبنيو عليها استراتيجية المحتوى.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" type="button">
-              <span>واش خاصني نكتب المحتوى بنفسي؟</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              لا. حنا كنتكلفو بمعظم خدمة الاستراتيجية والإعداد وصناعة المحتوى، وكنحتاجو منك الأفكار والخبرة والمراجعة ديالك.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" type="button">
-              <span>واش كتضمنو ليا العملاء والمبيعات؟</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              لا، ما كنضمنوش عدد محدد من العملاء أو المبيعات. كنخدمو على بناء الثقة وتحسين الحضور الرقمي، والنتائج كتتأثر حتى بالعرض ديالك، السوق، وطريقة البيع.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" type="button">
-              <span>شحال من منشور غادي ناخد كل شهر؟</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              العدد والمنصات كيتحددو حسب الباقة والاحتياجات ديالك قبل ما نبداو.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="final-cta">
-      <div class="container">
-        <h2>
-          <span class="font-light">الخبرة ديالك عندها قيمة.</span> <span class="font-bold">خلي الناس يشوفوها ويفهموها.</span>
+    <!-- 6. NEW FAQS & FINAL CTA -->
+    <section class="py-16 px-4 sm:px-6 border-t border-[#E7E3D8]" id="faq">
+      <div class="faq-section">
+        <h2 class="faq-title">
+          الأسئلة <span class="hl-box">الشائعة</span>
         </h2>
-        <p>
-          إلا عندك عرض واضح وباغي تبني Personal Brand كتزيد الثقة فخدمتك، خلينا نشوفو واش OTM System™ مناسب ليك.
+
+        <!-- Question 1 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span dir="rtl">شنو غادي ناخد بالضبط؟ </span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            الـ Founder Content Engine هو سيستيم متكامل كنديروه مجموعين (Done-with-you) موجه للمؤسسين اللي ديجا عندهم Offer وباغين براند شخصي كيجيب كليان بصح. كنبداو بـ Positioning Calls باش نفهم البيزنس ديالك مزيان. موراها كنبني ليك السيستيم: أفكار د الفيديوهات القصيرة اللي كتجيب نتيجة، معاونة فالتسجيل إذا احتاجها، والـ Editing كامل. من بعد كنشوفو الأرقام والداتا، كنبنيو Funnel وراء المحتوى، وكنضاعفو التركيز على داكشي اللي خدام. كتاخد ما بين 30 حتى لـ 50+ قطعة محتوى فالشهر.
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span dir="rtl">هاد السيستيم صالح لمن؟ </span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            صالح للمؤسسين والشركات القائمة على مؤسس، اللي ديجا كيبيعو شي حاجة وعندهم خبرة وتجربة حقيقية فالسوق. باغي الكليان يجي عندك حيت تايق فسميتك والسمعة ديالك عوض الاعتماد على الـ Ads بوحدها. ما صالحش ليك إلا مازال كتجرب وكتفكر شنو تبيع، أو إلا باغي غير Content Creator يحط ليك فيديوهات عامة وعشوائية بلا حتى استراتيجية وراها.
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span dir="rtl">فوقاش غادي نبدا نشوف النتائج؟ </span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="space-y-2 mb-3">
+              <p><strong>• الشهر 1:</strong> الـ Positioning كيكون مقاد، السيستيم كيبدا يخدم، وأول دفعة د المحتوى كيبدا نشرها.</p>
+              <p><strong>• الشهر 2-3:</strong> كتكون عندنا داتا وأرقام حقيقية على المواضيع والفورمات اللي كيجيبو الانتباه والتساؤلات (Inquiries).</p>
+              <p><strong>• الشهور الموالية:</strong> كنكونو ضاعفنا التركيز على اللي خدام، والمحتوى كيولي يجيب Leads وكليان باستمرار وبشكل متوقع.</p>
+            </div>
+            <p>ما كنبيعش أوهام ولا كنقول ليك عدد محدد د الكليان مضمون مسبقاً، حيت هادشي كيعتمد على العرض ديالك، السوق، ومدى التزامنا المشترك بالنشر. اللي كنضمنو ليك هو أنني كنوريك الأرقام والداتا الحقيقية كل شهر قدام عينيك.</p>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span dir="rtl">ماعنديش الوقت باش نبان ونسجل قدام الكاميرا؟</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            ما كتحتاجش وقت كبير. أنا اللي كنتكلف بالأفكار كاملة، كتابة الـ Scripts، والمونتاج. وإلا ما باغيش تدوز ساعات فالتصوير، كنلقاو طريقة ذكية تسجل بيها غير فوقت وجيز فالسيمانة أو كنعتمدو فورمات أخرى مناسبة لجدولك.
+          </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span dir="rtl">حطيت محتوى قبل وما جاب ليا والو؟</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            هادشي فالعادة كيعني أنك كنتي كتنشر بلا Positioning واضح. المحتوى اللي ما مبنيش على وجهة نظر محددة وخبرة يقدر يجيب Views، ولكن ما كيجيبش كليان كيدفعو. كنبداو بالاستراتيجية هي الأولى، عاد كنتبعو الأرقام اللي كتحول المشاهدة لتواصل واستفسار حقيقي.
+          </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span dir="rtl">علاش ما نجيبش غير Editor عادي ولا نطلق Ads؟</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            الـ Editor  كيقاد غير داكشي اللي عطيتيه، والـ Ads كتحبس النهار اللي كتحبس فيه الفلوس. هاد السيستيم كيبني Trust وAuthority كتبقى لاصقة فسميتك ديما. وفوق هادشي، هاد الخدمة جاية من تجربة ميدانية حقيقية: كنت Head of Content مع <strong>heymossab@</strong>، شاد الاستراتيجية، الأفكار، التصوير، المونتاج، وإدارة الفريق كامل.
+          </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">
+            <span dir="rtl">وإلا هاد السيستيم ما خدمش معايا؟ </span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p class="mb-2"><strong>• الخيار الأول:</strong> إلا ما عجبكش الحال من بعد الشهر اللول، كتخبرني وكنحبسو فالبلاصة. كتخلص غير داك الشهر اللي دوزتي بوحدو بلا التزام.</p>
+            <p><strong>• الخيار الثاني:</strong> إلا ما نفذناش داكشي اللي تفاهمنا عليه والتزمنا بيه فالـ Call، كيرجع ليك خلاص داك الشهر كامل بدون أي تردد.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final Direct CTA -->
+      <div class="max-w-xl mx-auto mt-16 text-center">
+        <h3 class="text-2xl sm:text-3xl font-black mb-3 text-[#141413]">
+          جاهز تبني الحضور ديالك أونلاين؟
+        </h3>
+        <p class="text-sm sm:text-base text-[#66645E] mb-6">
+          احجز مكالمة قصيرة نحددو فيها واش الـEngine مناسب لمرحلتك الحالية.
         </p>
 
-        <button 
-          class="btn-main"
-          data-cal-link="bariabder/free-discovery"
-          data-cal-namespace="free-discovery"
-          data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"}'>
-          احجز جلستك المجانية الآن
+        <button data-cal-link="bariabder/free-discovery" data-cal-namespace="free-discovery" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"}' class="btn-glow px-10 py-4 rounded-xl text-base font-bold cursor-pointer w-full sm:w-auto min-w-[260px]">
+          Apply to Content Engine &larr;
         </button>
       </div>
     </section>
+
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-inner-content">
-        <div>© 2026 OTM System™ · Bari Abder</div>
+  <footer class="site-footer" dir="ltr">
+    <div class="footer-inner">
+      
+      <div class="footer-top">
+        <!-- Brand & Mission Column -->
+        <div class="footer-brand-col">
+          <div class="footer-brand">
+            <span class="brand-badge"></span>
+            <span class="brand-name">BariAbder</span>
+          </div>
+         
+          <!-- Social Icons Row -->
+          <div class="footer-socials">
+            <!-- X / Twitter -->
+            <a href="https://x.com/bariabder" target="_blank" rel="noopener" aria-label="X (Twitter)">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/bariabder" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.95 0-1.72-.78-1.72-1.73s.77-1.73 1.72-1.73 1.73.78 1.73 1.73-.78 1.73-1.73 1.73m1.4 9.74v-8.37H5.06v8.37h2.8z"/></svg>
+            </a>
+            <!-- YouTube -->
+            <a href="https://youtube.com/@bariabder" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://instagram.com/bariabder" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <!-- Substack -->
+            <a href="https://bariabder.substack.com" target="_blank" rel="noopener" aria-label="Substack">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+            </a>
+          </div>
+        </div>
 
+        <!-- Footer Navigation Links -->
         <div class="footer-links-group">
-          <a href="https://linkedin.com/in/bariabder" target="_blank" rel="noopener noreferrer" class="footer-link-subtle">LinkedIn</a>
-          <span class="footer-divider">•</span>
-          <a href="https://Instagram.com/bariabder" target="_blank" rel="noopener noreferrer" class="footer-link-subtle">Instagram</a>
-          <span class="footer-divider">•</span>
-          <a href="https://www.bariabder.com/Terms-of-Service" class="footer-link-subtle">شروط الخدمة</a>
-          <span class="footer-divider">•</span>
-          <a href="https://www.bariabder.com/privacy" class="footer-link-subtle">سياسة الخصوصية</a>
+          <div class="footer-col">
+            <a href="#about">About</a>
+            <a href="https://bariabder.substack.com">Newsletter</a>
+            <a href="#faq">FAQ</a>
+          </div>
         </div>
       </div>
+
+      <div class="footer-divider"></div>
+
+      <!-- Bottom Bar with Legal and Copyright -->
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="https://www.bariabder.com/privacy">Privacy Policy</a>
+          <span>|</span>
+          <a href="https://www.bariabder.com/Terms-of-Service">Terms of Service</a>
+        </div>
+        <p class="copyright">© 2026 bariAbder. All rights reserved.</p>
+      </div>
+
     </div>
   </footer>
 
-  <div class="overlay-modal" id="videoModal" aria-modal="true" role="dialog" onclick="closeVideoModal()">
-    <div class="video-theater" onclick="event.stopPropagation()" id="videoContainer"></div>
+  <!-- VIDEO MODAL WITH BLURRED BACKDROP -->
+  <div 
+    id="video-modal" 
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md transition-opacity duration-300 opacity-0 pointer-events-none"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+  >
+    <div class="relative w-full max-w-[380px] sm:max-w-[420px] bg-[#141413] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+      <!-- Close Button -->
+      <button 
+        id="close-video-btn" 
+        type="button"
+        class="absolute top-3 left-3 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition-colors text-lg cursor-pointer"
+        aria-label="Close video"
+      >
+        ✕
+      </button>
+
+      <!-- Wistia Player Element -->
+      <div class="w-full flex justify-center items-center">
+        <wistia-player 
+          id="mossab-wistia-player"
+          media-id="9rakujkciy" 
+          aspect="0.5625" 
+          style="width: 100%; height: auto; max-height: 82vh;"
+        ></wistia-player>
+      </div>
+    </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // FAQ accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach((item) => {
+      const question = item.querySelector('.faq-question');
+      const icon = item.querySelector('.faq-icon');
+      question.addEventListener('click', () => {
+        faqItems.forEach((other) => {
+          if (other !== item && other.classList.contains('active')) {
+            other.classList.remove('active');
+            other.querySelector('.faq-icon').textContent = '+';
+            other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          }
+        });
+        item.classList.toggle('active');
+        const isOpen = item.classList.contains('active');
+        icon.textContent = isOpen ? '×' : '+';
+        question.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+
+    // Video Modal Open / Close Logic
+    const modal = document.getElementById('video-modal');
+    const openBtn = document.getElementById('open-video-btn');
+    const closeBtn = document.getElementById('close-video-btn');
+    const wistiaEl = document.getElementById('mossab-wistia-player');
+
+    function openModal() {
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100', 'pointer-events-auto');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100', 'pointer-events-auto');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+
+      if (wistiaEl && typeof wistiaEl.pause === 'function') {
+        wistiaEl.pause();
+      }
+    }
+
+    if (openBtn && modal) {
+      openBtn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('pointer-events-none')) {
+          closeModal();
+        }
+      });
+    }
+  </script>
 </body>
 </html>
