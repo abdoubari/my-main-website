@@ -3,497 +3,713 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bari Abder — The 45 Method</title>
-  <meta name="description" content="45 دقيقة فالسيمانة = 30+ فيديو جاهز للنشر. The 45 Method: خدمة Done-For-You للـ Founders من Bari Abder.">
+  <title>Bari Abder — The 45 Method™</title>
+  <meta name="description" content="خدمة Done-For-You متكاملة للـ Founders لتحويل 45 دقيقة أسبوعياً إلى محتوى احترافي ومستمر.">
   <link rel="canonical" href="https://www.bariabder.com/">
-
-  <!-- Fonts: Graphik Arabic + Inter -->
-  <style>
-    @font-face {
-      font-family: 'Graphik Arabic';
-      src: url('https://www.bariabder.com/Graphik%20Arabic%20SemiBold.ttf') format('truetype');
-      font-weight: 600;
-      font-style: normal;
-    }
-  </style>
   <link rel="icon" type="image/png" href="https://www.bariabder.com/fav-icon.png">
+
+  <!-- Typography: IBM Plex Sans Arabic (Authentic 400 & 600 weights) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Graphik Arabic', 'Inter', '-apple-system', 'Segoe UI', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            brandDark: '#080E0C',
-            surfaceCard: '#0E1714',
-            surfaceMuted: '#131F1B',
-            hairline: 'rgba(255, 255, 255, 0.08)',
-            electricLime: '#B7F34A',
-            softWhite: '#F3F5F2',
-            textSecondary: '#9AA7A0',
-            textMuted: '#687770'
-          }
-        }
-      }
-    }
-  </script>
-<!-- Wistia Scripts -->
-  <script src="https://fast.wistia.com/player.js" async></script>
-  <script src="https://fast.wistia.com/embed/5bd1e0alqr.js" async type="module"></script>
-  <script src="https://fast.wistia.com/embed/9xo90klu92.js" async type="module"></script>
-  <style>
-    wistia-player[media-id='5bd1e0alqr']:not(:defined) { 
-      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/5bd1e0alqr/swatch'); 
-      display: block; 
-      filter: blur(5px); 
-      padding-top: 56.25%; 
-    }
-    wistia-player[media-id='9xo90klu92']:not(:defined) { 
-      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/9xo90klu92/swatch'); 
-      display: block; 
-      filter: blur(5px); 
-      padding-top: 125%; 
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-dark: #080E0C;
+      --bg: #090A09;
+      --text: #F5F5F0;
+      --text-muted: #A1A1A6;
+      --text-dim: #6E6E73;
+      --border: rgba(255, 255, 255, 0.08);
+      --lime: #B7FF00;
+      --lime-hover: #c7ff33;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      background-color: var(--bg-dark);
-      color: #F3F5F2;
-      font-family: 'Graphik Arabic', 'Inter', -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 17px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
-      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     }
 
-    .num-tabular {
-      font-variant-numeric: tabular-nums;
+    .container {
+      width: 100%;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
-    /* Modal styles */
+    .container-wide {
+      width: 100%;
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+   h1 {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.headline-line {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Lime text for 45 minutes */
+.headline-green {
+  color: var(--lime);
+}
+
+/* Underline for 30–50 videos */
+.headline-highlight {
+  text-decoration: underline;
+  text-decoration-color: var(--lime);
+  text-decoration-thickness: 5px;
+  text-underline-offset: 14px;
+  text-decoration-skip-ink: none;
+}
+
+@media (max-width: 640px) {
+  .headline-highlight {
+    text-decoration-thickness: 4px;
+    text-underline-offset: 12px;
+  }
+}
+    .nowrap {
+      white-space: nowrap;
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    p.lead {
+      font-size: 20px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    section {
+      padding: 120px 0;
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 30px; line-height: 1.3; }
+      h2 { font-size: 24px; }
+      p.lead { font-size: 18px; }
+      section { padding: 80px 0; }
+      body { font-size: 16px; }
+    }
+
+    /* Primary CTA Button (Exclusive Lime Accent) */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--lime);
+      color: #090A09;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 40px;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--lime-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary:focus-visible {
+      outline: 2px solid var(--text);
+      outline-offset: 4px;
+    }
+
+    /* Clean Video Container */
+    .video-wrapper {
+      border-radius: 20px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    /* What You Get: 5 Clean Editorial Lines */
+    .deliverables-list {
+      list-style: none;
+      margin-top: 32px;
+    }
+
+    .deliverables-item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .deliverables-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .deliverables-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .deliverables-desc {
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    /* Proof Section: Asymmetric Media & Clean Neutral Stats */
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-top: 36px;
+    }
+
+    @media (min-width: 768px) {
+      .proof-grid {
+        grid-template-columns: 280px 1fr;
+        gap: 48px;
+      }
+    }
+
+   
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  direction: ltr;
+  padding: 30px 0;
+  margin: 28px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.stats-row > div {
+  text-align: center;
+  min-width: 0;
+}
+
+.stat-number {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-dim);
+  margin-top: 9px;
+  letter-spacing: 0.04em;
+}
+
+.stat-label .headline-green {
+  color: var(--lime);
+}
+
+@media (max-width: 400px) {
+  .stat-number {
+    font-size: 23px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+}
+
+
+    .proof-disclaimer {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+
+    /* Minimal Accordion */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      text-align: right;
+      background: none;
+      border: none;
+      padding: 24px 0;
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-icon {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-dim);
+      margin-right: 16px;
+      user-select: none;
+    }
+
+    .faq-answer {
+      display: none;
+      padding-bottom: 24px;
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      padding: 100px 0 64px;
+      text-align: center;
+    }
+
+    /* Minimal Footer without border lines or mono */
+    footer {
+      padding-bottom: 64px;
+      color: var(--text-muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 4px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: color 0.15s ease;
+      border-radius: 4px;
+    }
+
+    .social-link:hover {
+      color: #FFFFFF;
+    }
+
+    .social-link:focus-visible {
+      outline: 2px solid var(--text);
+      outline-offset: 4px;
+    }
+
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .footer-legal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .footer-legal a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .footer-legal a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-legal a:focus-visible {
+      outline: 2px solid var(--text);
+      outline-offset: 2px;
+    }
+
+    .footer-copy {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* Booking Modal */
     .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.2s ease, visibility 0.2s ease;
     }
+
     .modal-backdrop.open {
       opacity: 1;
       visibility: visible;
     }
-    .modal-content {
-      transform: scale(0.98);
-      transition: transform 0.2s ease;
+
+    .modal-sheet {
+      width: 100%;
+      max-width: 580px;
+      background: #111311;
+      border-radius: 24px;
+      padding: 32px 24px 24px;
+      position: relative;
     }
-    .modal-backdrop.open .modal-content {
-      transform: scale(1);
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    .modal-close:hover {
+      color: var(--text);
     }
 
     .youform-wrapper iframe {
-      height: 680px !important;
-      min-height: 680px !important;
+      height: 640px !important;
+      min-height: 640px !important;
       border: none !important;
     }
+    .vsl-container {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    /* Minimalist Accordion */
-    .faq-item {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .faq-answer {
-      display: none;
-      padding-bottom: 16px;
-      color: #9AA7A0;
-      font-size: 13.5px;
-      line-height: 1.8;
-    }
-    .faq-item.active .faq-answer { display: block; }
+@media (max-width: 640px) {
+  .vsl-container {
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+.signature-headline {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 34px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: var(--text);
+  white-space: nowrap;
+  margin-bottom: 24px;
+}
 
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: var(--bg-dark); }
-    ::-webkit-scrollbar-thumb { background: #1B2B25; }
+@media (max-width: 640px) {
+  .signature-headline {
+    font-size: 25px;
+  }
+}
   </style>
+
+  <!-- Wistia Embedded Logic -->
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/5bd1e0alqr.js" async type="module"></script>
+  <script src="https://fast.wistia.com/embed/9xo90klu92.js" async type="module"></script>
 </head>
 
-<body class="selection:bg-[#B7F34A] selection:text-[#080E0C]">
+<body>
 
-  <main class="max-w-2xl mx-auto px-6 py-16 sm:py-20 flex flex-col items-center">
-    
-    <!-- 01. HEADLINE & VALUE PROP -->
-    <div class="text-center w-full mb-10">
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-[1.25] tracking-tight">
-        45 دقيقة أسبوعياً. <br />
-        <span class="text-[#B7F34A]">30+ مقطع مصوّر</span> مبني على خبرتك الميدانية.
-      </h1>
-
-      <p class="text-sm sm:text-base text-textSecondary mt-5 max-w-xl mx-auto leading-relaxed">
-       بلا سكريبتات محفوظة، بلا تصنّع قدام الكاميرا. غير 45 دقيقة فالسيمانة كتشارك فيها خبرتك، وحنا نحولو كلامك لـ30+ فيديو جاهز للنشر كل شهر.
+  <!-- 01. HERO (Starts directly: Headline in 2 lines → Sentence → Video → Centered CTA) -->
+  <section style="padding-top: 40px; padding-bottom: 20px; text-align: center;">
+    <div class="container">
+<h1>
+  <span class="headline-line">
+    كيفاش كنحوّلو <span class="headline-green">45 دقيقة</span> من وقتك كمؤسس
+  </span>
+  <span class="headline-line">
+    إلى <span class="headline-green">30–50 فيديو</span> كل شهر
+  </span>
+</h1>
+      <p class="lead">
+        كنجلسو معاك 45 دقيقة فالسيمانة،  كنوجهو معاك حوار بأسئلة مدروسة، وكنحوّلو خبرتك الميدانية لمحتوى احترافي بلا Scripts  بلا تصنّع، وبلا صداع المونتاج.
       </p>
     </div>
 
-<!-- 02. VSL VIDEO -->
-    <div class="w-full mb-8">
-      <div class="rounded-xl overflow-hidden border border-hairline bg-black">
+    <div class="container-wide" style="margin-top: 20px;">
+      <div class="video-wrapper">
         <wistia-player media-id="5bd1e0alqr" aspect="1.7777777777777777"></wistia-player>
       </div>
-    </div>
 
-    <!-- 03. PRIMARY ACTION -->
-    <div class="text-center mb-16 w-full">
-      <button
-        type="button"
-        onclick="openBookingModal()"
-        class="bg-[#B7F34A] hover:bg-[#c2f85d] text-[#080E0C] font-bold text-sm sm:text-base px-8 py-3.5 rounded-lg w-full sm:w-auto transition-colors cursor-pointer"
-      >
-        حجز مكالمة اكتشاف أولية &larr;
-      </button>
-    </div>
-
-    <!-- 04. EXTRACTION UI -->
-    <div class="w-full mb-16">
-      <div class="border-t border-hairline pt-12">
-        
-        <div class="mb-6 flex items-baseline justify-between">
-          <h2 class="text-sm font-bold text-white uppercase tracking-wider">سير العمل الأسبوعي</h2>
-          <span class="text-[11px] font-mono text-textMuted">RECORDING STUDIO</span>
-        </div>
-
-        <div class="bg-surfaceCard border border-hairline rounded-2xl p-4">
-          
-          <div class="grid grid-cols-2 gap-3 mb-3">
-            
-            <!-- Tile 1: Founder -->
-            <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black border border-hairline">
-              <img 
-                src="client.jpg" 
-                alt="Founder" 
-                class="w-full h-full object-cover rounded-2xl"
-                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80';"
-              />
-              <div class="absolute bottom-2.5 right-2.5 flex items-center gap-1.5 bg-black/80 backdrop-blur-sm px-2 py-0.5 rounded-md text-[10px] text-white">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#B7F34A]"></span>
-                <span>You</span>
-              </div>
-            </div>
-
-            <!-- Tile 2: Bari -->
-            <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-black border border-hairline">
-              <img 
-                src="me.jpg" 
-                alt="Bari Abder" 
-                class="w-full h-full object-cover rounded-2xl"
-                onerror="this.onerror=null; this.src='https://www.bariabder.com/bariabder.jpg';"
-              />
-              <div class="absolute bottom-2.5 right-2.5 bg-black/80 backdrop-blur-sm px-2 py-0.5 rounded-md text-[10px] text-white">
-                <span>Bari Abder</span>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Bottom Control Bar -->
-          <div class="flex items-center justify-between border-t border-hairline pt-3 px-1" dir="ltr">
-            <span class="text-[11px] font-mono text-textMuted">SESSION: 45:00</span>
-            <button 
-              type="button" 
-              class="bg-red-600/90 hover:bg-red-600 text-white font-medium text-[11px] px-3.5 py-1 rounded-full transition-colors flex items-center gap-1.5"
-            >
-              <svg class="w-3 h-3 fill-current rotate-[135deg]" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-              <span>End Call</span>
-            </button>
-          </div>
-
-        </div>
-
-        <!-- Metric Ratio Row -->
-        <div class="grid grid-cols-2 gap-3 mt-3">
-          <div class="bg-surfaceCard border border-hairline rounded-xl p-3.5">
-            <span class="text-[11px] font-mono text-textMuted block mb-1">INPUT</span>
-            <div class="text-base font-bold text-white">45 دقيقة فالسيمانة</div>
-            <p class="text-xs text-textSecondary mt-0.5">أجوبة حية على أسئلة مركزة.</p>
-          </div>
-
-          <div class="bg-surfaceCard border border-hairline rounded-xl p-3.5">
-            <span class="text-[11px] font-mono text-textMuted block mb-1">OUTPUT</span>
-            <div class="text-base font-bold text-[#B7F34A]">30+ مقطع شهرياً</div>
-            <p class="text-xs text-textSecondary mt-0.5">مونتاج وتوزيع جاهز للنشر.</p>
-          </div>
-        </div>
-
+      <div style="margin-top: 32px; text-align: center;">
+        <button type="button" onclick="openBookingModal()" class="btn-primary">قدّم الطلب</button>
       </div>
     </div>
+  </section>
 
-    <!-- 05. PROOF (HIGHLIGHTED HeyMossab) -->
-    <div class="w-full mb-12 border-t border-hairline pt-12">
-      <div class="mb-8 text-center">
-        <span class="text-[11px] font-mono text-textMuted block mb-1.5 uppercase tracking-wider">CASE STUDY</span>
-        <h2 class="text-xl sm:text-2xl font-bold text-white">
-          النتائج مع <span class="text-[#B7F34A]">HeyMossab</span>
-        </h2>
-      </div>
+  <!-- 02. WHAT YOU GET (5 Editorial Lines) -->
+  <section>
+    <div class="container">
+      <h2>شنو كتاخد بالضبط</h2>
+      <p style="color: var(--text-muted); margin-bottom: 24px;">
+        خدمة <span class="headline-green">Done-For-You</span> متكاملة كتستخرج الأفكار والخبرة اللي عندك وبتحولها لحضور رقمي دائم:
+      </p>
 
-      <!-- Bigger testimonial container -->
-      <div class="bg-surfaceCard border border-hairline rounded-2xl p-6 sm:p-8 shadow-xl">
-        <div class="grid grid-cols-1 sm:grid-cols-12 gap-8 items-center">
-          
-          <!-- Wistia 4:5 Format Container -->
-          <div class="sm:col-span-6 flex justify-center">
-            <div class="w-full max-w-[280px] aspect-[4/5] rounded-xl overflow-hidden border border-hairline bg-black shadow-lg">
-              <wistia-player media-id="9xo90klu92" aspect="0.8"></wistia-player>
-            </div>
-          </div>
-
-          <!-- Vertical Stacked Metrics -->
-          <div class="sm:col-span-6 flex flex-col gap-6 text-right">
-            <div class="flex flex-col gap-4">
-              
-              <div class="border-b border-hairline/60 pb-3">
-                <div class="text-3xl sm:text-4xl font-black text-[#B7F34A] num-tabular" dir="ltr">500+</div>
-                <div class="text-xs sm:text-sm text-textSecondary mt-0.5 font-medium">فيديو منشور</div>
-              </div>
-
-              <div class="border-b border-hairline/60 pb-3">
-                <div class="text-3xl sm:text-4xl font-black text-white num-tabular" dir="ltr">480K+</div>
-                <div class="text-xs sm:text-sm text-textSecondary mt-0.5 font-medium">متابع عبر المنصات</div>
-              </div>
-
-              <div class="border-b border-hairline/60 pb-3">
-                <div class="text-3xl sm:text-4xl font-black text-white num-tabular" dir="ltr">$100K+</div>
-                <div class="text-xs sm:text-sm text-textSecondary mt-0.5 font-medium">عائدات صفقات</div>
-              </div>
-
-            </div>
-
-            <p class="text-xs sm:text-sm text-textSecondary leading-relaxed">
-              تحويل كامل لخبرة المؤسس لمحتوى منتظم بدون ما يضيع وقته فكتابة السكريبتات أو إدارة فريق المونتاج.
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Button Below Video Testimonial Section -->
-      <div class="mt-8 text-center">
-        <button
-          type="button"
-          onclick="openBookingModal()"
-          class="bg-[#B7F34A] hover:bg-[#c2f85d] text-[#080E0C] font-bold text-sm sm:text-base px-8 py-3.5 rounded-lg w-full sm:w-auto transition-colors cursor-pointer"
-        >
-          حجز مكالمة اكتشاف أولية &larr;
-        </button>
-      </div>
-    </div>
-
-    <!-- NEW SECTION: WHO IS THE 45 METHOD FOR? (HIGHLIGHTED The 45 Method) -->
-    <div class="w-full mb-16 border-t border-hairline pt-12">
-      <div class="mb-6 text-center">
-        <span class="text-[11px] font-mono text-textMuted block mb-1.5 uppercase tracking-wider">TARGET AUDIENCE</span>
-        <h2 class="text-xl sm:text-2xl font-bold text-white">
-         شكون خاصو ينضم <span class="text-[#B7F34A]">The 45 Method</span> ؟
-        </h2>
-      </div>
-
-      <div class="bg-surfaceCard border border-hairline rounded-xl p-5 sm:p-6 text-right">
-        <p class="text-sm sm:text-base text-softWhite leading-relaxed">
-          للمؤسسين اللي عندهم منتج أو كايقدمو خدمات ، وباغيين يبنيو Authority ويجذبو كليان أكثر بالمحتوى، بلا ما يضيعو وقتهم فالتخطيط، حفظ Scripts أو التصنّع قدام الكاميرا.
-        </p>
-      </div>
-    </div>
-
-    <!-- 06. DELIVERABLES -->
-    <div class="w-full mb-16 border-t border-hairline pt-12">
-      <div class="mb-8 text-center">
-        <span class="text-[11px] font-mono text-textMuted block mb-1.5 uppercase tracking-wider">SCOPE OF WORK</span>
-        <h2 class="text-xl sm:text-2xl font-bold text-white">شنو كتاخد شهرياً</h2>
-      </div>
-
-      <ul class="space-y-2.5">
-        <li class="flex items-start gap-3 p-3.5 bg-surfaceCard border border-hairline rounded-lg text-xs sm:text-sm">
-          <span class="text-[#B7F34A] font-mono font-bold">01</span>
-          <span class="text-white leading-relaxed">بحث السوق والمنافسين وتحديد فرص المحتوى.</span>
+      <ul class="deliverables-list">
+        <li class="deliverables-item">
+          <div class="deliverables-title">تحديد التموضع وخطة المحتوى الشهرية</div>
+          <div class="deliverables-desc">دراسة السوق والمنافسين وتحديد الزاوية الخاصة اللي غتميزك فمجالك، مع خطة أسبوعية للمواضيع.</div>
         </li>
-        <li class="flex items-start gap-3 p-3.5 bg-surfaceCard border border-hairline rounded-lg text-xs sm:text-sm">
-          <span class="text-[#B7F34A] font-mono font-bold">02</span>
-          <span class="text-white leading-relaxed">إعداد استراتيجية وخطة محتوى شهرية: شنو نقولو، علاش، وبأي ترتيب.</span>
+        <li class="deliverables-item">
+          <div class="deliverables-title">البحث المسبق والأسئلة الاستراتيجية</div>
+          <div class="deliverables-desc">كنوجدو الأسئلة الدقيقة اللي كتستفز خبرتك وتخرج أحسن ما عندك، بلا ما تحتاج تحضر أي حاجة مسبقاً.</div>
         </li>
-        <li class="flex items-start gap-3 p-3.5 bg-surfaceCard border border-hairline rounded-lg text-xs sm:text-sm">
-          <span class="text-[#B7F34A] font-mono font-bold">03</span>
-          <span class="text-white leading-relaxed">تحديد محاور المحتوى وزوايا المواضيع والأسئلة قبل كل جلسة.</span>
+        <li class="deliverables-item">
+          <div class="deliverables-title">4 جلسات استخراج شهرياً (45 دقيقة كل جلسة)</div>
+          <div class="deliverables-desc">حوار مباشر كنقودوه معاك أسبوعياً، كتهضر فيه براحتك وكتجاوب بعفوية كأنك جالس مع كليان.</div>
         </li>
-        <li class="flex items-start gap-3 p-3.5 bg-surfaceCard border border-hairline rounded-lg text-xs sm:text-sm">
-          <span class="text-[#B7F34A] font-mono font-bold">04</span>
-          <span class="text-white leading-relaxed">4 جلسات استخراج محتوى شهرياً (45 دقيقة لكل جلسة).</span>
+        <li class="deliverables-item">
+          <div class="deliverables-title">30 إلى 50 مقطع فيديو شهرياً جاهز للنشر</div>
+          <div class="deliverables-desc">استخراج أقوى اللحظات، مع مونتاج احترافي، خطوط متناسقة، نصوص الشرح، وتسليم منظم.</div>
         </li>
-        <li class="flex items-start gap-3 p-3.5 bg-surfaceCard border border-hairline rounded-lg text-xs sm:text-sm">
-          <span class="text-[#B7F34A] font-mono font-bold">05</span>
-          <span class="text-white leading-relaxed">قيادة الجلسات بالأسئلة لاستخراج أفضل ما عندك: خبرتك وأفكارك وقصصك.</span>
-        </li>
-        <li class="flex items-start gap-3 p-3.5 bg-surfaceCard border border-hairline rounded-lg text-xs sm:text-sm">
-          <span class="text-[#B7F34A] font-mono font-bold">06</span>
-          <span class="text-white leading-relaxed">تحويل أفكارك إلى أكثر من 30+ مقطع جاهز للنشر.</span>
-        </li>
-        <li class="flex items-start gap-3 p-3.5 bg-surfaceCard border border-hairline rounded-lg text-xs sm:text-sm">
-          <span class="text-[#B7F34A] font-mono font-bold">07</span>
-          <span class="text-white leading-relaxed">مونتاج أنيق وإحترافي يعكس هوية البراند وقيمه.</span>
-        </li>
-        <li class="flex items-start gap-3 p-3.5 bg-surfaceCard border border-hairline rounded-lg text-xs sm:text-sm">
-          <span class="text-[#B7F34A] font-mono font-bold">08</span>
-          <span class="text-white leading-relaxed">تنظيم وتسليم الفيديوهات جاهزة للنشر.</span>
-        </li>
-        <li class="flex items-start gap-3 p-3.5 bg-surfaceCard border border-hairline rounded-lg text-xs sm:text-sm">
-          <span class="text-[#B7F34A] font-mono font-bold">09</span>
-          <span class="text-white leading-relaxed">مكالمة استراتيجية شهرية 1-1 معي.</span>
-        </li>
-        <li class="flex items-start gap-3 p-3.5 bg-surfaceCard border border-hairline rounded-lg text-xs sm:text-sm">
-          <span class="text-[#B7F34A] font-mono font-bold">10</span>
-          <span class="text-white leading-relaxed">تقرير شهري للأداء: شنو خدم وشنو ما خدمش.</span>
-        </li>
-        <li class="flex items-start gap-3 p-3.5 bg-surfaceCard border border-hairline rounded-lg text-xs sm:text-sm">
-          <span class="text-[#B7F34A] font-mono font-bold">11</span>
-          <span class="text-white leading-relaxed">تحليل النتائج وتطوير استراتيجية الشهر الموالي وبناء مكتبة محتوى منظمة للأفكار والمواضيع.</span>
+        <li class="deliverables-item">
+          <div class="deliverables-title">جلسة استراتيجية فردية وتقرير شهري للأداء</div>
+          <div class="deliverables-desc">متابعة شهرية مباشرة معايا لتحليل النتائج، تحسين الخطاب، وتوثيق أفكارك فـ Content Library دائمة للبيزنس.</div>
         </li>
       </ul>
+    </div>
+  </section>
 
-      <div class="mt-8 text-center">
-        <button
-          type="button"
-          onclick="openBookingModal()"
-          class="bg-[#B7F34A] hover:bg-[#c2f85d] text-[#080E0C] font-bold text-sm px-8 py-3 rounded-lg transition-colors cursor-pointer"
-        >
-          حجز المكالمة الاستكشافية &larr;
-        </button>
+  <!-- 03. PROOF (Case Study: HeyMossab) -->
+  <section>
+    <div class="container">
+      <h2><span class="headline-green">The 45 Method </span>فالواقع</h2>
+      <p style="color: var(--text-muted);">
+        خدمت كـ Head of Content مع رائد الأعمال HeyMossab، وشاركنا فبناء الحضور الرقمي ديالو عن طريق جلسات كنستخرجو فيها الخبرة ديالو
+      </p>
+
+      <div class="proof-grid">
+        <div style="border-radius: 16px; overflow: hidden; background: #000;">
+          <wistia-player media-id="9xo90klu92" aspect="0.8"></wistia-player>
+        </div>
+
+        <div>
+          <div class="stats-row">
+            <div>
+              <div class="stat-number">500+</div>
+              <div class="stat-label"><span class="headline-green">Videos </span></div>
+            </div>
+            <div>
+              <div class="stat-number">480K+</div>
+              <div class="stat-label"><span class="headline-green">Followers </span> </div>
+            </div>
+            <div>
+              <div class="stat-number">$100K+</div>
+              <div class="stat-label"><span class="headline-green">Revenue </span> </div>
+            </div>
+          </div>
+
+          <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 16px;">
+            الدرس كان بسيط: أقوى محتوى ما كيحتاجش سكريبت مسرحي؛ كيحتاج أسئلة ذكية كتطرح على شخص خبير فمجالو، وكتخليه يعبر بثقة وصدق.
+          </p>
+          <div class="proof-disclaimer">
+            النتائج تصف مسار تجربة HeyMossab، ولا تمثل ضماناً لنتائج مماثلة.
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- 07. FAQ -->
-    <div class="w-full mb-16 border-t border-hairline pt-12">
-      <div class="mb-8 text-center">
-        <span class="text-[11px] font-mono text-textMuted block mb-1.5 uppercase tracking-wider">QUESTIONS</span>
-        <h2 class="text-xl sm:text-2xl font-bold text-white">الأسئلة المتكررة</h2>
-      </div>
+  <!-- 04. QUESTIONS -->
+  <section style="padding-bottom: 0;">
+    <div class="container">
+      <h2>الأسئلة الشائعة</h2>
 
-      <div class="space-y-1">
+      <div class="faq-accordion" style="margin-top: 32px;">
         
         <div class="faq-item">
-          <button class="w-full py-4 flex justify-between items-center text-right text-sm font-semibold text-white cursor-pointer" type="button">
-            <span>ماعنديش الوقت باش نبان ونسجل قدام الكاميرا؟</span>
-            <span class="text-textMuted font-mono text-xs">+</span>
+          <button type="button" class="faq-trigger">
+            <span>واش خاصني نكون مرتاح قدام الكاميرا؟</span>
+            <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            هاد السيستيم تصاوب خصيصاً للمؤسسين اللي معندهمش الوقت. كتحتاج فقط 45 دقيقة فالسيمانة لمكالمة الاستخراج، وموراها كتسجل السكربتات الواجدة فوقت وجيز ومريح. حنا كنتكلفو بالاستراتيجية، الكتابة، المونتاج، الجدولة، والنشر الكامل.
+            لا. السيستيم تصاوب خصيصاً باش ما تحتاجش تمثل أو تحفظ سكريبتات. حنا كنقودو الحوار معاك بأسئلة مركزة، ونتا كتجاوب بطبيعتك كأنك كتشرح لكليان قدامك.
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="w-full py-4 flex justify-between items-center text-right text-sm font-semibold text-white cursor-pointer" type="button">
-            <span>حطيت محتوى قبل وما جاب ليا والو؟</span>
-            <span class="text-textMuted font-mono text-xs">+</span>
+          <button type="button" class="faq-trigger">
+            <span>واش خاصني نوجد أي حاجة قبل الجلسة؟</span>
+            <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            غالباً كنتي كتحفظ سكريبتات وكتحس براسك كتمثل، والجمهور كيحس بها مباشرة. The 45 Method مبنية على محاكاة حوار حقيقي Face-to-Face مع إنسان كيسولك على مجالك؛ هادشي كيخليك تهضر بتلقائية، ثقة، وتبان خبير حقيقي كيشرح تجربته الميدانية بدون تصنع، وهو النوع ديال المحتوى اللي كيبني الـ Authority ويجلب الصفقات.
+            نهائياً. حنا كنتكلفو بالبحث المسبق وتحضير المواضيع والأسئلة الاستراتيجية. نتا كتدخل للمكالمة ببال مرتاح باش تشارك خبرتك فقط.
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="w-full py-4 flex justify-between items-center text-right text-sm font-semibold text-white cursor-pointer" type="button">
-            <span>شنو هي الضمانة ديالكم (Guarantee)؟</span>
-            <span class="text-textMuted font-mono text-xs">+</span>
+          <button type="button" class="faq-trigger">
+            <span>شحال ديال الوقت خاصني نخصص فالأسبوع؟</span>
+            <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            كنلتازمو بتسليم العدد المتفق عليه (30+ مقطع شهرياً) وفق معايير الجودة والمونتاج اللي توافقنا عليها مسبقاً. إلا ما استوفيناش العدد المتفق عليه شهرياً وفق التزامات العمل المشتركة، كتسترجع المبلغ ديالك كاملاً بدون تعقيدات.
+            45 دقيقة فقط فالسيمانة لمكالمة الاستخراج (أي 3 ساعات فالشهر كامل)، وحنا كنتكلفو بالإنتاج، المونتاج والتسليم الكامل.
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="w-full py-4 flex justify-between items-center text-right text-sm font-semibold text-white cursor-pointer" type="button">
-            <span>علاش ما نجيبش غير Editor عادي ولا نطلق Ads؟</span>
-            <span class="text-textMuted font-mono text-xs">+</span>
+          <button type="button" class="faq-trigger">
+            <span>واش الخدمة مناسبة إلا كان عندي Content Team؟</span>
+            <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            الـ Editor العادي كيقاد غير داكشي اللي عطيتيه وما كيفهمش فالبزنس ديالك والـ Sales، والـ Ads كتحبس نهار كتحبس الميزانية. هاد السيستيم كيبني أصل تجاري وثقة كتبقى ديما. وفوق هادشي، هاد الخدمة جاية من تجربة ميدانية حقيقية: كنت Head of Content مع heymossab@، شاد الاستراتيجية، الأفكار، المونتاج، وإدارة الفريق كامل.
+            نعم. نقدرو نخدمو مع الفريق ديالك؛ كنتكلفو بالاستراتيجية وبجلسات استخراج المحتوى وصياغة الأفكار، وفريقك يكمل مراحل النشر والجدولة.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-trigger">
+            <span>واش كتضمنو ليا عدد محدد ديال الـ Clients؟</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            ما كنبيعوش أوهام: ما كنضمنوش رقم إيرادات معين. اللي كنقدمو ليك هو System منظم كيبني حضور رقمي رصين، Positioning حاد فالسوق، ومحتوى كيخلي جمهورك يفهم قيمتك ويثق فخدمتك.
           </div>
         </div>
 
       </div>
     </div>
+  </section>
 
-     <!-- Button Below Video Testimonial Section -->
-      <div class="mt-8 text-center">
-        <button
-          type="button"
-          onclick="openBookingModal()"
-          class="bg-[#B7F34A] hover:bg-[#c2f85d] text-[#080E0C] font-bold text-sm sm:text-base px-8 py-3.5 rounded-lg w-full sm:w-auto transition-colors cursor-pointer"
-        >
-          حجز مكالمة اكتشاف أولية &larr;
-        </button>
-      </div>
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+<h2 class="signature-headline">
+ <span class="headline-green">You bring the expertise. We build the content engine </span> 
+</h2>
+      <p style="color: var(--text-muted); max-width: 520px; margin: 0 auto 32px;">
+        45 دقيقة فالسيمانة كافية باش تبني واحد من أقوى أصول البيزنس ديالك. نتا ركز على شركتك وكليانك، وحنا نتكلفو بالباقي.
+      </p>
+      <button type="button" onclick="openBookingModal()" class="btn-primary">قدّم الطلب</button>
     </div>
+  </section>
 
-    <!-- 08. FOOTER WITH SOCIALS & LEGAL -->
-    <footer class="w-full border-t border-hairline pt-10 pb-6 flex flex-col gap-6 text-xs text-textMuted">
+  <!-- FOOTER (Centered, no borders, no mono font, 64px top space) -->
+  <footer>
+    <div class="container footer-container">
       
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-        
-        <div class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#B7F34A]"></span>
-          <span class="text-white font-semibold">Bari Abder</span>
-          <span class="font-mono text-[11px]">— The 45 Method</span>
-        </div>
+      <!-- 1. Social Icons (SVG 20px, #A1A1A6 turning white on hover) -->
+      <div class="footer-socials">
+        <!-- Instagram -->
+        <a href="https://instagram.com/bariabder" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
 
-        <div class="flex items-center gap-4 font-mono text-[11px]" dir="ltr">
-          <a href="https://instagram.com/bariabder" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
-          <span>•</span>
-          <a href="https://x.com/bariabder" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">X (Twitter)</a>
-          <span>•</span>
-          <a href="https://linkedin.com/in/bariabder" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">LinkedIn</a>
-          <span>•</span>
-          <a href="https://bariabder.substack.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Substack</a>
-        </div>
+        <!-- X (Twitter) -->
+        <a href="https://x.com/bariabder" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/bariabder" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+
+        <!-- Substack -->
+        <a href="https://bariabder.substack.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Substack">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+        </a>
+        <!-- YouTube -->
+<a href="https://www.youtube.com/@bariabder"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="social-link"
+   aria-label="YouTube">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55A3.016 3.016 0 0 0 .501 6.186C0 8.057 0 12 0 12s0 3.943.501 5.814a3.016 3.016 0 0 0 2.122 2.136C4.495 20.5 12 20.5 12 20.5s7.505 0 9.376-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.943 24 12 24 12s0-3.943-.502-5.814zM9.6 15.5v-7l6.3 3.5-6.3 3.5z"/>
+  </svg>
+</a>
 
       </div>
 
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-hairline/60 font-mono text-[11px]">
-        <span>© 2026 BARI ABDER. ALL RIGHTS RESERVED.</span>
-        
-        <div class="flex items-center gap-4">
-          <a href="/terms" class="hover:text-white transition-colors">Terms of Service</a>
-          <span>•</span>
-          <a href="/privacy" class="hover:text-white transition-colors">Privacy Policy</a>
-        </div>
+      <!-- 2. Legal links (14px, #A1A1A6) -->
+      <div class="footer-legal">
+        <a href="https://www.bariabder.com/Terms-of-Service">Terms</a>
+        <span style="color: var(--text-dim); user-select: none;">·</span>
+        <a href="https://www.bariabder.com/privacy">Privacy</a>
       </div>
 
-    </footer>
-
-  </main>
-
-  <!-- MODAL -->
-  <div id="bookingModal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80">
-    <div class="modal-content relative w-full max-w-xl bg-surfaceCard border border-hairline p-6 rounded-xl text-right">
-      
-      <button 
-        type="button" 
-        onclick="closeBookingModal()"
-        class="absolute top-4 left-4 text-textMuted hover:text-white transition-colors cursor-pointer text-xs font-mono"
-      >
-        [CLOSE]
-      </button>
-
-      <div class="mb-4">
-        <span class="text-[10px] font-mono text-[#B7F34A]">DISCOVERY CALL</span>
-        <h3 class="text-base font-bold text-white mt-1">عمر النموذج وسنتواصل معك فـ أقل من 24 ساعة</h3>
+      <!-- 3. Copyright (14px, no all-caps) -->
+      <div class="footer-copy">
+        © 2026 Bari Abder — The 45 Method™
       </div>
 
-      <div class="w-full rounded-lg overflow-hidden bg-white youform-wrapper">
-        <div data-youform-embed data-form='jdhalqcr' data-base-url='https://app.youform.com' data-width='100%' data-height='680'></div>
-      </div>
+    </div>
+  </footer>
 
+  <!-- BOOKING MODAL -->
+  <div id="bookingModal" class="modal-backdrop">
+    <div class="modal-sheet">
+      <button type="button" onclick="closeBookingModal()" class="modal-close">إغلاق</button>
+      <div style="margin-bottom: 20px;">
+        <div style="font-weight: 600; font-size: 17px;">قدّم الطلب ديالك</div>
+        <div style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">عمر الاستمارة وغادي نتواصلو معك فـ أقل من 24 ساعة.</div>
+      </div>
+      <div class="youform-wrapper" style="border-radius: 12px; overflow: hidden; background: #fff;">
+        <div data-youform-embed data-form='jdhalqcr' data-base-url='https://app.youform.com' data-width='100%' data-height='640'></div>
+      </div>
     </div>
   </div>
 
@@ -501,19 +717,19 @@
 
   <script>
     // Accordion Logic
-    document.querySelectorAll('.faq-item').forEach(item => {
-      const btn = item.querySelector('button');
+    document.querySelectorAll('.faq-trigger').forEach(btn => {
       btn.addEventListener('click', () => {
+        const item = btn.parentElement;
         const isActive = item.classList.contains('active');
         document.querySelectorAll('.faq-item').forEach(other => {
           other.classList.remove('active');
-          const sym = other.querySelector('span:last-child');
-          if (sym) sym.textContent = '+';
+          const icon = other.querySelector('.faq-icon');
+          if (icon) icon.textContent = '+';
         });
         if (!isActive) {
           item.classList.add('active');
-          const sym = item.querySelector('span:last-child');
-          if (sym) sym.textContent = '—';
+          const icon = item.querySelector('.faq-icon');
+          if (icon) icon.textContent = '—';
         }
       });
     });
