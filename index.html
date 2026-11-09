@@ -1314,73 +1314,114 @@
 </style>
 
 <script>
-  // بدّل هذا برابط Web App ديال Google Apps Script ديالك:
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxg3l4--M86lLzq36xXgO66LtCeV-BQtRxcBTUXORq7pERImNhpBjFROW_-802duPkAPA/exec";
+ // Google Apps Script Web App URL
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyy6nFDFlWPLLb8iEJ6h0eoPSsmBA2YmSyCVRGNNdiPY5LUXg1iyAtEqmFqpaAyZ_MpZg/exec";
 
-  let currentStep = 1;
-  const totalSteps = 8;
+let currentStep = 1;
+const totalSteps = 8;
 
-  function updateProgress() {
-    const fill = document.getElementById('formProgress');
-    if (fill) {
-      fill.style.width = ((currentStep / totalSteps) * 100) + '%';
+function updateProgress() {
+  const fill = document.getElementById('formProgress');
+  if (fill) {
+    fill.style.width = ((currentStep / totalSteps) * 100) + '%';
+  }
+}
+
+function showStep(stepNumber) {
+  document.querySelectorAll('.form-step').forEach(step => {
+    step.classList.remove('active');
+  });
+  const target = document.querySelector(`.form-step[data-step="${stepNumber}"]`);
+  if (target) {
+    target.classList.add('active');
+    currentStep = stepNumber;
+    updateProgress();
+  }
+}
+
+function nextStep() {
+  if (currentStep < totalSteps) {
+    setTimeout(() => {
+      showStep(currentStep + 1);
+    }, 200);
+  }
+}
+
+function prevStep() {
+  if (currentStep > 1) {
+    showStep(currentStep - 1);
+  }
+}
+
+function validateContactAndNext() {
+  const nameInput = document.getElementById('fullName');
+  const phoneInput = document.getElementById('phone');
+
+  const name = nameInput ? nameInput.value.trim() : '';
+  const rawPhone = phoneInput ? phoneInput.value.trim() : '';
+
+  if (!name) {
+    alert('عافاك دخل الاسم الكامل.');
+    return;
+  }
+
+  // Remove spaces, hyphens, and brackets
+  const cleanPhone = rawPhone.replace(/[\s\-\(\)]/g, '');
+
+  let isValid = false;
+
+  // Case 1: Starts with +212 -> requires exactly 9 digits after +212
+  if (cleanPhone.startsWith('+212')) {
+    const afterCode = cleanPhone.slice(4);
+    if (/^\d{9}$/.test(afterCode)) {
+      isValid = true;
+    }
+  } 
+  // Case 2: Starts with 00212 -> requires exactly 9 digits after 00212
+  else if (cleanPhone.startsWith('00212')) {
+    const afterCode = cleanPhone.slice(5);
+    if (/^\d{9}$/.test(afterCode)) {
+      isValid = true;
+    }
+  }
+  // Case 3: Local format starting with 0 (e.g. 06..., 07...) -> requires 10 digits total
+  else if (cleanPhone.startsWith('0')) {
+    if (/^\d{10}$/.test(cleanPhone)) {
+      isValid = true;
     }
   }
 
-  function showStep(stepNumber) {
-    document.querySelectorAll('.form-step').forEach(step => {
-      step.classList.remove('active');
-    });
-    const target = document.querySelector(`.form-step[data-step="${stepNumber}"]`);
-    if (target) {
-      target.classList.add('active');
-      currentStep = stepNumber;
-      updateProgress();
-    }
+  if (!isValid) {
+    alert('عافاك تأكد من رقم الهاتف: إذا بديتي بـ +212 خاص يكونو 9 ديال الأرقام موراها (مثال: +212 655438567) أو دخل رقم محلي (مثال: 0655438567).');
+    return;
   }
 
-  function nextStep() {
-    if (currentStep < totalSteps) {
-      setTimeout(() => {
-        showStep(currentStep + 1);
-      }, 200);
-    }
+  nextStep();
+}
+
+function updateBudgetValue(val) {
+  const formatted = Number(val).toLocaleString();
+  const label = document.getElementById('budgetValue');
+  if (label) {
+    label.textContent = formatted;
   }
+}
 
-  function prevStep() {
-    if (currentStep > 1) {
-      showStep(currentStep - 1);
-    }
-  }
+function enableSubmitButton() {
+  // Optional trigger on last radio selection
+}
 
-  function validateContactAndNext() {
-    const name = document.getElementById('fullName').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-
-    if (!name || !phone) {
-      alert('عافاك دخل الاسم ورقم الـ WhatsApp باش نقدرو ندوزو للخطوة التالية.');
-      return;
-    }
-    nextStep();
-  }
-
-  function updateBudgetValue(val) {
-    const formatted = Number(val).toLocaleString();
-    document.getElementById('budgetValue').textContent = formatted;
-  }
-
-  function enableSubmitButton() {
-    // Optional micro-interaction when last radio is picked
-  }
-
-  // إرسال المعطيات لـ Google Sheets
-  const formElement = document.getElementById('otmMultiStepForm');
+// Form Submission Handler
+const formElement = document.getElementById('otmMultiStepForm');
+if (formElement) {
   formElement.addEventListener('submit', function(e) {
     e.preventDefault();
 
     const submitBtn = document.getElementById('submitFormBtn');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'جاري الإرسال...';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'جاري الإرسال...';
+    }
 
     const formData = new FormData(formElement);
     const payload = {
@@ -1408,14 +1449,17 @@
       if (progressBar) progressBar.style.display = 'none';
 
       const thankYou = document.getElementById('thankYouStep');
-      thankYou.classList.add('active');
+      if (thankYou) thankYou.classList.add('active');
       formElement.reset();
     })
     .finally(() => {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'تأكيد وإرسال الطلب';
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'تأكيد وإرسال الطلب';
+      }
     });
   });
+}
 </script>
 
   <script>
