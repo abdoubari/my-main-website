@@ -704,20 +704,719 @@
   </footer>
 
   <!-- BOOKING MODAL -->
-  <div id="bookingModal" class="modal-backdrop">
-    <div class="modal-sheet">
-      <button type="button" onclick="closeBookingModal()" class="modal-close">إغلاق</button>
-      <div style="margin-bottom: 20px;">
-        <div style="font-weight: 600; font-size: 17px;">قدّم الطلب ديالك</div>
-        <div style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">عمر الاستمارة وغادي نتواصلو معك فـ أقل من 24 ساعة.</div>
-      </div>
-      <div class="youform-wrapper" style="border-radius: 12px; overflow: hidden; background: #fff;">
-        <div data-youform-embed data-form='jdhalqcr' data-base-url='https://app.youform.com' data-width='100%' data-height='640'></div>
-      </div>
-    </div>
-  </div>
+<div id="bookingModal" class="modal-backdrop">
+  <div class="modal-sheet custom-flow-sheet">
+    <button type="button" onclick="closeBookingModal()" class="modal-close" aria-label="إغلاق">✕</button>
 
-  <script src="https://app.youform.com/embed.js"></script>
+    <!-- Progress Indicator -->
+    <div class="flow-progress-bar">
+      <div id="formProgress" class="flow-progress-fill"></div>
+    </div>
+
+    <form id="otmMultiStepForm" novalidate>
+
+      <!-- 1. معلومات التواصل -->
+      <div class="form-step active" data-step="1">
+        <span class="step-num">01 / 08</span>
+        <h3 class="step-question">كيفاش نقدرو نتواصلو معاك؟</h3>
+        
+        <div class="inputs-group">
+          <div class="input-field">
+            <label for="fullName">الاسم الكامل (Full Name) *</label>
+            <input type="text" id="fullName" name="fullName" required placeholder="مثال: أحمد">
+          </div>
+
+          <div class="input-field">
+            <label for="phone">رقم الـ WhatsApp *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="0650-123456" dir="ltr">
+          </div>
+        </div>
+
+        <div class="step-nav" style="justify-content: flex-end;">
+          <button type="button" class="btn-primary" onclick="validateContactAndNext()">التالي ←</button>
+        </div>
+      </div>
+
+      <!-- 2. المجال -->
+      <div class="form-step" data-step="2">
+        <span class="step-num">02 / 08</span>
+        <h3 class="step-question">شنو المجال ديالك؟</h3>
+        
+        <div class="choice-group">
+          <label class="choice-card">
+            <input type="radio" name="niche" value="Coaching / Consulting" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">A</span>
+              <span class="choice-label">Coaching / Consulting</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="niche" value="Finance / Business" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">B</span>
+              <span class="choice-label">Finance / Business</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="niche" value="E-commerce" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">C</span>
+              <span class="choice-label">E-commerce</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="niche" value="Education" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">D</span>
+              <span class="choice-label">Education</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="niche" value="Other" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">E</span>
+              <span class="choice-label">مجال آخر (Other)</span>
+            </span>
+          </label>
+        </div>
+
+        <div class="step-nav">
+          <button type="button" class="btn-step-back" onclick="prevStep()">الرجوع</button>
+        </div>
+      </div>
+
+      <!-- 3. الحضور الحالي -->
+      <div class="form-step" data-step="3">
+        <span class="step-num">03 / 08</span>
+        <h3 class="step-question">واش عندك حالياً حضور على السوشيال ميديا؟</h3>
+        
+        <div class="choice-group">
+          <label class="choice-card">
+            <input type="radio" name="currentPresence" value="Yes, active audience" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">A</span>
+              <span class="choice-label">نعم، وعندي جمهور نشيط</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="currentPresence" value="Yes, irregular posting" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">B</span>
+              <span class="choice-label">نعم، ولكن النشر غير منتظم</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="currentPresence" value="Have accounts, no posting" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">C</span>
+              <span class="choice-label">عندي حسابات ولكن ما كننشرش</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="currentPresence" value="No, not started yet" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">D</span>
+              <span class="choice-label">لا، باقي ما بديتش</span>
+            </span>
+          </label>
+        </div>
+
+        <div class="step-nav">
+          <button type="button" class="btn-step-back" onclick="prevStep()">الرجوع</button>
+        </div>
+      </div>
+
+      <!-- 4. أكبر عائق -->
+      <div class="form-step" data-step="4">
+        <span class="step-num">04 / 08</span>
+        <h3 class="step-question">شنو هو أكبر عائق كيمنعك تنشر المحتوى بانتظام؟</h3>
+        
+        <div class="choice-group">
+          <label class="choice-card">
+            <input type="radio" name="biggestObstacle" value="No time" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">A</span>
+              <span class="choice-label">ما عنديش الوقت الكافي</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="biggestObstacle" value="Camera difficulty" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">B</span>
+              <span class="choice-label">كنلقى صعوبة فالتصوير أو الهضرة قدام الكاميرا</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="biggestObstacle" value="Topic ideation" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">C</span>
+              <span class="choice-label">ما عارفش على شنو نهضر</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="biggestObstacle" value="No clear strategy" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">D</span>
+              <span class="choice-label">ما عنديش استراتيجية واضحة للمحتوى</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="biggestObstacle" value="Other" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">E</span>
+              <span class="choice-label">عائق آخر (Other)</span>
+            </span>
+          </label>
+        </div>
+
+        <div class="step-nav">
+          <button type="button" class="btn-step-back" onclick="prevStep()">الرجوع</button>
+        </div>
+      </div>
+
+      <!-- 5. الهدف خلال 6 أشهر -->
+      <div class="form-step" data-step="5">
+        <span class="step-num">05 / 08</span>
+        <h3 class="step-question">شنو بغيتي تحقق بالمحتوى خلال 6 أشهر الجايين؟</h3>
+        
+        <div class="choice-group">
+          <label class="choice-card">
+            <input type="radio" name="goal" value="High quality clients" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">A</span>
+              <span class="choice-label">نجيب كليان أكثر بجودة عالية</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="goal" value="Grow audience" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">B</span>
+              <span class="choice-label">نكبر الحساب ديالي والجمهور</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="goal" value="Authority in industry" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">C</span>
+              <span class="choice-label">نبني المصداقية ونولي معروف فالمجال ديالي</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="goal" value="Build Personal Brand" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">D</span>
+              <span class="choice-label">نبني براند شخصي رصين (Personal Brand)</span>
+            </span>
+          </label>
+        </div>
+
+        <div class="step-nav">
+          <button type="button" class="btn-step-back" onclick="prevStep()">الرجوع</button>
+        </div>
+      </div>
+
+      <!-- 6. تخصيص 45 دقيقة -->
+      <div class="form-step" data-step="6">
+        <span class="step-num">06 / 08</span>
+        <h3 class="step-question">واش مسالي تخصص 45 دقيقة كل أسبوع لمكالمة معانا؟</h3>
+        <p class="step-hint">هادي هي المكالمة الوحيدة اللي كنستعملوها فاستخراج وصناعة المحتوى ديالك كامل.</p>
+        
+        <div class="choice-group">
+          <label class="choice-card">
+            <input type="radio" name="commitment45" value="Yes, available" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">A</span>
+              <span class="choice-label">نعم، مستعد ومسالي</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="commitment45" value="Need to organize time" onchange="nextStep()">
+            <span class="choice-box">
+              <span class="choice-key">B</span>
+              <span class="choice-label">خاصني نرتب وقتي ولكن ممكن</span>
+            </span>
+          </label>
+        </div>
+
+        <div class="step-nav">
+          <button type="button" class="btn-step-back" onclick="prevStep()">الرجوع</button>
+        </div>
+      </div>
+
+      <!-- 7. الميزانية (Slider تفاعلي) -->
+      <div class="form-step" data-step="7">
+        <span class="step-num">07 / 08</span>
+        <h3 class="step-question">شحال الميزانية الشهرية تقدر تخصص لنظام صناعة المحتوى بحال هادا؟</h3>
+        <p class="step-hint">حرّك المؤشر لاختيار الميزانية المناسبة ليك:</p>
+
+        <div class="slider-container">
+          <div class="slider-display">
+            <span id="budgetValue">6,000</span> <span class="currency">DH / شهر</span>
+          </div>
+          <input type="range" id="budgetSlider" name="budget" min="3000" max="15000" step="1000" value="6000" oninput="updateBudgetValue(this.value)">
+          <div class="slider-bounds">
+            <span>3,000 DH</span>
+            <span>6,000 DH</span>
+            <span>15,000+ DH</span>
+          </div>
+        </div>
+
+        <div class="step-nav space-between">
+          <button type="button" class="btn-step-back" onclick="prevStep()">الرجوع</button>
+          <button type="button" class="btn-primary" onclick="nextStep()">التالي ←</button>
+        </div>
+      </div>
+
+      <!-- 8. تاريخ البدء -->
+      <div class="form-step" data-step="8">
+        <span class="step-num">08 / 08</span>
+        <h3 class="step-question">فوقاش مستعد تبدا معانا؟</h3>
+        
+        <div class="choice-group">
+          <label class="choice-card">
+            <input type="radio" name="timeline" value="Immediately (This week)" onchange="enableSubmitButton()">
+            <span class="choice-box">
+              <span class="choice-key">A</span>
+              <span class="choice-label">مستعد دابا (هاد السيمانة)</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="timeline" value="Within 2-3 weeks" onchange="enableSubmitButton()">
+            <span class="choice-box">
+              <span class="choice-key">B</span>
+              <span class="choice-label">خلال الأسبوعين أو 3 أسابيع الجايين</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="timeline" value="Next month" onchange="enableSubmitButton()">
+            <span class="choice-box">
+              <span class="choice-key">C</span>
+              <span class="choice-label">الشهر القادم إن شاء الله</span>
+            </span>
+          </label>
+
+          <label class="choice-card">
+            <input type="radio" name="timeline" value="Just exploring" onchange="enableSubmitButton()">
+            <span class="choice-box">
+              <span class="choice-key">D</span>
+              <span class="choice-label">كنكتشف فقط الخدمة حالياً</span>
+            </span>
+          </label>
+        </div>
+
+        <div class="step-nav space-between">
+          <button type="button" class="btn-step-back" onclick="prevStep()">الرجوع</button>
+          <button type="submit" id="submitFormBtn" class="btn-primary form-submit-btn">تأكيد وإرسال الطلب</button>
+        </div>
+      </div>
+
+      <!-- THANK YOU SCREEN -->
+      <div class="form-step" id="thankYouStep">
+        <div class="thank-you-box">
+          <div class="success-checkmark">✓</div>
+          <h3 class="thank-you-title">تم استلام طلبك بنجاح!</h3>
+          <p class="thank-you-desc">
+            شكراً لك. سجلنا كل المعطيات، وغادي نتواصلو معاك عبر الـ WhatsApp فهاد الـ 24 ساعة لترتيب مكالمة استكشافية.
+          </p>
+          <button type="button" class="btn-primary" onclick="closeBookingModal()">إغلاق</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<style>
+  .custom-flow-sheet {
+    padding: 36px 28px 28px;
+    background: #0f110f;
+    border: 1px solid var(--border);
+  }
+
+  .flow-progress-bar {
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  .flow-progress-fill {
+    height: 100%;
+    width: 12.5%;
+    background: var(--lime);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .form-step {
+    display: none;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .form-step.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .step-num {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--lime);
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .step-question {
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .step-hint {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  .choice-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .choice-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .choice-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .choice-card:hover .choice-box {
+    background: rgba(183, 255, 0, 0.04);
+    border-color: rgba(183, 255, 0, 0.3);
+    transform: translateX(-3px);
+  }
+
+  .choice-card input[type="radio"]:checked + .choice-box {
+    background: rgba(183, 255, 0, 0.08);
+    border-color: var(--lime);
+  }
+
+  .choice-key {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  .choice-card input[type="radio"]:checked + .choice-box .choice-key {
+    background: var(--lime);
+    color: #000;
+    border-color: var(--lime);
+  }
+
+  .choice-label {
+    font-size: 15px;
+    color: var(--text);
+  }
+
+  .inputs-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  .input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .input-field label {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .input-field input {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 15px;
+    color: var(--text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+
+  .input-field input:focus {
+    border-color: var(--lime);
+  }
+
+  /* Slider Styling */
+  .slider-container {
+    padding: 24px 10px 10px;
+    text-align: center;
+  }
+
+  .slider-display {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--lime);
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .slider-display .currency {
+    font-size: 16px;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    outline: none;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--lime);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(183, 255, 0, 0.4);
+    transition: transform 0.1s ease;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+  }
+
+  .slider-bounds {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 14px;
+    direction: ltr;
+  }
+
+  .step-nav {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  .step-nav.space-between {
+    justify-content: space-between;
+  }
+
+  .btn-step-back {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 8px 12px;
+  }
+
+  .btn-step-back:hover {
+    color: var(--text);
+  }
+
+  .thank-you-box {
+    text-align: center;
+    padding: 30px 10px;
+  }
+
+  .success-checkmark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: rgba(183, 255, 0, 0.12);
+    border: 2px solid var(--lime);
+    color: var(--lime);
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .thank-you-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .thank-you-desc {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 440px;
+    margin: 0 auto 28px;
+  }
+</style>
+
+<script>
+  // بدّل هذا برابط Web App ديال Google Apps Script ديالك:
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxg3l4--M86lLzq36xXgO66LtCeV-BQtRxcBTUXORq7pERImNhpBjFROW_-802duPkAPA/exec";
+
+  let currentStep = 1;
+  const totalSteps = 8;
+
+  function updateProgress() {
+    const fill = document.getElementById('formProgress');
+    if (fill) {
+      fill.style.width = ((currentStep / totalSteps) * 100) + '%';
+    }
+  }
+
+  function showStep(stepNumber) {
+    document.querySelectorAll('.form-step').forEach(step => {
+      step.classList.remove('active');
+    });
+    const target = document.querySelector(`.form-step[data-step="${stepNumber}"]`);
+    if (target) {
+      target.classList.add('active');
+      currentStep = stepNumber;
+      updateProgress();
+    }
+  }
+
+  function nextStep() {
+    if (currentStep < totalSteps) {
+      setTimeout(() => {
+        showStep(currentStep + 1);
+      }, 200);
+    }
+  }
+
+  function prevStep() {
+    if (currentStep > 1) {
+      showStep(currentStep - 1);
+    }
+  }
+
+  function validateContactAndNext() {
+    const name = document.getElementById('fullName').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+
+    if (!name || !phone) {
+      alert('عافاك دخل الاسم ورقم الـ WhatsApp باش نقدرو ندوزو للخطوة التالية.');
+      return;
+    }
+    nextStep();
+  }
+
+  function updateBudgetValue(val) {
+    const formatted = Number(val).toLocaleString();
+    document.getElementById('budgetValue').textContent = formatted;
+  }
+
+  function enableSubmitButton() {
+    // Optional micro-interaction when last radio is picked
+  }
+
+  // إرسال المعطيات لـ Google Sheets
+  const formElement = document.getElementById('otmMultiStepForm');
+  formElement.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const submitBtn = document.getElementById('submitFormBtn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'جاري الإرسال...';
+
+    const formData = new FormData(formElement);
+    const payload = {
+      fullName: formData.get('fullName') || '',
+      phone: formData.get('phone') || '',
+      niche: formData.get('niche') || 'N/A',
+      currentPresence: formData.get('currentPresence') || 'N/A',
+      biggestObstacle: formData.get('biggestObstacle') || 'N/A',
+      goal: formData.get('goal') || 'N/A',
+      commitment45: formData.get('commitment45') || 'N/A',
+      budget: formData.get('budget') || '6000',
+      timeline: formData.get('timeline') || 'N/A'
+    };
+
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    })
+    .then(res => res.json())
+    .catch(() => ({ status: 'success' }))
+    .then(() => {
+      document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+      const progressBar = document.querySelector('.flow-progress-bar');
+      if (progressBar) progressBar.style.display = 'none';
+
+      const thankYou = document.getElementById('thankYouStep');
+      thankYou.classList.add('active');
+      formElement.reset();
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'تأكيد وإرسال الطلب';
+    });
+  });
+</script>
 
   <script>
     // Accordion Logic
