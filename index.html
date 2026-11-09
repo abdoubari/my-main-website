@@ -8,11 +8,11 @@
   <link rel="canonical" href="https://www.bariabder.com/">
   <link rel="icon" type="image/png" href="https://www.bariabder.com/fav-icon.png">
 
-  <!-- Typography: IBM Plex Sans Arabic (Authentic 400 & 600 weights) -->
+  <!-- Typography: IBM Plex Sans Arabic & Nanum Pen Script -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #090A09;
@@ -30,6 +30,11 @@
       padding: 0;
     }
 
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       background-color: var(--bg);
       color: var(--text);
@@ -38,59 +43,47 @@
       line-height: 1.85;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
     }
 
     .container {
       width: 100%;
       max-width: 680px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 20px;
     }
 
     .container-wide {
       width: 100%;
       max-width: 840px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 20px;
     }
 
-   h1 {
-  font-size: 42px;
-  font-weight: 600;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
-  color: var(--text);
-  margin-bottom: 24px;
-}
+    h1 {
+      font-size: 42px;
+      font-weight: 600;
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 24px;
+      word-break: break-word;
+    }
 
-.headline-line {
-  display: block;
-  white-space: nowrap;
-}
-
-/* Lime text for 45 minutes */
-.headline-green {
-  color: var(--lime);
-}
-
-/* Underline for 30–50 videos */
-.headline-highlight {
-  text-decoration: underline;
-  text-decoration-color: var(--lime);
-  text-decoration-thickness: 5px;
-  text-underline-offset: 14px;
-  text-decoration-skip-ink: none;
-}
-
-@media (max-width: 640px) {
-  .headline-highlight {
-    text-decoration-thickness: 4px;
-    text-underline-offset: 12px;
-  }
-}
-    .nowrap {
+    .headline-line {
+      display: block;
       white-space: nowrap;
+    }
+
+    .headline-green {
+      color: var(--lime);
+    }
+
+    .headline-highlight {
+      text-decoration: underline;
+      text-decoration-color: var(--lime);
+      text-decoration-thickness: 5px;
+      text-underline-offset: 14px;
+      text-decoration-skip-ink: none;
     }
 
     h2 {
@@ -100,6 +93,7 @@
       letter-spacing: -0.01em;
       color: var(--text);
       margin-bottom: 24px;
+      word-break: break-word;
     }
 
     p.lead {
@@ -110,18 +104,10 @@
     }
 
     section {
-      padding: 120px 0;
+      padding: 100px 0;
     }
 
-    @media (max-width: 640px) {
-      h1 { font-size: 30px; line-height: 1.3; }
-      h2 { font-size: 24px; }
-      p.lead { font-size: 18px; }
-      section { padding: 80px 0; }
-      body { font-size: 16px; }
-    }
-
-    /* Primary CTA Button (Exclusive Lime Accent) */
+    /* Primary CTA Button */
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -149,14 +135,15 @@
       outline-offset: 4px;
     }
 
-    /* Clean Video Container */
+    /* Video Wrapper */
     .video-wrapper {
       border-radius: 20px;
       overflow: hidden;
       background: #000;
+      width: 100%;
     }
 
-    /* What You Get: 5 Clean Editorial Lines */
+    /* Deliverables */
     .deliverables-list {
       list-style: none;
       margin-top: 32px;
@@ -184,11 +171,11 @@
       line-height: 1.8;
     }
 
-    /* Proof Section: Asymmetric Media & Clean Neutral Stats */
+    /* Proof Section */
     .proof-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 40px;
+      gap: 36px;
       align-items: center;
       margin-top: 36px;
     }
@@ -200,63 +187,51 @@
       }
     }
 
-   
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  direction: ltr;
-  padding: 30px 0;
-  margin: 28px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.stats-row > div {
-  text-align: center;
-  min-width: 0;
-}
-
-.stat-number {
-  font-size: 30px;
-  font-weight: 600;
-  color: var(--text);
-  line-height: 1.2;
-  letter-spacing: -0.045em;
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-}
-
-.stat-label {
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--text-dim);
-  margin-top: 9px;
-  letter-spacing: 0.04em;
-}
-
-.stat-label .headline-green {
-  color: var(--lime);
-}
-
-@media (max-width: 400px) {
-  .stat-number {
-    font-size: 23px;
-  }
-
-  .stat-label {
-    font-size: 10px;
-  }
-}
-
-
-    .proof-disclaimer {
-      font-size: 14px;
-      color: var(--text-dim);
-      line-height: 1.7;
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      direction: ltr;
+      padding: 24px 0;
+      margin: 24px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
-    /* Minimal Accordion */
+    .stats-row > div {
+      text-align: center;
+      min-width: 0;
+    }
+
+    .stat-number {
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.2;
+      letter-spacing: -0.045em;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-dim);
+      margin-top: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    .stat-label .headline-green {
+      color: var(--lime);
+    }
+
+    .proof-disclaimer {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* FAQ Accordion */
     .faq-item {
       border-bottom: 1px solid var(--border);
     }
@@ -270,7 +245,7 @@
       text-align: right;
       background: none;
       border: none;
-      padding: 24px 0;
+      padding: 20px 0;
       font-family: inherit;
       font-size: 17px;
       font-weight: 600;
@@ -279,19 +254,20 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 12px;
     }
 
     .faq-icon {
       font-size: 18px;
       font-weight: 400;
       color: var(--text-dim);
-      margin-right: 16px;
+      flex-shrink: 0;
       user-select: none;
     }
 
     .faq-answer {
       display: none;
-      padding-bottom: 24px;
+      padding-bottom: 20px;
       font-size: 16px;
       color: var(--text-muted);
       line-height: 1.85;
@@ -303,13 +279,23 @@
 
     /* Final CTA */
     .final-cta {
-      padding: 100px 0 64px;
+      padding: 80px 0 60px;
       text-align: center;
     }
 
-    /* Minimal Footer without border lines or mono */
+    .signature-headline {
+      font-family: 'Nanum Pen Script', cursive;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--text);
+      margin-bottom: 20px;
+      word-break: break-word;
+    }
+
+    /* Footer */
     footer {
-      padding-bottom: 64px;
+      padding-bottom: 48px;
       color: var(--text-muted);
       font-size: 14px;
       text-align: center;
@@ -319,15 +305,15 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
     }
 
     .footer-socials {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 24px;
-      margin-bottom: 4px;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .social-link {
@@ -341,11 +327,6 @@
 
     .social-link:hover {
       color: #FFFFFF;
-    }
-
-    .social-link:focus-visible {
-      outline: 2px solid var(--text);
-      outline-offset: 4px;
     }
 
     .social-link svg {
@@ -365,33 +346,27 @@
     .footer-legal a {
       color: var(--text-muted);
       text-decoration: none;
-      transition: color 0.15s ease;
     }
 
     .footer-legal a:hover {
       color: #FFFFFF;
     }
 
-    .footer-legal a:focus-visible {
-      outline: 2px solid var(--text);
-      outline-offset: 2px;
-    }
-
     .footer-copy {
       color: var(--text-muted);
-      font-size: 14px;
+      font-size: 13px;
     }
 
-    /* Booking Modal */
+    /* Modal */
     .modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0, 0, 0, 0.88);
       z-index: 100;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 16px;
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.2s ease, visibility 0.2s ease;
@@ -405,22 +380,26 @@
     .modal-sheet {
       width: 100%;
       max-width: 580px;
+      max-height: 92vh;
+      overflow-y: auto;
       background: #111311;
-      border-radius: 24px;
-      padding: 32px 24px 24px;
+      border-radius: 20px;
+      padding: 28px 20px 20px;
       position: relative;
+      -webkit-overflow-scrolling: touch;
     }
 
     .modal-close {
       position: absolute;
-      top: 20px;
-      left: 20px;
+      top: 18px;
+      left: 18px;
       background: none;
       border: none;
       color: var(--text-muted);
       cursor: pointer;
       font-size: 14px;
       font-family: inherit;
+      padding: 6px 10px;
     }
 
     .modal-close:hover {
@@ -428,40 +407,76 @@
     }
 
     .youform-wrapper iframe {
-      height: 640px !important;
-      min-height: 640px !important;
+      max-height: 65vh;
+      width: 100%;
       border: none !important;
     }
-    .vsl-container {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-@media (max-width: 640px) {
-  .vsl-container {
-    max-width: 100%;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-}
-.signature-headline {
-  font-family: 'Nanum Pen Script', cursive;
-  font-size: 34px;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: 0;
-  color: var(--text);
-  white-space: nowrap;
-  margin-bottom: 24px;
-}
+    /* --- MOBILE BREAKPOINTS --- */
+    @media (max-width: 640px) {
+      body {
+        font-size: 16px;
+      }
 
-@media (max-width: 640px) {
-  .signature-headline {
-    font-size: 25px;
-  }
-}
+      section {
+        padding: 60px 0;
+      }
+
+      h1 {
+        font-size: 27px;
+        line-height: 1.4;
+      }
+
+      /* Allow hero headline to wrap naturally on phones */
+      .headline-line {
+        display: inline;
+        white-space: normal;
+      }
+
+      .headline-highlight {
+        text-decoration-thickness: 3px;
+        text-underline-offset: 8px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p.lead {
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .signature-headline {
+        font-size: 24px;
+        white-space: normal;
+      }
+
+      .btn-primary {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .stat-number {
+        font-size: 24px;
+      }
+
+      .stat-label {
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .stat-number {
+        font-size: 20px;
+      }
+      .stat-label {
+        font-size: 10px;
+      }
+      h1 {
+        font-size: 24px;
+      }
+    }
   </style>
 
   <!-- Wistia Embedded Logic -->
@@ -472,23 +487,23 @@
 
 <body>
 
-  <!-- 01. HERO (Starts directly: Headline in 2 lines → Sentence → Video → Centered CTA) -->
-  <section style="padding-top: 40px; padding-bottom: 20px; text-align: center;">
+  <!-- 01. HERO -->
+  <section style="padding-top: 40px; padding-bottom: 24px; text-align: center;">
     <div class="container">
-<h1>
-  <span class="headline-line">
-    كيفاش كنحوّلو <span class="headline-green">45 دقيقة</span> من وقتك كمؤسس
-  </span>
-  <span class="headline-line">
-    إلى <span class="headline-green">30–50 فيديو</span> كل شهر
-  </span>
-</h1>
+      <h1>
+        <span class="headline-line">
+          كيفاش كنحوّلو <span class="headline-green">45 دقيقة</span> من وقتك كمؤسس
+        </span>
+        <span class="headline-line">
+          إلى <span class="headline-green">30–50 فيديو</span> كل شهر
+        </span>
+      </h1>
       <p class="lead">
-        كنجلسو معاك 45 دقيقة فالسيمانة،  كنوجهو معاك حوار بأسئلة مدروسة، وكنحوّلو خبرتك الميدانية لمحتوى احترافي بلا Scripts  بلا تصنّع، وبلا صداع المونتاج.
+        كنجلسو معاك 45 دقيقة فالسيمانة، كنوجهو معاك حوار بأسئلة مدروسة، وكنحوّلو خبرتك الميدانية لمحتوى احترافي بلا Scripts بلا تصنّع، وبلا صداع المونتاج.
       </p>
     </div>
 
-    <div class="container-wide" style="margin-top: 20px;">
+    <div class="container-wide" style="margin-top: 24px;">
       <div class="video-wrapper">
         <wistia-player media-id="5bd1e0alqr" aspect="1.7777777777777777"></wistia-player>
       </div>
@@ -499,7 +514,7 @@
     </div>
   </section>
 
-  <!-- 02. WHAT YOU GET (5 Editorial Lines) -->
+  <!-- 02. WHAT YOU GET -->
   <section>
     <div class="container">
       <h2>شنو كتاخد بالضبط</h2>
@@ -532,7 +547,7 @@
     </div>
   </section>
 
-  <!-- 03. PROOF (Case Study: HeyMossab) -->
+  <!-- 03. PROOF -->
   <section>
     <div class="container">
       <h2><span class="headline-green">The 45 Method </span>فالواقع</h2>
@@ -541,7 +556,7 @@
       </p>
 
       <div class="proof-grid">
-        <div style="border-radius: 16px; overflow: hidden; background: #000;">
+        <div style="border-radius: 16px; overflow: hidden; background: #000; width: 100%; max-width: 320px; margin: 0 auto;">
           <wistia-player media-id="9xo90klu92" aspect="0.8"></wistia-player>
         </div>
 
@@ -549,15 +564,15 @@
           <div class="stats-row">
             <div>
               <div class="stat-number">500+</div>
-              <div class="stat-label"><span class="headline-green">Videos </span></div>
+              <div class="stat-label"><span class="headline-green">Videos</span></div>
             </div>
             <div>
               <div class="stat-number">480K+</div>
-              <div class="stat-label"><span class="headline-green">Followers </span> </div>
+              <div class="stat-label"><span class="headline-green">Followers</span></div>
             </div>
             <div>
               <div class="stat-number">$100K+</div>
-              <div class="stat-label"><span class="headline-green">Revenue </span> </div>
+              <div class="stat-label"><span class="headline-green">Revenue</span></div>
             </div>
           </div>
 
@@ -578,7 +593,6 @@
       <h2>الأسئلة الشائعة</h2>
 
       <div class="faq-accordion" style="margin-top: 32px;">
-        
         <div class="faq-item">
           <button type="button" class="faq-trigger">
             <span>واش خاصني نكون مرتاح قدام الكاميرا؟</span>
@@ -628,7 +642,6 @@
             ما كنبيعوش أوهام: ما كنضمنوش رقم إيرادات معين. اللي كنقدمو ليك هو System منظم كيبني حضور رقمي رصين، Positioning حاد فالسوق، ومحتوى كيخلي جمهورك يفهم قيمتك ويثق فخدمتك.
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -636,9 +649,9 @@
   <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="container">
-<h2 class="signature-headline">
- <span class="headline-green">You bring the expertise. We build the content engine </span> 
-</h2>
+      <h2 class="signature-headline">
+        <span class="headline-green">You bring the expertise. I build the content </span>
+      </h2>
       <p style="color: var(--text-muted); max-width: 520px; margin: 0 auto 32px;">
         45 دقيقة فالسيمانة كافية باش تبني واحد من أقوى أصول البيزنس ديالك. نتا ركز على شركتك وكليانك، وحنا نتكلفو بالباقي.
       </p>
@@ -646,11 +659,9 @@
     </div>
   </section>
 
-  <!-- FOOTER (Centered, no borders, no mono font, 64px top space) -->
+  <!-- FOOTER -->
   <footer>
     <div class="container footer-container">
-      
-      <!-- 1. Social Icons (SVG 20px, #A1A1A6 turning white on hover) -->
       <div class="footer-socials">
         <!-- Instagram -->
         <a href="https://instagram.com/bariabder" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
@@ -671,31 +682,24 @@
         <a href="https://bariabder.substack.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Substack">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
         </a>
-        <!-- YouTube -->
-<a href="https://www.youtube.com/@bariabder"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="social-link"
-   aria-label="YouTube">
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55A3.016 3.016 0 0 0 .501 6.186C0 8.057 0 12 0 12s0 3.943.501 5.814a3.016 3.016 0 0 0 2.122 2.136C4.495 20.5 12 20.5 12 20.5s7.505 0 9.376-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.943 24 12 24 12s0-3.943-.502-5.814zM9.6 15.5v-7l6.3 3.5-6.3 3.5z"/>
-  </svg>
-</a>
 
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@bariabder" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55A3.016 3.016 0 0 0 .501 6.186C0 8.057 0 12 0 12s0 3.943.501 5.814a3.016 3.016 0 0 0 2.122 2.136C4.495 20.5 12 20.5 12 20.5s7.505 0 9.376-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.943 24 12 24 12s0-3.943-.502-5.814zM9.6 15.5v-7l6.3 3.5-6.3 3.5z"/>
+          </svg>
+        </a>
       </div>
 
-      <!-- 2. Legal links (14px, #A1A1A6) -->
       <div class="footer-legal">
         <a href="https://www.bariabder.com/Terms-of-Service">Terms</a>
         <span style="color: var(--text-dim); user-select: none;">·</span>
         <a href="https://www.bariabder.com/privacy">Privacy</a>
       </div>
 
-      <!-- 3. Copyright (14px, no all-caps) -->
       <div class="footer-copy">
         © 2026 Bari Abder — The 45 Method™
       </div>
-
     </div>
   </footer>
 
