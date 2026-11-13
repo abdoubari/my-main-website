@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" class="scroll-smooth">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bari Abder — The 45 Method</title>
-  <meta name="description" content="خدمة Done-For-You متكاملة للـ Founders لتحويل 45 دقيقة أسبوعياً إلى محتوى احترافي ومستمر.">
+  <title>Bari Abder — The 45 Method™</title>
+  <meta name="description" content="Content strategist, funnel builder. The 45 Method™ helps founders turn their existing knowledge, experience, and opinions into consistent personal brand content.">
   <link rel="canonical" href="https://www.bariabder.com/">
   <link rel="icon" type="image/png" href="https://www.bariabder.com/fav-icon.png">
 
-  <!-- Typography: IBM Plex Sans Arabic & Nanum Pen Script -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #090A09;
-      --text: #F5F5F0;
-      --text-muted: #A1A1A6;
-      --text-dim: #6E6E73;
-      --border: rgba(255, 255, 255, 0.08);
+      --bg: #FBFBFD;
+      --surface: #FFFFFF;
+      --surface-subtle: #F5F5F7;
+      --ink: #1D1D1F;
+      --ink-muted: #6E6E73;
+      --border: rgba(0, 0, 0, 0.08);
       --lime: #B7FF00;
-      --lime-hover: #c7ff33;
+      --lime-hover: #c5ff33;
+    }
+
+    @property --border-angle {
+      syntax: "<angle>";
+      inherits: true;
+      initial-value: 0turn;
     }
 
     *, *::before, *::after {
@@ -30,1928 +36,441 @@
       padding: 0;
     }
 
-    html, body {
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-
     body {
       background-color: var(--bg);
-      color: var(--text);
-      font-family: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 17px;
-      line-height: 1.85;
+      color: var(--ink);
+      font-family: 'IBM Plex Sans Arabic', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
-    .container {
-      width: 100%;
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .container-wide {
-      width: 100%;
-      max-width: 840px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    h1 {
-      font-size: 42px;
-      font-weight: 600;
-      line-height: 1.45;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      margin-bottom: 24px;
-      word-break: break-word;
-    }
-
-    .headline-line {
-      display: block;
-      white-space: nowrap;
-    }
-
-    .headline-green {
-      color: var(--lime);
-    }
-
-    .headline-highlight {
-      text-decoration: underline;
-      text-decoration-color: var(--lime);
-      text-decoration-thickness: 5px;
-      text-underline-offset: 14px;
-      text-decoration-skip-ink: none;
-    }
-
-    h2 {
-      font-size: 32px;
-      font-weight: 600;
-      line-height: 1.35;
-      letter-spacing: -0.01em;
-      color: var(--text);
-      margin-bottom: 24px;
-      word-break: break-word;
-    }
-
-    p.lead {
-      font-size: 20px;
-      line-height: 1.8;
-      color: var(--text-muted);
-      margin-bottom: 0;
-    }
-
-    section {
-      padding: 100px 0;
-    }
-
-    /* Primary CTA Button */
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background-color: var(--lime);
-      color: #090A09;
-      font-family: inherit;
-      font-size: 16px;
-      font-weight: 600;
-      padding: 16px 40px;
-      border-radius: 9999px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background-color 0.15s ease, transform 0.15s ease;
-    }
-
-    .btn-primary:hover {
-      background-color: var(--lime-hover);
-      transform: translateY(-1px);
-    }
-
-    .btn-primary:focus-visible {
-      outline: 2px solid var(--text);
-      outline-offset: 4px;
-    }
-
-    /* Video Wrapper */
-    .video-wrapper {
-      border-radius: 20px;
-      overflow: hidden;
-      background: #000;
-      width: 100%;
-    }
-
-    /* Deliverables */
-    .deliverables-list {
-      list-style: none;
-      margin-top: 32px;
-    }
-
-    .deliverables-item {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .deliverables-item:first-child {
-      border-top: 1px solid var(--border);
-    }
-
-    .deliverables-title {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-
-    .deliverables-desc {
-      color: var(--text-muted);
-      font-size: 16px;
-      line-height: 1.8;
-    }
-
-    /* Proof Section */
-    .proof-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 36px;
-      align-items: center;
-      margin-top: 36px;
-    }
-
-    @media (min-width: 768px) {
-      .proof-grid {
-        grid-template-columns: 280px 1fr;
-        gap: 48px;
-      }
-    }
-
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
+    .en {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       direction: ltr;
-      padding: 24px 0;
-      margin: 24px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .stats-row > div {
-      text-align: center;
-      min-width: 0;
-    }
-
-    .stat-number {
-      font-size: 30px;
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.2;
-      letter-spacing: -0.045em;
-      white-space: nowrap;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .stat-label {
-      font-size: 12px;
-      font-weight: 400;
-      color: var(--text-dim);
-      margin-top: 8px;
-      letter-spacing: 0.04em;
-    }
-
-    .stat-label .headline-green {
-      color: var(--lime);
-    }
-
-    .proof-disclaimer {
-      font-size: 13px;
-      color: var(--text-dim);
-      line-height: 1.6;
-    }
-
-    /* FAQ Accordion */
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .faq-item:first-child {
-      border-top: 1px solid var(--border);
-    }
-
-    .faq-trigger {
-      width: 100%;
-      text-align: right;
-      background: none;
-      border: none;
-      padding: 20px 0;
-      font-family: inherit;
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--text);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .faq-icon {
-      font-size: 18px;
-      font-weight: 400;
-      color: var(--text-dim);
-      flex-shrink: 0;
-      user-select: none;
-    }
-
-    .faq-answer {
-      display: none;
-      padding-bottom: 20px;
-      font-size: 16px;
-      color: var(--text-muted);
-      line-height: 1.85;
-    }
-
-    .faq-item.active .faq-answer {
-      display: block;
-    }
-
-    /* Final CTA */
-    .final-cta {
-      padding: 80px 0 60px;
-      text-align: center;
-    }
-
-    .signature-headline {
-      font-family: 'Nanum Pen Script', cursive;
-      font-size: 36px;
-      font-weight: 400;
-      line-height: 1.3;
-      color: var(--text);
-      margin-bottom: 20px;
-      word-break: break-word;
-    }
-
-    /* Footer */
-    footer {
-      padding-bottom: 48px;
-      color: var(--text-muted);
-      font-size: 14px;
-      text-align: center;
-    }
-
-    .footer-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .footer-socials {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      transition: color 0.15s ease;
-      border-radius: 4px;
-    }
-
-    .social-link:hover {
-      color: #FFFFFF;
-    }
-
-    .social-link svg {
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
-    }
-
-    .footer-legal {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      font-size: 14px;
-    }
-
-    .footer-legal a {
-      color: var(--text-muted);
-      text-decoration: none;
-    }
-
-    .footer-legal a:hover {
-      color: #FFFFFF;
-    }
-
-    .footer-copy {
-      color: var(--text-muted);
-      font-size: 13px;
-    }
-
-    /* Modal */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.88);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s ease, visibility 0.2s ease;
-    }
-
-    .modal-backdrop.open {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .modal-sheet {
-      width: 100%;
-      max-width: 580px;
-      max-height: 92vh;
-      overflow-y: auto;
-      background: #111311;
-      border-radius: 20px;
-      padding: 28px 20px 20px;
-      position: relative;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 18px;
-      left: 18px;
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      cursor: pointer;
-      font-size: 14px;
-      font-family: inherit;
-      padding: 6px 10px;
-    }
-
-    .modal-close:hover {
-      color: var(--text);
-    }
-
-    .youform-wrapper iframe {
-      max-height: 65vh;
-      width: 100%;
-      border: none !important;
-    }
-
-    /* --- MOBILE BREAKPOINTS --- */
-    @media (max-width: 640px) {
-      body {
-        font-size: 16px;
-      }
-
-      section {
-        padding: 60px 0;
-      }
-
-      h1 {
-        font-size: 27px;
-        line-height: 1.4;
-      }
-
-      /* Allow hero headline to wrap naturally on phones */
-      .headline-line {
-        display: inline;
-        white-space: normal;
-      }
-
-      .headline-highlight {
-        text-decoration-thickness: 3px;
-        text-underline-offset: 8px;
-      }
-
-      h2 {
-        font-size: 22px;
-      }
-
-      p.lead {
-        font-size: 17px;
-        line-height: 1.7;
-      }
-
-      .signature-headline {
-        font-size: 24px;
-        white-space: normal;
-      }
-
-      .btn-primary {
-        width: 100%;
-        max-width: 320px;
-      }
-
-      .stat-number {
-        font-size: 24px;
-      }
-
-      .stat-label {
-        font-size: 11px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .stat-number {
-        font-size: 20px;
-      }
-      .stat-label {
-        font-size: 10px;
-      }
-      h1 {
-        font-size: 24px;
-      }
-    }
-  </style>
-
-  <!-- Wistia Embedded Logic -->
-  <script src="https://fast.wistia.com/player.js" async></script>
-  <script src="https://fast.wistia.com/embed/5bd1e0alqr.js" async type="module"></script>
-  <script src="https://fast.wistia.com/embed/9xo90klu92.js" async type="module"></script>
-</head>
-
-<body>
-
-  <!-- 01. HERO -->
-  <section style="padding-top: 40px; padding-bottom: 24px; text-align: center;">
-    <div class="container">
-      <h1>
-        <span class="headline-line">
-          كيفاش كنحوّلو <span class="headline-green">45 دقيقة</span> من وقتك كمؤسس
-        </span>
-        <span class="headline-line">
-          إلى <span class="headline-green">30–50 فيديو</span> كل شهر
-        </span>
-      </h1>
-      <p class="lead">
-        كنجلسو معاك 45 دقيقة فالسيمانة، كنوجهو معاك حوار بأسئلة مدروسة، وكنحوّلو خبرتك الميدانية لمحتوى احترافي بلا Scripts بلا تصنّع، وبلا صداع المونتاج.
-      </p>
-    </div>
-
-    <div class="container-wide" style="margin-top: 24px;">
-      <div class="video-wrapper">
-        <wistia-player media-id="5bd1e0alqr" aspect="1.7777777777777777"></wistia-player>
-      </div>
-
-      <div style="margin-top: 32px; text-align: center;">
-        <button type="button" onclick="openBookingModal()" class="btn-primary">قدّم الطلب</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- 02. WHAT YOU GET -->
-  <section>
-    <div class="container">
-      <h2>شنو كتاخد بالضبط</h2>
-      <p style="color: var(--text-muted); margin-bottom: 24px;">
-        خدمة <span class="headline-green">Done-For-You</span> متكاملة كتستخرج الأفكار والخبرة اللي عندك وبتحولها لحضور رقمي دائم:
-      </p>
-
-      <ul class="deliverables-list">
-        <li class="deliverables-item">
-          <div class="deliverables-title">تحديد التموضع وخطة المحتوى الشهرية</div>
-          <div class="deliverables-desc">دراسة السوق والمنافسين وتحديد الزاوية الخاصة اللي غتميزك فمجالك، مع خطة أسبوعية للمواضيع.</div>
-        </li>
-        <li class="deliverables-item">
-          <div class="deliverables-title">البحث المسبق والأسئلة الاستراتيجية</div>
-          <div class="deliverables-desc">كنوجدو الأسئلة الدقيقة اللي كتستفز خبرتك وتخرج أحسن ما عندك، بلا ما تحتاج تحضر أي حاجة مسبقاً.</div>
-        </li>
-        <li class="deliverables-item">
-          <div class="deliverables-title">4 جلسات استخراج شهرياً (45 دقيقة كل جلسة)</div>
-          <div class="deliverables-desc">حوار مباشر كنقودوه معاك أسبوعياً، كتهضر فيه براحتك وكتجاوب بعفوية كأنك جالس مع كليان.</div>
-        </li>
-        <li class="deliverables-item">
-          <div class="deliverables-title">30 إلى 50 مقطع فيديو شهرياً جاهز للنشر</div>
-          <div class="deliverables-desc">استخراج أقوى اللحظات، مع مونتاج احترافي، خطوط متناسقة، نصوص الشرح، وتسليم منظم.</div>
-        </li>
-        <li class="deliverables-item">
-          <div class="deliverables-title">جلسة استراتيجية فردية وتقرير شهري للأداء</div>
-          <div class="deliverables-desc">متابعة شهرية مباشرة معايا لتحليل النتائج، تحسين الخطاب، وتوثيق أفكارك فـ Content Library دائمة للبيزنس.</div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 03. PROOF -->
-  <section>
-    <div class="container">
-      <h2><span class="headline-green">The 45 Method </span>فالواقع</h2>
-      <p style="color: var(--text-muted);">
-        خدمت كـ Head of Content مع رائد الأعمال HeyMossab، وشاركنا فبناء الحضور الرقمي ديالو عن طريق جلسات كنستخرجو فيها الخبرة ديالو
-      </p>
-
-      <div class="proof-grid">
-        <div style="border-radius: 16px; overflow: hidden; background: #000; width: 100%; max-width: 320px; margin: 0 auto;">
-          <wistia-player media-id="9xo90klu92" aspect="0.8"></wistia-player>
-        </div>
-
-        <div>
-          <div class="stats-row">
-            <div>
-              <div class="stat-number">500+</div>
-              <div class="stat-label"><span class="headline-green">Videos</span></div>
-            </div>
-            <div>
-              <div class="stat-number">480K+</div>
-              <div class="stat-label"><span class="headline-green">Followers</span></div>
-            </div>
-            <div>
-              <div class="stat-number">$100K+</div>
-              <div class="stat-label"><span class="headline-green">Revenue</span></div>
-            </div>
-          </div>
-
-          <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 16px;">
-            الدرس كان بسيط: أقوى محتوى ما كيحتاجش سكريبت مسرحي؛ كيحتاج أسئلة ذكية كتطرح على شخص خبير فمجالو، وكتخليه يعبر بثقة وصدق.
-          </p>
-          <div class="proof-disclaimer">
-            النتائج تصف مسار تجربة HeyMossab، ولا تمثل ضماناً لنتائج مماثلة.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ========================================================
-       SECTION: VIRAL PROOF (Direct drop-in for anchouf.html)
-       ======================================================== -->
-  <section class="viral-section" id="viral-reels">
-    <div class="container">
-      
-      <!-- Header -->
-      <div class="section-header">
-        <span class="section-eyebrow">Proof of Distribution</span>
-        <h2>نماذج من الفيديوهات اللي <span class="headline-green">حققت انتشار</span></h2>
-        <p class="section-subtitle">
-          هذه من أكثر المقاطع نجاحاً، ليس فقط من حيث المشاهدات، بل أيضاً من حيث الإيرادات التي ساهمت في تحقيقها للشركة.
-
- اضغط على أي مقطع للمشاهدة.
-        </p>
-
-    <!-- View Mode Switch: Clean Icons -->
-        <div class="view-toggle" role="group" aria-label="طريقة العرض">
-          <!-- Stack Button -->
-          <button type="button" id="toggleStackBtn" onclick="switchView('stack')" aria-label="عرض مكدس" title="عرض مكدس">
-            <svg viewBox="0 0 24 24">
-              <rect x="3" y="3" width="18" height="18" rx="3"></rect>
-              <path d="M7 21h10"></path>
-              <path d="M9 17h6"></path>
-            </svg>
-          </button>
-
-          <!-- Grid Button (Default Active on mobile) -->
-          <button type="button" id="toggleGridBtn" class="active" onclick="switchView('grid')" aria-label="عرض شبكي" title="عرض شبكي">
-            <svg viewBox="0 0 24 24">
-              <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
-              <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
-              <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
-              <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- 8-Card Stack Container: Defaults to layout-grid -->
-      <div id="stackWrapper" class="viral-stack-wrapper layout-grid">
-
-        <!-- Line 1: Cards 1 to 4 -->
-        <div class="stack-row">
-          <!-- Card 1 -->
-          <a href="https://www.instagram.com/listentomocast/reel/CzmCxbLNF3N/" target="_blank" rel="noopener noreferrer" class="reel-card" id="reel-1" aria-label="شاهد الفيديو الأول على إنستغرام">
-            <img src="1.png" alt="Viral Reel Screenshot 1" onerror="this.onerror=null; this.src='https://placehold.co/450x800/181a18/b7ff00?text=1.png';" loading="lazy">
-          </a>
-
-          <!-- Card 2 -->
-          <a href="https://www.instagram.com/listentomocast/reel/C3sUO_nNaJ1/" target="_blank" rel="noopener noreferrer" class="reel-card" id="reel-2" aria-label="شاهد الفيديو الثاني على إنستغرام">
-            <img src="2.png" alt="Viral Reel Screenshot 2" onerror="this.onerror=null; this.src='https://placehold.co/450x800/111311/888888?text=2.png';" loading="lazy">
-          </a>
-
-          <!-- Card 3 -->
-          <a href="https://www.instagram.com/listentomocast/reel/C92xQi-tTWN/" target="_blank" rel="noopener noreferrer" class="reel-card" id="reel-3" aria-label="شاهد الفيديو الثالث على إنستغرام">
-            <img src="3.png" alt="Viral Reel Screenshot 3" onerror="this.onerror=null; this.src='https://placehold.co/450x800/162016/b7ff00?text=3.png';" loading="lazy">
-          </a>
-
-          <!-- Card 4 -->
-          <a href="https://www.instagram.com/listentomocast/reel/C61oQqPNBMu/" target="_blank" rel="noopener noreferrer" class="reel-card" id="reel-4" aria-label="شاهد الفيديو الرابع على إنستغرام">
-            <img src="4.png" alt="Viral Reel Screenshot 4" onerror="this.onerror=null; this.src='https://placehold.co/450x800/1c1f1c/ffffff?text=4.png';" loading="lazy">
-          </a>
-        </div>
-
-        <!-- Line 2: Cards 5 to 8 -->
-        <div class="stack-row">
-          <!-- Card 5 -->
-          <a href="https://www.instagram.com/listentomocast/reel/C2hr_ibNJGO/" target="_blank" rel="noopener noreferrer" class="reel-card" id="reel-5" aria-label="شاهد الفيديو الخامس على إنستغرام">
-            <img src="5.png" alt="Viral Reel Screenshot 5" onerror="this.onerror=null; this.src='https://placehold.co/450x800/151715/b7ff00?text=5.png';" loading="lazy">
-          </a>
-
-          <!-- Card 6 -->
-          <a href="https://www.instagram.com/listentomocast/reel/C69a12PtpEW/" target="_blank" rel="noopener noreferrer" class="reel-card" id="reel-6" aria-label="شاهد الفيديو السادس على إنستغرام">
-            <img src="6.png" alt="Viral Reel Screenshot 6" onerror="this.onerror=null; this.src='https://placehold.co/450x800/191b19/888888?text=6.png';" loading="lazy">
-          </a>
-
-          <!-- Card 7 -->
-          <a href="https://www.instagram.com/listentomocast/reel/Cya7slStvdF/" target="_blank" rel="noopener noreferrer" class="reel-card" id="reel-7" aria-label="شاهد الفيديو السابع على إنستغرام">
-            <img src="7.png" alt="Viral Reel Screenshot 7" onerror="this.onerror=null; this.src='https://placehold.co/450x800/161816/b7ff00?text=7.png';" loading="lazy">
-          </a>
-
-          <!-- Card 8 -->
-          <a href="https://www.instagram.com/listentomocast/reel/C-Qg9ZlN_tA/" target="_blank" rel="noopener noreferrer" class="reel-card" id="reel-8" aria-label="شاهد الفيديو الثامن على إنستغرام">
-            <img src="8.png" alt="Viral Reel Screenshot 8" onerror="this.onerror=null; this.src='https://placehold.co/450x800/111311/ffffff?text=8.png';" loading="lazy">
-          </a>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Interactive Logic for Viral Section View Toggle -->
-  <script>
-  function switchView(mode) {
-    const wrapper = document.getElementById('stackWrapper');
-    const btnStack = document.getElementById('toggleStackBtn');
-    const btnGrid = document.getElementById('toggleGridBtn');
-
-    if (!wrapper || !btnStack || !btnGrid) return;
-
-    if (mode === 'grid') {
-      wrapper.classList.remove('layout-stack');
-      wrapper.classList.add('layout-grid');
-      btnGrid.classList.add('active');
-      btnStack.classList.remove('active');
-    } else {
-      wrapper.classList.remove('layout-grid');
-      wrapper.classList.add('layout-stack');
-      btnStack.classList.add('active');
-      btnGrid.classList.remove('active');
-    }
-  }
-
-  // Desktop defaults to Stack; Mobile stays Grid
-  if (window.innerWidth > 640) {
-    switchView('stack');
-  }
-  </script>
-
-  <!-- 04. QUESTIONS -->
-  <section style="padding-bottom: 0;">
-    <div class="container">
-      <h2>الأسئلة الشائعة</h2>
-
-      <div class="faq-accordion" style="margin-top: 32px;">
-        <div class="faq-item">
-          <button type="button" class="faq-trigger">
-            <span>واش خاصني نكون مرتاح قدام الكاميرا؟</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            لا. السيستيم تصاوب خصيصاً باش ما تحتاجش تمثل أو تحفظ سكريبتات. حنا كنقودو الحوار معاك بأسئلة مركزة، ونتا كتجاوب بطبيعتك كأنك كتشرح لكليان قدامك.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-trigger">
-            <span>واش خاصني نوجد أي حاجة قبل الجلسة؟</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            نهائياً. حنا كنتكلفو بالبحث المسبق وتحضير المواضيع والأسئلة الاستراتيجية. نتا كتدخل للمكالمة ببال مرتاح باش تشارك خبرتك فقط.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-trigger">
-            <span>شحال ديال الوقت خاصني نخصص فالأسبوع؟</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            45 دقيقة فقط فالسيمانة لمكالمة الاستخراج (أي 3 ساعات فالشهر كامل)، وحنا كنتكلفو بالإنتاج، المونتاج والتسليم الكامل.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-trigger">
-            <span>واش الخدمة مناسبة إلا كان عندي Content Team؟</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            نعم. نقدرو نخدمو مع الفريق ديالك؛ كنتكلفو بالاستراتيجية وبجلسات استخراج المحتوى وصياغة الأفكار، وفريقك يكمل مراحل النشر والجدولة.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-trigger">
-            <span>واش كتضمنو ليا عدد محدد ديال الـ Clients؟</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            ما كنبيعوش أوهام: ما كنضمنوش رقم إيرادات معين. اللي كنقدمو ليك هو System منظم كيبني حضور رقمي رصين، Positioning حاد فالسوق، ومحتوى كيخلي جمهورك يفهم قيمتك ويثق فخدمتك.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="final-cta">
-    <div class="container">
-      <h2 class="signature-headline">
-        <span class="headline-green">You bring the expertise. I build the content </span>
-      </h2>
-      <p style="color: var(--text-muted); max-width: 520px; margin: 0 auto 32px;">
-        45 دقيقة فالسيمانة كافية باش تبني واحد من أقوى أصول البيزنس ديالك. نتا ركز على شركتك وكليانك، وحنا نتكلفو بالباقي.
-      </p>
-      <button type="button" onclick="openBookingModal()" class="btn-primary">قدّم الطلب</button>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container footer-container">
-      <div class="footer-socials">
-        <!-- Instagram -->
-        <a href="https://instagram.com/bariabder" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-
-        <!-- X (Twitter) -->
-        <a href="https://x.com/bariabder" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-
-        <!-- LinkedIn -->
-        <a href="https://linkedin.com/in/bariabder" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-        </a>
-
-        <!-- Substack -->
-        <a href="https://bariabder.substack.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Substack">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
-        </a>
-
-        <!-- YouTube -->
-        <a href="https://www.youtube.com/@bariabder" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55A3.016 3.016 0 0 0 .501 6.186C0 8.057 0 12 0 12s0 3.943.501 5.814a3.016 3.016 0 0 0 2.122 2.136C4.495 20.5 12 20.5 12 20.5s7.505 0 9.376-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.943 24 12 24 12s0-3.943-.502-5.814zM9.6 15.5v-7l6.3 3.5-6.3 3.5z"/>
-          </svg>
-        </a>
-      </div>
-
-      <div class="footer-legal">
-        <a href="https://www.bariabder.com/Terms-of-Service">Terms</a>
-        <span style="color: var(--text-dim); user-select: none;">·</span>
-        <a href="https://www.bariabder.com/privacy">Privacy</a>
-      </div>
-
-      <div class="footer-copy">
-        © 2026 Bari Abder — The 45 Method™
-      </div>
-    </div>
-  </footer>
-
-  <!-- BOOKING MODAL -->
-<div id="bookingModal" class="modal-backdrop">
-  <div class="modal-sheet custom-flow-sheet">
-    <button type="button" onclick="closeBookingModal()" class="modal-close" aria-label="إغلاق">✕</button>
-
-    <!-- Progress Indicator -->
-    <div class="flow-progress-bar">
-      <div id="formProgress" class="flow-progress-fill"></div>
-    </div>
-
-    <form id="otmMultiStepForm" novalidate>
-
-      <!-- 1. معلومات التواصل -->
-      <div class="form-step active" data-step="1">
-        <span class="step-num">01 / 08</span>
-        <h3 class="step-question">كيفاش نقدرو نتواصلو معاك؟</h3>
-        
-        <div class="inputs-group">
-          <div class="input-field">
-            <label for="fullName">الاسم الكامل (Full Name) *</label>
-            <input type="text" id="fullName" name="fullName" required placeholder="مثال: أحمد">
-          </div>
-
-          <div class="input-field">
-            <label for="phone">رقم الـ WhatsApp *</label>
-            <input type="tel" id="phone" name="phone" required placeholder="0650-123456" dir="ltr">
-          </div>
-        </div>
-
-        <div class="step-nav" style="justify-content: flex-end;">
-          <button type="button" class="btn-primary" onclick="validateContactAndNext()">التالي ←</button>
-        </div>
-      </div>
-
-      <!-- 2. المجال -->
-      <div class="form-step" data-step="2">
-        <span class="step-num">02 / 08</span>
-        <h3 class="step-question">شنو المجال ديالك؟</h3>
-        
-        <div class="choice-group">
-          <label class="choice-card">
-            <input type="radio" name="niche" value="Coaching / Consulting" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">A</span>
-              <span class="choice-label">Coaching / Consulting</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="niche" value="Finance / Business" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">B</span>
-              <span class="choice-label">Finance / Business</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="niche" value="E-commerce" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">C</span>
-              <span class="choice-label">E-commerce</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="niche" value="Education" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">D</span>
-              <span class="choice-label">Education</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="niche" value="Other" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">E</span>
-              <span class="choice-label">مجال آخر (Other)</span>
-            </span>
-          </label>
-        </div>
-
-        <div class="step-nav">
-          <button type="button" class="btn-step-back" onclick="prevStep()">الرجوع</button>
-        </div>
-      </div>
-
-      <!-- 3. الحضور الحالي -->
-      <div class="form-step" data-step="3">
-        <span class="step-num">03 / 08</span>
-        <h3 class="step-question">واش عندك حالياً حضور على السوشيال ميديا؟</h3>
-        
-        <div class="choice-group">
-          <label class="choice-card">
-            <input type="radio" name="currentPresence" value="Yes, active audience" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">A</span>
-              <span class="choice-label">نعم، وعندي جمهور نشيط</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="currentPresence" value="Yes, irregular posting" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">B</span>
-              <span class="choice-label">نعم، ولكن النشر غير منتظم</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="currentPresence" value="Have accounts, no posting" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">C</span>
-              <span class="choice-label">عندي حسابات ولكن ما كننشرش</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="currentPresence" value="No, not started yet" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">D</span>
-              <span class="choice-label">لا، باقي ما بديتش</span>
-            </span>
-          </label>
-        </div>
-
-        <div class="step-nav">
-          <button type="button" class="btn-step-back" onclick="prevStep()">الرجوع</button>
-        </div>
-      </div>
-
-      <!-- 4. أكبر عائق -->
-      <div class="form-step" data-step="4">
-        <span class="step-num">04 / 08</span>
-        <h3 class="step-question">شنو هو أكبر عائق كيمنعك تنشر المحتوى بانتظام؟</h3>
-        
-        <div class="choice-group">
-          <label class="choice-card">
-            <input type="radio" name="biggestObstacle" value="No time" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">A</span>
-              <span class="choice-label">ما عنديش الوقت الكافي</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="biggestObstacle" value="Camera difficulty" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">B</span>
-              <span class="choice-label">كنلقى صعوبة فالتصوير أو الهضرة قدام الكاميرا</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="biggestObstacle" value="Topic ideation" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">C</span>
-              <span class="choice-label">ما عارفش على شنو نهضر</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="biggestObstacle" value="No clear strategy" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">D</span>
-              <span class="choice-label">ما عنديش استراتيجية واضحة للمحتوى</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="biggestObstacle" value="Other" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">E</span>
-              <span class="choice-label">عائق آخر (Other)</span>
-            </span>
-          </label>
-        </div>
-
-        <div class="step-nav">
-          <button type="button" class="btn-step-back" onclick="prevStep()">الرجوع</button>
-        </div>
-      </div>
-
-      <!-- 5. الهدف خلال 6 أشهر -->
-      <div class="form-step" data-step="5">
-        <span class="step-num">05 / 08</span>
-        <h3 class="step-question">شنو بغيتي تحقق بالمحتوى خلال 6 أشهر الجايين؟</h3>
-        
-        <div class="choice-group">
-          <label class="choice-card">
-            <input type="radio" name="goal" value="High quality clients" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">A</span>
-              <span class="choice-label">نجيب كليان أكثر بجودة عالية</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="goal" value="Grow audience" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">B</span>
-              <span class="choice-label">نكبر الحساب ديالي والجمهور</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="goal" value="Authority in industry" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">C</span>
-              <span class="choice-label">نبني المصداقية ونولي معروف فالمجال ديالي</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="goal" value="Build Personal Brand" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">D</span>
-              <span class="choice-label">نبني براند شخصي رصين (Personal Brand)</span>
-            </span>
-          </label>
-        </div>
-
-        <div class="step-nav">
-          <button type="button" class="btn-step-back" onclick="prevStep()">الرجوع</button>
-        </div>
-      </div>
-
-      <!-- 6. تخصيص 45 دقيقة -->
-      <div class="form-step" data-step="6">
-        <span class="step-num">06 / 08</span>
-        <h3 class="step-question">واش مسالي تخصص 45 دقيقة كل أسبوع لمكالمة معانا؟</h3>
-        <p class="step-hint">هادي هي المكالمة الوحيدة اللي كنستعملوها فاستخراج وصناعة المحتوى ديالك كامل.</p>
-        
-        <div class="choice-group">
-          <label class="choice-card">
-            <input type="radio" name="commitment45" value="Yes, available" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">A</span>
-              <span class="choice-label">نعم، مستعد ومسالي</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="commitment45" value="Need to organize time" onchange="nextStep()">
-            <span class="choice-box">
-              <span class="choice-key">B</span>
-              <span class="choice-label">خاصني نرتب وقتي ولكن ممكن</span>
-            </span>
-          </label>
-        </div>
-
-        <div class="step-nav">
-          <button type="button" class="btn-step-back" onclick="prevStep()">الرجوع</button>
-        </div>
-      </div>
-
-      <!-- 7. الميزانية (Slider تفاعلي) -->
-      <div class="form-step" data-step="7">
-        <span class="step-num">07 / 08</span>
-        <h3 class="step-question">شحال الميزانية الشهرية تقدر تخصص لنظام صناعة المحتوى بحال هادا؟</h3>
-        <p class="step-hint">حرّك المؤشر لاختيار الميزانية المناسبة ليك:</p>
-
-        <div class="slider-container">
-          <div class="slider-display">
-            <span id="budgetValue">6,000</span> <span class="currency">DH / شهر</span>
-          </div>
-          <input type="range" id="budgetSlider" name="budget" min="3000" max="15000" step="1000" value="6000" oninput="updateBudgetValue(this.value)">
-          <div class="slider-bounds">
-            <span>3,000 DH</span>
-            <span>6,000 DH</span>
-            <span>15,000+ DH</span>
-          </div>
-        </div>
-
-        <div class="step-nav space-between">
-          <button type="button" class="btn-step-back" onclick="prevStep()">الرجوع</button>
-          <button type="button" class="btn-primary" onclick="nextStep()">التالي ←</button>
-        </div>
-      </div>
-
-      <!-- 8. تاريخ البدء -->
-      <div class="form-step" data-step="8">
-        <span class="step-num">08 / 08</span>
-        <h3 class="step-question">فوقاش مستعد تبدا معانا؟</h3>
-        
-        <div class="choice-group">
-          <label class="choice-card">
-            <input type="radio" name="timeline" value="Immediately (This week)" onchange="enableSubmitButton()">
-            <span class="choice-box">
-              <span class="choice-key">A</span>
-              <span class="choice-label">مستعد دابا (هاد السيمانة)</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="timeline" value="Within 2-3 weeks" onchange="enableSubmitButton()">
-            <span class="choice-box">
-              <span class="choice-key">B</span>
-              <span class="choice-label">خلال الأسبوعين أو 3 أسابيع الجايين</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="timeline" value="Next month" onchange="enableSubmitButton()">
-            <span class="choice-box">
-              <span class="choice-key">C</span>
-              <span class="choice-label">الشهر القادم إن شاء الله</span>
-            </span>
-          </label>
-
-          <label class="choice-card">
-            <input type="radio" name="timeline" value="Just exploring" onchange="enableSubmitButton()">
-            <span class="choice-box">
-              <span class="choice-key">D</span>
-              <span class="choice-label">كنكتشف فقط الخدمة حالياً</span>
-            </span>
-          </label>
-        </div>
-
-        <div class="step-nav space-between">
-          <button type="button" class="btn-step-back" onclick="prevStep()">الرجوع</button>
-          <button type="submit" id="submitFormBtn" class="btn-primary form-submit-btn">تأكيد وإرسال الطلب</button>
-        </div>
-      </div>
-
-      <!-- THANK YOU SCREEN -->
-      <div class="form-step" id="thankYouStep">
-        <div class="thank-you-box">
-          <div class="success-checkmark">✓</div>
-          <h3 class="thank-you-title">تم استلام طلبك بنجاح!</h3>
-          <p class="thank-you-desc">
-            شكراً لك. سجلنا كل المعطيات، وغادي نتواصلو معاك عبر الـ WhatsApp فهاد الـ 24 ساعة لترتيب مكالمة استكشافية.
-          </p>
-          <button type="button" class="btn-primary" onclick="closeBookingModal()">إغلاق</button>
-        </div>
-      </div>
-
-    </form>
-  </div>
-</div>
-
-<style>
-  .custom-flow-sheet {
-    padding: 36px 28px 28px;
-    background: #0f110f;
-    border: 1px solid var(--border);
-  }
-
-  .flow-progress-bar {
-    width: 100%;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 999px;
-    margin-bottom: 24px;
-    overflow: hidden;
-  }
-
-  .flow-progress-fill {
-    height: 100%;
-    width: 12.5%;
-    background: var(--lime);
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .form-step {
-    display: none;
-    opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-  }
-
-  .form-step.active {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .step-num {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    color: var(--lime);
-    display: inline-block;
-    margin-bottom: 8px;
-  }
-
-  .step-question {
-    font-size: 21px;
-    font-weight: 600;
-    line-height: 1.45;
-    color: var(--text);
-    margin-bottom: 8px;
-  }
-
-  .step-hint {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 20px;
-  }
-
-  .choice-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .choice-card input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .choice-box {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 13px 18px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.15s ease;
-  }
-
-  .choice-card:hover .choice-box {
-    background: rgba(183, 255, 0, 0.04);
-    border-color: rgba(183, 255, 0, 0.3);
-    transform: translateX(-3px);
-  }
-
-  .choice-card input[type="radio"]:checked + .choice-box {
-    background: rgba(183, 255, 0, 0.08);
-    border-color: var(--lime);
-  }
-
-  .choice-key {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text-muted);
-    flex-shrink: 0;
-  }
-
-  .choice-card input[type="radio"]:checked + .choice-box .choice-key {
-    background: var(--lime);
-    color: #000;
-    border-color: var(--lime);
-  }
-
-  .choice-label {
-    font-size: 15px;
-    color: var(--text);
-  }
-
-  .inputs-group {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 8px;
-  }
-
-  .input-field {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .input-field label {
-    font-size: 13px;
-    color: var(--text-muted);
-  }
-
-  .input-field input {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 10px;
-    padding: 12px 14px;
-    font-size: 15px;
-    color: var(--text);
-    font-family: inherit;
-    outline: none;
-    transition: border-color 0.15s ease;
-  }
-
-  .input-field input:focus {
-    border-color: var(--lime);
-  }
-
-  /* Slider Styling */
-  .slider-container {
-    padding: 24px 10px 10px;
-    text-align: center;
-  }
-
-  .slider-display {
-    font-size: 36px;
-    font-weight: 600;
-    color: var(--lime);
-    letter-spacing: -0.02em;
-    margin-bottom: 20px;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .slider-display .currency {
-    font-size: 16px;
-    color: var(--text-muted);
-    font-weight: 400;
-  }
-
-  input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 4px;
-    outline: none;
-  }
-
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: var(--lime);
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(183, 255, 0, 0.4);
-    transition: transform 0.1s ease;
-  }
-
-  input[type="range"]::-webkit-slider-thumb:hover {
-    transform: scale(1.15);
-  }
-
-  .slider-bounds {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    color: var(--text-dim);
-    margin-top: 14px;
-    direction: ltr;
-  }
-
-  .step-nav {
-    display: flex;
-    align-items: center;
-    margin-top: 24px;
-  }
-
-  .step-nav.space-between {
-    justify-content: space-between;
-  }
-
-  .btn-step-back {
-    background: none;
-    border: none;
-    color: var(--text-dim);
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    padding: 8px 12px;
-  }
-
-  .btn-step-back:hover {
-    color: var(--text);
-  }
-
-  .thank-you-box {
-    text-align: center;
-    padding: 30px 10px;
-  }
-
-  .success-checkmark {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    background: rgba(183, 255, 0, 0.12);
-    border: 2px solid var(--lime);
-    color: var(--lime);
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-
-  .thank-you-title {
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 12px;
-  }
-
-  .thank-you-desc {
-    color: var(--text-muted);
-    font-size: 15px;
-    line-height: 1.8;
-    max-width: 440px;
-    margin: 0 auto 28px;
-  }
-  .container {
-      width: 100%;
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Section Typography */
-    .viral-section {
-      padding: 90px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
-    .section-eyebrow {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      color: var(--lime);
       display: inline-block;
-      margin-bottom: 10px;
-      text-transform: uppercase;
     }
 
-    h2 {
-      font-size: 32px;
-      font-weight: 600;
-      line-height: 1.35;
-      letter-spacing: -0.01em;
-      color: var(--text);
-      margin-bottom: 14px;
-    }
-
-    .headline-green {
-      color: var(--lime);
-    }
-
-    .section-subtitle {
-      color: var(--text-muted);
-      font-size: 16px;
-      max-width: 580px;
+    .shell {
+      max-width: 1000px;
+      min-height: 100dvh;
       margin: 0 auto;
-      line-height: 1.8;
-    }
-
-    /* Layout Toggle: Minimal SVG Icons Only */
-    .view-toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      padding: 4px;
-      border-radius: 999px;
-      margin-top: 24px;
-    }
-
-    .view-toggle button {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .view-toggle button svg {
-      width: 18px;
-      height: 18px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .view-toggle button.active {
-      background: var(--lime);
-      color: #090A09;
-    }
-
-    .view-toggle button:not(.active):hover {
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    /* ========================================================
-       FAN STACK CONTAINER (8 Reels: 2 rows of 4)
-       ======================================================== */
-    .viral-stack-wrapper {
-      position: relative;
-      width: 100%;
+      padding: 28px 24px 24px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      margin: 10px 0 10px;
+      justify-content: space-between;
     }
 
-    .stack-row {
-      position: relative;
+    /* Desktop: Locked single viewport, zero scroll */
+    @media (min-width: 861px) {
+      html, body {
+        height: 100dvh;
+        overflow: hidden;
+      }
+
+      .shell {
+        height: 100dvh;
+        padding-top: 32px;
+        padding-bottom: 24px;
+      }
+    }
+
+    /* Main Split Grid: Equal, symmetrical 50/50 columns centered vertically */
+    main {
+      margin: auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: stretch;
+      direction: ltr;
+    }
+
+    /* LEFT: Portrait Card + Track Record */
+    .profile-side {
+      direction: ltr;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      perspective: 1200px;
-      min-height: 380px;
-      width: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
     }
 
-    .stack-row:last-child {
-      margin-top: -30px;
-    }
-
-    /* The Stacked Card Unit */
-    .reel-card {
+    .portrait-card {
       position: relative;
-      display: block;
-      width: 200px;
-      aspect-ratio: 9 / 16;
-      border-radius: 16px;
+      width: 100%;
+      height: 290px;
+      border-radius: 26px;
       overflow: hidden;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      text-decoration: none;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
-      transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1),
-                  box-shadow 0.4s cubic-bezier(0.2, 0.9, 0.3, 1),
-                  opacity 0.35s ease,
-                  border-color 0.35s ease;
-      cursor: pointer;
-      will-change: transform, box-shadow;
-      flex-shrink: 0;
+      background: #E8ECEF;
+      box-shadow: 0 20px 44px -16px rgba(0, 0, 0, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.7);
     }
 
-    /* Card Image */
-    .reel-card img {
+    .portrait-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 20%;
       display: block;
-      border-radius: inherit;
-      background-color: #141714;
     }
 
-    /* Subtle Dark Vignette & Play Icon */
-    .reel-card::before {
-      content: '';
+    /* Bottom Blur Overlay with Name & Bio */
+    .portrait-bottom-overlay {
       position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0,0,0,0.1) 40%, transparent 70%);
-      pointer-events: none;
-      opacity: 0.7;
-      transition: opacity 0.3s ease;
-      z-index: 2;
+      inset: auto 0 0 0;
+      padding: 36px 20px 18px;
+      background: linear-gradient(to top, rgba(12, 14, 16, 0.78) 0%, rgba(12, 14, 16, 0.45) 55%, transparent 100%);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      mask-image: linear-gradient(to top, black 65%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to top, black 65%, transparent 100%);
+      color: #FFFFFF;
     }
 
-    .reel-card::after {
-      content: '';
-      position: absolute;
-      bottom: 16px;
-      right: 16px;
-      width: 28px;
-      height: 28px;
+    .portrait-bottom-overlay h1 {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 23px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: #FFFFFF;
+    }
+
+    .portrait-subtitle {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .portrait-subtitle .lime-dot {
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
-      background: rgba(0, 0, 0, 0.6) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23B7FF00'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") no-repeat center center / 12px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(4px);
-      z-index: 3;
-      transition: transform 0.25s ease, background-color 0.25s ease;
+      background: var(--lime);
+      flex-shrink: 0;
     }
 
-    .reel-card:hover::after {
-      transform: scale(1.15);
-      background-color: #000;
+    /* Track Record (English) */
+    .proof-block {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    .reel-card:hover::before {
-      opacity: 0.25;
+    .proof-line {
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      line-height: 1.55;
+      margin-bottom: 12px;
     }
 
-    /* --------------------------------------------------------
-       RESTING 4-CARD FAN PER ROW (Matching artboard fan)
-       -------------------------------------------------------- */
-  .layout-stack .reel-card {
-      margin-inline: -26px;
+    .proof-line strong {
+      color: var(--ink);
+      font-weight: 600;
     }
 
-    /* Row 1 Stack: Leftmost card on top */
-    .layout-stack #reel-1 {
-      transform: translateY(6px) rotate(-4.5deg);
-      z-index: 10;
-    }
-    .layout-stack #reel-2 {
-      transform: translateY(-2px) rotate(-1.5deg);
-      z-index: 9;
-    }
-    .layout-stack #reel-3 {
-      transform: translateY(-2px) rotate(1.5deg);
-      z-index: 8;
-    }
-    .layout-stack #reel-4 {
-      transform: translateY(6px) rotate(4.5deg);
-      z-index: 7;
+    .proof-line a {
+      color: var(--ink);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: var(--lime);
+      text-decoration-thickness: 2.5px;
+      text-underline-offset: 3px;
     }
 
-    /* Row 2 Stack: Leftmost card on top */
-    .layout-stack #reel-5 {
-      transform: translateY(6px) rotate(-4.5deg);
-      z-index: 6;
-    }
-    .layout-stack #reel-6 {
-      transform: translateY(-2px) rotate(-1.5deg);
-      z-index: 5;
-    }
-    .layout-stack #reel-7 {
-      transform: translateY(-2px) rotate(1.5deg);
-      z-index: 4;
-    }
-    .layout-stack #reel-8 {
-      transform: translateY(6px) rotate(4.5deg);
-      z-index: 3;
-    }
-
-    /* Hover elevation on fan stack */
-    .layout-stack .reel-card:hover {
-      transform: translateY(-26px) scale(1.06) rotate(0deg) !important;
-      z-index: 30 !important;
-      border-color: #B7FF00;
-      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.9), 0 0 35px var(--lime-glow);
-    }
-
-    .layout-stack:hover .reel-card:not(:hover) {
-      opacity: 0.45;
-      transform: scale(0.97);
-      filter: blur(0.4px);
-    }
-
-    /* --------------------------------------------------------
-       GRID VIEW MODE (Compact 4 x 2 layout)
-       -------------------------------------------------------- */
-    .layout-grid {
-      display: flex !important;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .layout-grid .stack-row {
-      display: grid !important;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      min-height: auto;
-      perspective: none;
-      margin-top: 0 !important;
-    }
-
-    .layout-grid .reel-card {
-      width: 100%;
-      margin-left: 0 !important;
-      transform: none !important;
-      z-index: 1 !important;
-    }
-
-    .layout-grid .reel-card:hover {
-      transform: translateY(-8px) scale(1.02) !important;
-      border-color: var(--border-hover);
-      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.8), 0 0 24px var(--lime-glow);
-      z-index: 5 !important;
-    }
-
-    .layout-grid:hover .reel-card:not(:hover) {
+    .proof-line a:hover {
       opacity: 0.8;
-      filter: none;
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 900px) {
-      .reel-card {
-        width: 165px;
-      }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      background: var(--surface-subtle);
+      padding: 13px 16px;
+      border-radius: 16px;
+    }
 
-      .layout-stack .reel-card {
-        margin-left: -58px;
-      }
+    .stat-val {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+    }
 
-      .stack-row {
-        min-height: 310px;
-      }
+    .stat-lbl {
+      font-size: 11.5px;
+      color: var(--ink-muted);
+      margin-top: 2px;
+    }
 
-      .stack-row:last-child {
-        margin-top: -20px;
+    /* RIGHT: Highlighted Service Card with Animated Stroke & Smooth 3s Shake */
+    .service-card {
+      position: relative;
+      direction: rtl;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 26px;
+      padding: 36px;
+      border: 2px solid transparent;
+      background:
+        linear-gradient(180deg, #FAFFF0 0%, #FFFFFF 100%) padding-box,
+        conic-gradient(
+          from var(--border-angle),
+          rgba(183, 255, 0, 0.22) 0%,
+          rgba(183, 255, 0, 0.22) 70%,
+          #B7FF00 88%,
+          #9be000 94%,
+          rgba(183, 255, 0, 0.22) 100%
+        ) border-box;
+      box-shadow: 0 18px 40px rgba(183, 255, 0, 0.14), 0 4px 12px rgba(0, 0, 0, 0.03);
+      animation:
+        spinStroke 3.6s linear infinite,
+        gentleShake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+      will-change: transform;
+    }
+
+    .service-card:hover {
+      animation-play-state: running, paused;
+    }
+
+    @keyframes spinStroke {
+      to {
+        --border-angle: 1turn;
       }
     }
 
-    @media (max-width: 640px) {
-      .viral-section {
-        padding: 60px 0;
+    @keyframes gentleShake {
+      0%, 80%, 100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+      }
+      84% {
+        transform: translate3d(-3px, 0, 0) rotate(-0.4deg);
+      }
+      88% {
+        transform: translate3d(3px, 0, 0) rotate(0.4deg);
+      }
+      92% {
+        transform: translate3d(-2px, 0, 0) rotate(-0.25deg);
+      }
+      96% {
+        transform: translate3d(1.5px, 0, 0) rotate(0.15deg);
+      }
+    }
+
+    .service-title {
+      font-family: 'Inter', sans-serif;
+      direction: ltr;
+      text-align: right;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+
+    .service-copy {
+      font-size: 16.5px;
+      line-height: 1.8;
+      color: var(--ink-muted);
+      margin-bottom: 28px;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 15px 24px;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    .btn-cta:hover {
+      background: var(--lime-hover);
+      transform: translateY(-1px);
+    }
+
+    /* Footer pinned at the very bottom */
+    footer {
+      direction: ltr;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding-top: 20px;
+      font-size: 13px;
+      color: var(--ink-muted);
+    }
+
+    .connect-label {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .socials a {
+      color: var(--ink-muted);
+      display: inline-flex;
+      transition: color 0.15s ease;
+    }
+
+    .socials a:hover {
+      color: var(--ink);
+    }
+
+    .socials svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* Mobile: Stacked cleanly with generous breathing room between containers */
+    @media (max-width: 860px) {
+      .shell {
+        padding-top: 79px;
+        padding-bottom: 79px;
+        gap: 28px;
       }
 
-      h2 {
+      main {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        margin: 0;
+      }
+
+      .portrait-card {
+        height: 270px;
+        border-radius: 22px;
+      }
+
+      .service-card {
+        padding: 24px;
+        border-radius: 22px;
+      }
+
+      .service-title {
         font-size: 22px;
+        margin-bottom: 10px;
       }
 
-      .reel-card {
-        width: 125px;
-        border-radius: 12px;
+      .service-copy {
+        font-size: 14.5px;
+        margin-bottom: 20px;
       }
 
-      .layout-stack .reel-card {
-        margin-left: -64px;
+      .stats {
+        padding: 12px 14px;
       }
 
-      .stack-row {
-        min-height: 240px;
+      .stat-val {
+        font-size: 18px;
       }
 
-      .stack-row:last-child {
-        margin-top: -15px;
+      footer {
+        margin-top: auto;
+        padding-top: 20px;
+        gap: 14px;
       }
-
-      .layout-grid .stack-row {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-      }
-}
-</style>
-
-<script>
- // Google Apps Script Web App URL
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyy6nFDFlWPLLb8iEJ6h0eoPSsmBA2YmSyCVRGNNdiPY5LUXg1iyAtEqmFqpaAyZ_MpZg/exec";
-
-let currentStep = 1;
-const totalSteps = 8;
-
-function updateProgress() {
-  const fill = document.getElementById('formProgress');
-  if (fill) {
-    fill.style.width = ((currentStep / totalSteps) * 100) + '%';
-  }
-}
-
-function showStep(stepNumber) {
-  document.querySelectorAll('.form-step').forEach(step => {
-    step.classList.remove('active');
-  });
-  const target = document.querySelector(`.form-step[data-step="${stepNumber}"]`);
-  if (target) {
-    target.classList.add('active');
-    currentStep = stepNumber;
-    updateProgress();
-  }
-}
-
-function nextStep() {
-  if (currentStep < totalSteps) {
-    setTimeout(() => {
-      showStep(currentStep + 1);
-    }, 200);
-  }
-}
-
-function prevStep() {
-  if (currentStep > 1) {
-    showStep(currentStep - 1);
-  }
-}
-
-function validateContactAndNext() {
-  const nameInput = document.getElementById('fullName');
-  const phoneInput = document.getElementById('phone');
-
-  const name = nameInput ? nameInput.value.trim() : '';
-  const rawPhone = phoneInput ? phoneInput.value.trim() : '';
-
-  if (!name) {
-    alert('عافاك دخل الاسم الكامل.');
-    return;
-  }
-
-  // Remove spaces, hyphens, and brackets
-  const cleanPhone = rawPhone.replace(/[\s\-\(\)]/g, '');
-
-  let isValid = false;
-
-  // Case 1: Starts with +212 -> requires exactly 9 digits after +212
-  if (cleanPhone.startsWith('+212')) {
-    const afterCode = cleanPhone.slice(4);
-    if (/^\d{9}$/.test(afterCode)) {
-      isValid = true;
     }
-  } 
-  // Case 2: Starts with 00212 -> requires exactly 9 digits after 00212
-  else if (cleanPhone.startsWith('00212')) {
-    const afterCode = cleanPhone.slice(5);
-    if (/^\d{9}$/.test(afterCode)) {
-      isValid = true;
-    }
-  }
-  // Case 3: Local format starting with 0 (e.g. 06..., 07...) -> requires 10 digits total
-  else if (cleanPhone.startsWith('0')) {
-    if (/^\d{10}$/.test(cleanPhone)) {
-      isValid = true;
-    }
-  }
+  </style>
+</head>
 
-  if (!isValid) {
-    alert('عافاك تأكد من رقم الهاتف: إذا بديتي بـ +212 خاص يكونو 9 ديال الأرقام موراها (مثال: +212 655438567) أو دخل رقم محلي (مثال: 0655438567).');
-    return;
-  }
+<body>
+  <div class="shell">
 
-  nextStep();
-}
+    <!-- MAIN -->
+    <main>
 
-function updateBudgetValue(val) {
-  const formatted = Number(val).toLocaleString();
-  const label = document.getElementById('budgetValue');
-  if (label) {
-    label.textContent = formatted;
-  }
-}
+      <!-- LEFT: PORTRAIT CARD + TRACK RECORD -->
+      <section class="profile-side">
+        <div class="portrait-card">
+          <img src="bariabder.webp" alt="Bari Abder">
+          <div class="portrait-bottom-overlay">
+            <h1>Bari Abder</h1>
+            <div class="portrait-subtitle">
+              <span class="lime-dot"></span>
+              <span>Content strategist, funnel builder</span>
+            </div>
+          </div>
+        </div>
 
-function enableSubmitButton() {
-  // Optional trigger on last radio selection
-}
+        <div class="proof-block">
+          <p class="proof-line">
+            Previously <strong>Head of Content</strong> for <a href="https://www.instagram.com/heymossab/" target="_blank" rel="noopener noreferrer">@Heymossab</a> — scaled his content across 2 years. Results achieved together:
+          </p>
 
-// Form Submission Handler
-const formElement = document.getElementById('otmMultiStepForm');
-if (formElement) {
-  formElement.addEventListener('submit', function(e) {
-    e.preventDefault();
+          <div class="stats">
+            <div>
+              <div class="stat-val">500+</div>
+              <div class="stat-lbl">Videos</div>
+            </div>
+            <div>
+              <div class="stat-val">480K+</div>
+              <div class="stat-lbl">Followers</div>
+            </div>
+            <div>
+              <div class="stat-val">$100K+</div>
+              <div class="stat-lbl">Revenue</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    const submitBtn = document.getElementById('submitFormBtn');
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'جاري الإرسال...';
-    }
+      <!-- RIGHT: SERVICE + CTA -->
+      <section class="service-card">
+        <div>
+          <h2 class="service-title">The 45 Method™</h2>
+          <p class="service-copy">
+            <span class="en">The 45 Method™</span> كتعاون الـ <span class="en">Founders</span> يحوّلو المعرفة، الخبرة، والآراء ديالهم لمحتوى مستمر يبني البراند الشخصي ديالهم، بلا سكريبت وبلا تضييع الوقت .
+          </p>
+        </div>
 
-    const formData = new FormData(formElement);
-    const payload = {
-      fullName: formData.get('fullName') || '',
-      phone: formData.get('phone') || '',
-      niche: formData.get('niche') || 'N/A',
-      currentPresence: formData.get('currentPresence') || 'N/A',
-      biggestObstacle: formData.get('biggestObstacle') || 'N/A',
-      goal: formData.get('goal') || 'N/A',
-      commitment45: formData.get('commitment45') || 'N/A',
-      budget: formData.get('budget') || '6000',
-      timeline: formData.get('timeline') || 'N/A'
-    };
+        <a href="/the45method/" class="btn-cta">
+          <span>اكتشف <span class="en">The 45 Method</span></span>
+        </a>
+      </section>
 
-    fetch(GOOGLE_SCRIPT_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(payload)
-    })
-    .then(res => res.json())
-    .catch(() => ({ status: 'success' }))
-    .then(() => {
-      document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
-      const progressBar = document.querySelector('.flow-progress-bar');
-      if (progressBar) progressBar.style.display = 'none';
+    </main>
 
-      const thankYou = document.getElementById('thankYouStep');
-      if (thankYou) thankYou.classList.add('active');
-      formElement.reset();
-    })
-    .finally(() => {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'تأكيد وإرسال الطلب';
-      }
-    });
-  });
-}
-</script>
+    <!-- FOOTER -->
+    <footer>
+      <span class="connect-label">Let's connect</span>
+      <div class="socials">
+        <a href="https://instagram.com/bariabder" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://x.com/bariabder" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/bariabder" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="https://bariabder.substack.com" target="_blank" rel="noopener noreferrer" aria-label="Substack">
+          <svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@bariabder" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55A3.016 3.016 0 0 0 .501 6.186C0 8.057 0 12 0 12s0 3.943.501 5.814a3.016 3.016 0 0 0 2.122 2.136C4.495 20.5 12 20.5 12 20.5s7.505 0 9.376-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.943 24 12 24 12s0-3.943-.502-5.814zM9.6 15.5v-7l6.3 3.5-6.3 3.5z"/></svg>
+        </a>
+      </div>
+    </footer>
 
-  <script>
-    // Accordion Logic
-    document.querySelectorAll('.faq-trigger').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        const isActive = item.classList.contains('active');
-        document.querySelectorAll('.faq-item').forEach(other => {
-          other.classList.remove('active');
-          const icon = other.querySelector('.faq-icon');
-          if (icon) icon.textContent = '+';
-        });
-        if (!isActive) {
-          item.classList.add('active');
-          const icon = item.querySelector('.faq-icon');
-          if (icon) icon.textContent = '—';
-        }
-      });
-    });
-
-    // Modal Logic
-    const modal = document.getElementById('bookingModal');
-    function openBookingModal() {
-      modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeBookingModal() {
-      modal.classList.remove('open');
-      document.body.style.overflow = 'auto';
-    }
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeBookingModal();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('open')) closeBookingModal();
-    });
-  </script>
+  </div>
 </body>
 </html>
